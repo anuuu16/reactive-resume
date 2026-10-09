@@ -8042,8 +8042,8 @@ msgid "PDF styles support a subset of CSS. Rotation, dashed and dotted borders, 
 msgstr "PDF 樣式支援 CSS 的子集。旋轉、虛線和點線邊框以及某些佈局屬性將被忽略。"
 
 #: src/features/homepage/faq.tsx
-msgid "PDF, Word (DOCX), Markdown and JSON. The JSON export imports back into any Reactive Resume, including one you host yourself, so your data is never locked in."
-msgstr "PDF, Word （DOCX), Markdown 和 JSON。這 JSON 出口進口回到任何 Reactive Resume，包括您自己託管的數據，因此您的數據永遠不會被鎖定。"
+msgid "PDF, Word (DOCX), OpenDocument (ODT), Markdown and JSON. The JSON export imports back into any Reactive Resume, including one you host yourself, so your data is never locked in."
+msgstr ""
 
 #: src/features/documents/documents-page.tsx
 msgid "PDF, Word or JSON. We'll build a resume from it."
@@ -11149,6 +11149,10 @@ msgstr "面試當天早上已過，因此簡報現在執行。"
 #: src/features/career/coach.tsx
 msgid "The offers you chose to compare, with their terms"
 msgstr "您選擇比較的錄取通知及其條件"
+
+#: src/features/resume/share/download-tab.tsx
+msgid "The open format for LibreOffice, OpenOffice and other office suites. Layout is simplified."
+msgstr ""
 
 #: src/features/ats-checker/messages.ts
 msgid "The order the text is stored in disagrees badly with the order it reads in."

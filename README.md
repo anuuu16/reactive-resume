@@ -96,7 +96,7 @@ You own your data. The codebase is open source under the MIT license, with no tr
 
 - Import Reactive Resume JSON, JSON Resume, LinkedIn data exports, PDF, and Word files
 - JSON, LinkedIn, and readable PDF imports work without AI; Word imports require a connected provider
-- Export resumes and letters as PDF, Word (DOCX), Markdown, or JSON
+- Export resumes and letters as PDF, Word (DOCX), OpenDocument (ODT), Markdown, or JSON
 - Share resumes through public links with optional password protection and view/download statistics
 - REST API and MCP server for document management, imports, exports, checks, and application workflows
 

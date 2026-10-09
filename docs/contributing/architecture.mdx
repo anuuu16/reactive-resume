@@ -11,7 +11,7 @@ There are two apps and a set of shared packages:
 
 - **`apps/web`** is a client-rendered React 19 single-page app built with Vite, TanStack Router, TanStack Query, Tailwind CSS, and Lingui for translations.
 - **`apps/server`** is a Hono application on Node.js. It serves the API, authentication, the MCP server, uploads, OpenAPI, and the built web app.
-- **`packages/*`** hold everything the apps share: API business logic, authentication, database access, schemas, PDF and DOCX rendering, and UI primitives.
+- **`packages/*`** hold everything the apps share: API business logic, authentication, database access, schemas, PDF, DOCX and ODT rendering, and UI primitives.
 
 The browser talks to the server through [oRPC](https://orpc.unnoq.com/) at `/api/rpc`. [Better Auth](https://www.better-auth.com/) handles sign-in, sessions, passkeys, two-factor authentication, API keys, and the OAuth provider used by MCP clients. [Drizzle](https://orm.drizzle.team/) talks to PostgreSQL.
 
@@ -62,6 +62,7 @@ The server checks the environment, applies database migrations, and verifies the
 | `packages/resume`     | Pure resume logic with no database, HTTP, or DOM dependencies, such as JSON Patch helpers and social network icons                                    |
 | `packages/pdf`        | Resume templates (which also lay out cover letters), the Forme adapter, font resolution, custom-style support, and browser and server PDF adapters    |
 | `packages/docx`       | DOCX export                                                                                                                                           |
+| `packages/odt`        | ODT (OpenDocument Text) export                                                                                                                        |
 | `packages/mcp`        | MCP tools, prompts, resources, and the server card                                                                                                    |
 | `packages/ai`         | AI provider types, prompts, and model-facing helpers                                                                                                  |
 | `packages/import`     | Resume importers                                                                                                                                      |
@@ -90,6 +91,7 @@ Turbo hashes shared Vitest configuration and setup files, tracks transitive sour
 | A PDF template or rendering behavior            | `packages/pdf`                                                                                                                  |
 | PDF.js canvas or viewer UI                      | `apps/web/src/features/resume` (never `packages/pdf`)                                                                           |
 | DOCX export                                     | `packages/docx`                                                                                                                 |
+| ODT export                                      | `packages/odt`                                                                                                                  |
 | An MCP tool, prompt, or resource                | `packages/mcp`                                                                                                                  |
 | A generic UI primitive or hook                  | `packages/ui`; workflow-specific UI stays in its web feature                                                                    |
 | A database column or table                      | `packages/db/src/schema/*`, then `pnpm db:generate`                                                                             |
@@ -98,7 +100,7 @@ Turbo hashes shared Vitest configuration and setup files, tracks transitive sour
 
 A new template touches several places: `packages/schema/src/templates.ts`, `packages/pdf/src/templates/index.ts`, the template source under `packages/pdf/src/templates/<name>/`, and preview images under `apps/web/public/templates/{jpg,pdf}`.
 
-Add a helper to `packages/utils` only when no domain package is a better owner. JSON Patch behavior belongs in `@reactive-resume/resume/patch`, and DOCX builders belong in `@reactive-resume/docx`.
+Add a helper to `packages/utils` only when no domain package is a better owner. JSON Patch behavior belongs in `@reactive-resume/resume/patch`, DOCX builders belong in `@reactive-resume/docx`, and ODT builders in `@reactive-resume/odt`.
 
 ## Boundary rules
 

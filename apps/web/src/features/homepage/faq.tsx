@@ -49,7 +49,7 @@ function useQuestions(): Question[] {
 		{
 			id: "export",
 			question: t`What formats can I download?`,
-			answer: t`PDF, Word (DOCX), Markdown and JSON. The JSON export imports back into any Reactive Resume, including one you host yourself, so your data is never locked in.`,
+			answer: t`PDF, Word (DOCX), OpenDocument (ODT), Markdown and JSON. The JSON export imports back into any Reactive Resume, including one you host yourself, so your data is never locked in.`,
 		},
 		{
 			id: "ai",

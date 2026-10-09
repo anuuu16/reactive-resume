@@ -50,6 +50,13 @@ export const getExportFormats = (): DownloadFormat[] => [
 		description: t`For portals or recruiters who ask for Word. Layout is simplified.`,
 	},
 	{
+		id: "odt",
+		label: "OpenDocument",
+		extension: ".odt",
+		icon: "file-doc",
+		description: t`The open format for LibreOffice, OpenOffice and other office suites. Layout is simplified.`,
+	},
+	{
 		id: "md",
 		label: "Markdown",
 		extension: ".md",

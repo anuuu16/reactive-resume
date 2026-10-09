@@ -13,7 +13,7 @@ import { resumeService } from "../resume/service";
 
 const exportInput = z.object({
 	id: z.string().min(1),
-	format: z.enum(["pdf", "docx", "md", "json"]),
+	format: z.enum(["pdf", "docx", "odt", "md", "json"]),
 });
 const exportOutput = z.object({ headers: z.object({ "content-disposition": z.string() }), body: z.file() });
 
@@ -41,8 +41,11 @@ async function fileResponse(
 			const resolveTitle = (id: string) => getResumeSectionTitle(data, id);
 			if (format === "md") body = new File([buildMarkdown(data, resolveTitle)], filename, { type: "text/markdown" });
 			else {
-				const { buildDocx } = await import("@reactive-resume/docx");
-				const blob = await buildDocx(data, resolveTitle);
+				const build =
+					format === "odt"
+						? (await import("@reactive-resume/odt")).buildOdt
+						: (await import("@reactive-resume/docx")).buildDocx;
+				const blob = await build(data, resolveTitle);
 				body = new File([blob], filename, { type: blob.type });
 			}
 		}
@@ -60,7 +63,7 @@ export const documentExports = {
 			path: "/resumes/{id}/exports/{format}",
 			tags: ["Resumes"],
 			operationId: "exportResumeFile",
-			summary: "Download a resume in PDF, DOCX, Markdown or JSON",
+			summary: "Download a resume in PDF, DOCX, ODT, Markdown or JSON",
 			outputStructure: "detailed",
 		})
 		.input(exportInput)
@@ -76,7 +79,7 @@ export const documentExports = {
 			path: "/cover-letters/{id}/exports/{format}",
 			tags: ["Cover Letters"],
 			operationId: "exportCoverLetterFile",
-			summary: "Download a cover letter in PDF, DOCX, Markdown or JSON",
+			summary: "Download a cover letter in PDF, DOCX, ODT, Markdown or JSON",
 			description:
 				"Uses live linked sender/design details. Structured letter greetings default to English; supply words to localize them. Dates use the document locale.",
 			outputStructure: "detailed",

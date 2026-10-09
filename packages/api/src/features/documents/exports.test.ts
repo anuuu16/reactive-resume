@@ -21,7 +21,7 @@ beforeEach(() => {
 	getResume.mockResolvedValue({ id: "resume-1", name: "Ada", data });
 });
 
-it("exports saved data as round-trippable JSON, readable Markdown and a Word document", async () => {
+it("exports saved data as round-trippable JSON, readable Markdown, a Word document and an OpenDocument file", async () => {
 	const json = await call(documentExports.resume, { id: "resume-1", format: "json" }, { context });
 	expect(JSON.parse(await json.body.text())).toMatchObject({ basics: { name: "Ada Lovelace" } });
 	expect(json.headers["content-disposition"]).toContain(".json");
@@ -33,5 +33,15 @@ it("exports saved data as round-trippable JSON, readable Markdown and a Word doc
 	expect(xml).toBeDefined();
 	if (!xml) throw new Error("Missing Word document");
 	expect(strFromU8(xml)).toContain("Ada Lovelace");
+	const odt = await call(documentExports.resume, { id: "resume-1", format: "odt" }, { context });
+	expect(odt.headers["content-disposition"]).toContain(".odt");
+	expect(odt.body.type).toBe("application/vnd.oasis.opendocument.text");
+	const parts = unzipSync(new Uint8Array(await odt.body.arrayBuffer()));
+	expect(strFromU8(parts.mimetype ?? new Uint8Array())).toBe("application/vnd.oasis.opendocument.text");
+	const content = parts["content.xml"];
+	expect(content).toBeDefined();
+	if (!content) throw new Error("Missing OpenDocument content");
+	expect(strFromU8(content)).toContain("Ada Lovelace");
+	expect(strFromU8(content)).toContain("Builds analytical engines.");
 	expect(getResume).toHaveBeenCalledWith({ id: "resume-1", userId: "owner" });
 });

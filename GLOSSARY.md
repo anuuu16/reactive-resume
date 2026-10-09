@@ -19,7 +19,7 @@ Product and technology names stay in English (or in the locale's established tra
 the catalog already uses one consistently):
 
 Reactive Resume, GitHub, Crowdin, Docker, PostgreSQL, Better Auth, TanStack, Microsoft Word,
-PDF, DOCX, JSON, CSV, API, MCP, oRPC, SSO, CSS, URL, JSON Resume.
+LibreOffice, OpenOffice, PDF, DOCX, ODT, OpenDocument, JSON, CSV, API, MCP, oRPC, SSO, CSS, URL, JSON Resume.
 
 Also keep LinkedIn, Discord, Figma, Claude Desktop, PDF.js, models.dev, iOS, MIT License,
 and WCAG 2.1 AA unchanged. **Word**, when naming an import or download format, means

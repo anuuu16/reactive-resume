@@ -8042,8 +8042,8 @@ msgid "PDF styles support a subset of CSS. Rotation, dashed and dotted borders, 
 msgstr "PDF 스타일은 CSS의 하위 집합을 지원합니다. 회전, 파선 및 점선 테두리, 일부 레이아웃 속성은 무시됩니다."
 
 #: src/features/homepage/faq.tsx
-msgid "PDF, Word (DOCX), Markdown and JSON. The JSON export imports back into any Reactive Resume, including one you host yourself, so your data is never locked in."
-msgstr "PDF, Word (DOCX), Markdown 그리고 JSON. 그만큼 JSON 수출 수입을 다시 어떤 국가로든 Reactive Resume, 귀하가 직접 호스팅하는 것을 포함하여 귀하의 데이터가 결코 잠겨 있지 않습니다."
+msgid "PDF, Word (DOCX), OpenDocument (ODT), Markdown and JSON. The JSON export imports back into any Reactive Resume, including one you host yourself, so your data is never locked in."
+msgstr ""
 
 #: src/features/documents/documents-page.tsx
 msgid "PDF, Word or JSON. We'll build a resume from it."
@@ -11149,6 +11149,10 @@ msgstr "면접 당일 아침이 지났으므로 브리핑을 지금 실행합니
 #: src/features/career/coach.tsx
 msgid "The offers you chose to compare, with their terms"
 msgstr "비교하도록 선택한 오퍼와 그 조건"
+
+#: src/features/resume/share/download-tab.tsx
+msgid "The open format for LibreOffice, OpenOffice and other office suites. Layout is simplified."
+msgstr ""
 
 #: src/features/ats-checker/messages.ts
 msgid "The order the text is stored in disagrees badly with the order it reads in."

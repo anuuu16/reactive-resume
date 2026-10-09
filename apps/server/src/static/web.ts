@@ -134,7 +134,7 @@ function homepageStructuredData(origin: string): StructuredData {
 				featureList: [
 					"Resume editor with a live page preview",
 					`${templateSchema.options.length} templates`,
-					"PDF, Word (DOCX), Markdown and JSON export",
+					"PDF, Word (DOCX), OpenDocument (ODT), Markdown and JSON export",
 					"Import from PDF, LinkedIn, JSON Resume and Word",
 					"ATS readability checker",
 					"Public or password-protected sharing links",

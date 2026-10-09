@@ -27,7 +27,7 @@ Reactive Resume is a free, open-source resume builder with privacy and data owne
 
 ## Capabilities and Constraints
 
-- Resume creation, importing, template customization, PDF/JSON/DOCX export, and public sharing.
+- Resume creation, importing, template customization, PDF/JSON/DOCX/ODT export, and public sharing.
 - Cover-letter editing and application tracking.
 - Preserve free and open-source access, privacy, and user control of their data.
 - Preserve multilingual and right-to-left support throughout workflows and accessible labels.

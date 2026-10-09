@@ -107,13 +107,14 @@ Where each concern lives, and where new code for it goes:
 | Resume PDF rendering                                                                            | `packages/pdf` (React templates converted through `src/forme` to Forme documents, font resolution, browser/server adapters)                                      |
 | PDF.js viewer/canvas UI                                                                         | `apps/web/src/features/resume` — never in `packages/pdf`                                                                                                         |
 | DOCX export                                                                                     | `packages/docx`                                                                                                                                                  |
+| ODT export                                                                                      | `packages/odt`                                                                                                                                                   |
 | MCP tools/prompts/resources/server-card                                                         | `packages/mcp`                                                                                                                                                   |
 | Generic UI primitives + hooks                                                                   | `packages/ui` (Base UI/shadcn-style); workflow-specific UI stays in the owning web feature                                                                       |
 | DeepSeek Harness integration                                                                    | `packages/dsh-plugin` (separately built/published plugin)                                                                                                        |
 | Focused support surfaces                                                                        | `packages/fonts`, `packages/email`, `packages/import`, `packages/ai`, `packages/utils`, `packages/config` — prefer existing exports over cross-package shortcuts |
 | Dev-only scripts                                                                                | `tooling/`, not `packages/`, so packages only hold runtime-bundled code                                                                                          |
 
-Narrow cross-cutting helpers go in `packages/utils` only after checking no domain package is a better owner. Specifically: resume JSON Patch behavior belongs in `@reactive-resume/resume/patch` and DOCX builders in `@reactive-resume/docx` — not in `@reactive-resume/utils`.
+Narrow cross-cutting helpers go in `packages/utils` only after checking no domain package is a better owner. Specifically: resume JSON Patch behavior belongs in `@reactive-resume/resume/patch`, DOCX builders in `@reactive-resume/docx` and ODT builders in `@reactive-resume/odt` — not in `@reactive-resume/utils`.
 
 ## Web app conventions
 

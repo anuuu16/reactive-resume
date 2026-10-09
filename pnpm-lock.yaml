@@ -682,6 +682,9 @@ importers:
       '@reactive-resume/import':
         specifier: workspace:*
         version: link:../../packages/import
+      '@reactive-resume/odt':
+        specifier: workspace:*
+        version: link:../../packages/odt
       '@reactive-resume/pdf':
         specifier: workspace:*
         version: link:../../packages/pdf
@@ -984,6 +987,9 @@ importers:
       '@reactive-resume/import':
         specifier: workspace:*
         version: link:../import
+      '@reactive-resume/odt':
+        specifier: workspace:*
+        version: link:../odt
       '@reactive-resume/pdf':
         specifier: workspace:*
         version: link:../pdf
@@ -1367,6 +1373,31 @@ importers:
       vitest:
         specifier: 'catalog:'
         version: 5.0.3(@types/node@26.6.4)(@vitest/coverage-v8@5.0.3)(happy-dom@20.14.5)(vite@8.3.4(@types/node@26.6.4)(esbuild@0.28.2)(jiti@2.7.0)(tsx@4.23.15)(yaml@2.9.1))
+
+  packages/odt:
+    dependencies:
+      '@reactive-resume/schema':
+        specifier: workspace:*
+        version: link:../schema
+      '@reactive-resume/utils':
+        specifier: workspace:*
+        version: link:../utils
+      fflate:
+        specifier: 'catalog:'
+        version: 0.8.3
+      node-html-parser:
+        specifier: ^9.0.4
+        version: 9.0.4
+    devDependencies:
+      '@reactive-resume/config':
+        specifier: workspace:*
+        version: link:../config
+      '@typescript/native-preview':
+        specifier: 'catalog:'
+        version: 7.0.0-dev.20260707.2
+      typescript:
+        specifier: 'catalog:'
+        version: 7.0.2
 
   packages/pdf:
     dependencies:

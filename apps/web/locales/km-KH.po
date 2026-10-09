@@ -8042,8 +8042,8 @@ msgid "PDF styles support a subset of CSS. Rotation, dashed and dotted borders, 
 msgstr "រចនាប័ទ្ម PDF គាំទ្រសំណុំរងនៃ CSS ។ ការបង្វិល បន្ទាត់ដាច់ៗ និងបន្ទាត់ចំនុច និងលក្ខណៈសម្បត្តិប្លង់មួយចំនួនមិនត្រូវបានអើពើ។"
 
 #: src/features/homepage/faq.tsx
-msgid "PDF, Word (DOCX), Markdown and JSON. The JSON export imports back into any Reactive Resume, including one you host yourself, so your data is never locked in."
-msgstr "PDF, Word (DOCX), Markdown និង JSON ។ ការនាំចេញ JSON ត្រឡប់ទៅ Reactive Resume ណាមួយ រួមទាំងអ្នកបង្ហោះដោយខ្លួនឯង ដូច្នេះទិន្នន័យរបស់អ្នកមិនត្រូវបានចាក់សោទេ។"
+msgid "PDF, Word (DOCX), OpenDocument (ODT), Markdown and JSON. The JSON export imports back into any Reactive Resume, including one you host yourself, so your data is never locked in."
+msgstr ""
 
 #: src/features/documents/documents-page.tsx
 msgid "PDF, Word or JSON. We'll build a resume from it."
@@ -11149,6 +11149,10 @@ msgstr "ព្រឹកថ្ងៃសម្ភាសន៍បានកន្ល
 #: src/features/career/coach.tsx
 msgid "The offers you chose to compare, with their terms"
 msgstr "ការផ្តល់ការងារដែលអ្នកបានជ្រើសរើសដើម្បីប្រៀបធៀប ជាមួយលក្ខខណ្ឌរបស់វា"
+
+#: src/features/resume/share/download-tab.tsx
+msgid "The open format for LibreOffice, OpenOffice and other office suites. Layout is simplified."
+msgstr ""
 
 #: src/features/ats-checker/messages.ts
 msgid "The order the text is stored in disagrees badly with the order it reads in."

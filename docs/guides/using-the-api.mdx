@@ -117,7 +117,7 @@ Additional app workflows have REST endpoints:
 | Workflow                                                                                | Endpoint                                                                         |
 | --------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
 | PDF, JSON Resume, Reactive Resume v4/current, LinkedIn imports                          | `POST /resumes/file-imports`                                                     |
-| PDF, Word, Markdown and JSON exports                                                    | `GET /resumes/{id}/exports/{format}`, `GET /cover-letters/{id}/exports/{format}` |
+| PDF, Word, OpenDocument, Markdown and JSON exports                                      | `GET /resumes/{id}/exports/{format}`, `GET /cover-letters/{id}/exports/{format}` |
 | Editor content checks and job-term matching                                             | `GET /resumes/{id}/checks`, `POST /resumes/{id}/job-matches`                     |
 | Public PDF readability checker                                                          | `POST /pdf-checks`                                                               |
 | File uploads and deletion                                                               | `POST /files`, `DELETE /files`                                                   |
@@ -141,7 +141,7 @@ curl "https://rxresu.me/api/openapi/resumes/RESUME_ID/exports/docx" \
   -H "x-api-key: YOUR_API_KEY" -o resume.docx
 ```
 
-Exports accept `pdf`, `docx`, `md` or `json` and return a downloadable file. They enforce document ownership. The public checker accepts a multipart `file` (PDF, maximum 25 MB) and optional `jobDescription` text. It stores nothing, examines at most 30 pages and reports truncation or skipped checks. Parsing has a 45-second deadline. Hosting-provider request limits still apply.
+Exports accept `pdf`, `docx`, `odt`, `md` or `json` and return a downloadable file. They enforce document ownership. The public checker accepts a multipart `file` (PDF, maximum 25 MB) and optional `jobDescription` text. It stores nothing, examines at most 30 pages and reports truncation or skipped checks. Parsing has a 45-second deadline. Hosting-provider request limits still apply.
 
 ## Pagination and partial updates
 

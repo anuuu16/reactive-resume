@@ -8042,8 +8042,8 @@ msgid "PDF styles support a subset of CSS. Rotation, dashed and dotted borders, 
 msgstr "PDF uslublari CSS to‘plamini qo‘llab-quvvatlaydi. Aylantirish, chiziqli va nuqta chegaralari va ba'zi tartib xususiyatlari e'tiborga olinmaydi."
 
 #: src/features/homepage/faq.tsx
-msgid "PDF, Word (DOCX), Markdown and JSON. The JSON export imports back into any Reactive Resume, including one you host yourself, so your data is never locked in."
-msgstr "PDF, Word (DOCX), Markdown va JSON. JSON eksporti har qanday Reactive Resume-ga, jumladan, siz oʻzingiz joylashtirgan faylga qayta import qilinadi, shuning uchun maʼlumotlaringiz hech qachon qulflanmaydi."
+msgid "PDF, Word (DOCX), OpenDocument (ODT), Markdown and JSON. The JSON export imports back into any Reactive Resume, including one you host yourself, so your data is never locked in."
+msgstr ""
 
 #: src/features/documents/documents-page.tsx
 msgid "PDF, Word or JSON. We'll build a resume from it."
@@ -11149,6 +11149,10 @@ msgstr "Intervyu kunining ertalabi o'tib ketdi, shuning uchun brifing hozir ishg
 #: src/features/career/coach.tsx
 msgid "The offers you chose to compare, with their terms"
 msgstr "Solishtirish uchun tanlagan takliflaringiz, shartlari bilan"
+
+#: src/features/resume/share/download-tab.tsx
+msgid "The open format for LibreOffice, OpenOffice and other office suites. Layout is simplified."
+msgstr ""
 
 #: src/features/ats-checker/messages.ts
 msgid "The order the text is stored in disagrees badly with the order it reads in."
