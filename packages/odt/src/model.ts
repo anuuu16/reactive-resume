@@ -17,11 +17,21 @@ export type TextStyle = {
 	background?: string;
 };
 
+/** An embedded picture, anchored as a character; `href` is its path inside the package. */
+export type Image = {
+	kind: "image";
+	href: string;
+	width: number;
+	height: number;
+	border?: { width: number; color: string };
+};
+
 export type Inline =
 	| { kind: "text"; text: string; style?: TextStyle }
 	| { kind: "link"; href: string; children: Inline[] }
 	| { kind: "break" }
-	| { kind: "tab" };
+	| { kind: "tab" }
+	| Image;
 
 type TabStop = { position: number; type: "left" | "right" | "center" };
 

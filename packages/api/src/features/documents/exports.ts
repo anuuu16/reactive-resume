@@ -40,12 +40,18 @@ async function fileResponse(
 			const { getResumeSectionTitle } = await import("@reactive-resume/pdf/section-title");
 			const resolveTitle = (id: string) => getResumeSectionTitle(data, id);
 			if (format === "md") body = new File([buildMarkdown(data, resolveTitle)], filename, { type: "text/markdown" });
-			else {
-				const build =
-					format === "odt"
-						? (await import("@reactive-resume/odt")).buildOdt
-						: (await import("@reactive-resume/docx")).buildDocx;
-				const blob = await build(data, resolveTitle);
+			else if (format === "odt") {
+				const [{ buildOdt }, { readServerImage }] = await Promise.all([
+					import("@reactive-resume/odt"),
+					import("@reactive-resume/pdf/server"),
+				]);
+				// The picture downloads through the same reader as for PDFs: public URLs and this installation's uploads.
+				const readImage = (source: string) => readServerImage(source, env.APP_URL);
+				const blob = await buildOdt(data, resolveTitle, { readImage });
+				body = new File([blob], filename, { type: blob.type });
+			} else {
+				const { buildDocx } = await import("@reactive-resume/docx");
+				const blob = await buildDocx(data, resolveTitle);
 				body = new File([blob], filename, { type: blob.type });
 			}
 		}

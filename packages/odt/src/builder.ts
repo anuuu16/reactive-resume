@@ -1,5 +1,6 @@
-import type { OdtDocument } from "./document";
+import type { OdtDocument, PackagedPicture } from "./document";
 import type { Block, Inline, Paragraph, TableCell } from "./model";
+import type { LoadedPicture } from "./picture";
 import type { RenderConfig } from "./section-renderers";
 import type { LayoutPage, ResumeData, SectionType } from "@reactive-resume/schema/resume/data";
 import type { Template } from "@reactive-resume/schema/templates";
@@ -9,6 +10,7 @@ import { isRTL } from "@reactive-resume/utils/locale";
 import { shouldShowResumeHeader } from "./cover-letter";
 import { toSafeOdtLink } from "./link-utils";
 import { link, paragraph, text } from "./model";
+import { pictureFrame } from "./picture";
 import { renderBuiltInSection, renderCustomSection, renderSummary } from "./section-renderers";
 
 // --- Color helpers ---
@@ -90,11 +92,33 @@ function renderSection(
 
 // --- Header ---
 
-function buildHeader(data: ResumeData, config: RenderConfig): Paragraph[] {
+const PICTURE_EXTENSIONS: Record<LoadedPicture["mediaType"], string> = {
+	"image/png": "png",
+	"image/jpeg": "jpg",
+	"image/webp": "webp",
+};
+
+/** The picture as it's packaged, and as the header shows it: in its own paragraph above the name. */
+function packagePicture(
+	picture: ResumeData["picture"],
+	loaded: LoadedPicture,
+): { file: PackagedPicture; inline: Inline } {
+	const path = `Pictures/picture.${PICTURE_EXTENSIONS[loaded.mediaType]}`;
+	const border =
+		picture.borderWidth > 0 ? { width: picture.borderWidth, color: toHex(picture.borderColor, "#000000") } : undefined;
+	return {
+		file: { path, bytes: loaded.bytes, mediaType: loaded.mediaType },
+		inline: { kind: "image", href: path, ...pictureFrame(picture, loaded), ...(border ? { border } : {}) },
+	};
+}
+
+function buildHeader(data: ResumeData, config: RenderConfig, picture?: Inline): Paragraph[] {
 	const paragraphs: Paragraph[] = [];
 	const { basics } = data;
 	const run = { font: config.bodyFont, size: config.bodySize, color: config.textColor };
 	const linkRun = { ...run, color: config.primaryColor, underline: true };
+
+	if (picture) paragraphs.push(paragraph([picture], { style: { spacingAfter: 6 } }));
 
 	if (basics.name) {
 		paragraphs.push(
@@ -147,7 +171,16 @@ function buildHeader(data: ResumeData, config: RenderConfig): Paragraph[] {
  * - Page margins and fixed page format from `metadata.page`; free-form exports as A4
  * - Primary, text and background colors from `metadata.design.colors`
  */
-export function buildDocument(data: ResumeData, resolveTitle?: SectionTitleResolver): OdtDocument {
+export type BuildDocumentOptions = {
+	/** The resume picture, already downloaded; left out when missing. */
+	picture?: LoadedPicture | undefined;
+};
+
+export function buildDocument(
+	data: ResumeData,
+	resolveTitle?: SectionTitleResolver,
+	options: BuildDocumentOptions = {},
+): OdtDocument {
 	const { colors } = data.metadata.design;
 	const primaryColor = toHex(colors.primary, "#dc2626");
 	const textColor = toHex(colors.text, "#000000");
@@ -193,10 +226,13 @@ export function buildDocument(data: ResumeData, resolveTitle?: SectionTitleResol
 	// The header prints once, on the first page, where the template puts it: across the page, over the main column
 	// or in the sidebar. A one-column first page prints it at the top either way.
 	let headerPending = shouldShowResumeHeader(data);
+	let headerPrinted = false;
+	const picture = options.picture ? packagePicture(data.picture, options.picture) : undefined;
 	const takeHeader = (config: RenderConfig): Paragraph[] => {
 		if (!headerPending) return [];
 		headerPending = false;
-		return buildHeader(data, config);
+		headerPrinted = true;
+		return buildHeader(data, config, picture?.inline);
 	};
 	const blocks: Block[] = [];
 	const sidebarSide = pageLayout.sidebarSide ?? layout.sidebarSide ?? "left";
@@ -263,6 +299,7 @@ export function buildDocument(data: ResumeData, resolveTitle?: SectionTitleResol
 	return {
 		title: data.basics.name,
 		blocks,
+		...(picture && headerPrinted ? { pictures: [picture.file] } : {}),
 		page: {
 			width: pageSize.width,
 			height: pageSize.height,

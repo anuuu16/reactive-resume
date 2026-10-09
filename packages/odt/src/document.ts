@@ -1,4 +1,4 @@
-import type { Block, Inline, Paragraph, Table } from "./model";
+import type { Block, Image, Inline, Paragraph, Table } from "./model";
 import { strToU8, zipSync } from "fflate";
 import { AutomaticStyles, fontFaceDeclarations, textProperties } from "./styles";
 import { attributes, escapeXml, pt, textContent } from "./xml";
@@ -27,11 +27,15 @@ type DocumentDefaults = {
 	lineHeight: number;
 };
 
+/** A file packaged under `Pictures/`, referenced by an image in the text. */
+export type PackagedPicture = { path: string; bytes: Uint8Array; mediaType: string };
+
 export type OdtDocument = {
 	title: string;
 	blocks: Block[];
 	page: PageSettings;
 	defaults: DocumentDefaults;
+	pictures?: PackagedPicture[];
 };
 
 const NAMESPACES = attributes({
@@ -39,6 +43,7 @@ const NAMESPACES = attributes({
 	"xmlns:style": "urn:oasis:names:tc:opendocument:xmlns:style:1.0",
 	"xmlns:text": "urn:oasis:names:tc:opendocument:xmlns:text:1.0",
 	"xmlns:table": "urn:oasis:names:tc:opendocument:xmlns:table:1.0",
+	"xmlns:draw": "urn:oasis:names:tc:opendocument:xmlns:drawing:1.0",
 	"xmlns:fo": "urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0",
 	"xmlns:xlink": "http://www.w3.org/1999/xlink",
 	"xmlns:svg": "urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0",
@@ -61,6 +66,7 @@ const NUMBER_LIST_STYLE = "List_20_Number";
 
 class ContentWriter {
 	readonly styles = new AutomaticStyles();
+	private pictures = 1;
 
 	blocks(blocks: Block[]): string {
 		let xml = "";
@@ -178,9 +184,30 @@ class ContentWriter {
 					xml += "<text:tab/>";
 					atStart = false;
 					break;
+				case "image":
+					xml += this.image(child);
+					atStart = false;
+					break;
 			}
 		}
 		return xml;
+	}
+
+	private image(image: Image): string {
+		const frame = attributes({
+			"draw:style-name": this.styles.graphic(image.border),
+			"draw:name": `Picture${this.pictures++}`,
+			"text:anchor-type": "as-char",
+			"svg:width": pt(image.width),
+			"svg:height": pt(image.height),
+		});
+		const source = attributes({
+			"xlink:href": image.href,
+			"xlink:type": "simple",
+			"xlink:show": "embed",
+			"xlink:actuate": "onLoad",
+		});
+		return `<draw:frame${frame}><draw:image${source}/></draw:frame>`;
 	}
 
 	private table(block: Table): string {
@@ -287,13 +314,24 @@ function metaXml(document: OdtDocument): string {
 	return `${XML_DECLARATION}<office:document-meta${NAMESPACES}><office:meta><meta:generator>Reactive Resume</meta:generator><dc:title>${escapeXml(document.title)}</dc:title></office:meta></office:document-meta>`;
 }
 
-const MANIFEST_XML = `${XML_DECLARATION}<manifest:manifest xmlns:manifest="urn:oasis:names:tc:opendocument:xmlns:manifest:1.0" manifest:version="1.2"><manifest:file-entry manifest:full-path="/" manifest:version="1.2" manifest:media-type="${ODT_MIME_TYPE}"/><manifest:file-entry manifest:full-path="content.xml" manifest:media-type="text/xml"/><manifest:file-entry manifest:full-path="styles.xml" manifest:media-type="text/xml"/><manifest:file-entry manifest:full-path="meta.xml" manifest:media-type="text/xml"/></manifest:manifest>`;
+function manifestXml(document: OdtDocument): string {
+	const entry = (path: string, mediaType: string, version?: string) =>
+		`<manifest:file-entry${attributes({ "manifest:full-path": path, "manifest:version": version, "manifest:media-type": mediaType })}/>`;
+	const entries = [
+		entry("/", ODT_MIME_TYPE, "1.2"),
+		entry("content.xml", "text/xml"),
+		entry("styles.xml", "text/xml"),
+		entry("meta.xml", "text/xml"),
+		...(document.pictures ?? []).map((picture) => entry(picture.path, picture.mediaType)),
+	];
+	return `${XML_DECLARATION}<manifest:manifest xmlns:manifest="urn:oasis:names:tc:opendocument:xmlns:manifest:1.0" manifest:version="1.2">${entries.join("")}</manifest:manifest>`;
+}
 
-/** The parts of the OpenDocument package, as text, for inspection and tests. */
+/** The text parts of the OpenDocument package, for inspection and tests. */
 export function renderOdtParts(document: OdtDocument): Record<string, string> {
 	return {
 		mimetype: ODT_MIME_TYPE,
-		"META-INF/manifest.xml": MANIFEST_XML,
+		"META-INF/manifest.xml": manifestXml(document),
 		"content.xml": contentXml(document),
 		"styles.xml": stylesXml(document),
 		"meta.xml": metaXml(document),
@@ -313,5 +351,7 @@ export function packageOdt(document: OdtDocument): Uint8Array {
 				.filter(([path]) => path !== "mimetype")
 				.map(([path, xml]) => [path, [strToU8(xml), { level: 6 }]]),
 		),
+		// Pictures are compressed already.
+		...Object.fromEntries((document.pictures ?? []).map((picture) => [picture.path, [picture.bytes, { level: 0 }]])),
 	});
 }

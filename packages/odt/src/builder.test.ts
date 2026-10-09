@@ -214,3 +214,99 @@ describe("buildDocument", () => {
 		expect(blocks.map(plain)).toEqual(["Dear Jane,", "Hire me."]);
 	});
 });
+
+describe("buildDocument pictures", () => {
+	const loaded = { bytes: new Uint8Array([1, 2, 3]), mediaType: "image/png" as const, width: 200, height: 100 };
+
+	it("embeds the picture above the name, sized and bordered as in the editor", () => {
+		const data = structuredClone(defaultResumeData);
+		data.basics.name = "Ada Lovelace";
+		data.picture = { ...data.picture, url: "https://example.com/p.png", size: 64, aspectRatio: 1, borderWidth: 2 };
+		data.picture.borderColor = "rgba(220, 38, 38, 1)";
+		const document = buildDocument(data, undefined, { picture: loaded });
+		expect(document.pictures).toEqual([{ path: "Pictures/picture.png", bytes: loaded.bytes, mediaType: "image/png" }]);
+		const [first, second] = document.blocks;
+		expect(first).toMatchObject({
+			children: [
+				{ kind: "image", href: "Pictures/picture.png", width: 64, height: 32, border: { width: 2, color: "#dc2626" } },
+			],
+		});
+		expect(plain(second)).toBe("Ada Lovelace");
+	});
+
+	it("packages no picture when the header isn't printed", () => {
+		const data = structuredClone(defaultResumeData);
+		data.customSections = [
+			{
+				id: "letter",
+				type: "cover-letter",
+				title: "Cover Letter",
+				icon: "envelope",
+				columns: 1,
+				hidden: false,
+				showHeading: true,
+				keepTogether: false,
+				startOnNewPage: false,
+				items: [{ id: "item", hidden: false, recipient: "", content: "<p>Hire me.</p>" }],
+			},
+		];
+		data.metadata.layout.pages = [{ fullWidth: true, main: ["letter"], sidebar: [] }];
+		const document = buildDocument(data, undefined, { picture: loaded });
+		expect(document.pictures).toBeUndefined();
+		expect(JSON.stringify(document.blocks)).not.toContain("Pictures/");
+	});
+
+	it("prints custom sections of every kind through the matching renderer", () => {
+		const data = structuredClone(defaultResumeData);
+		data.customSections = [
+			{
+				id: "custom-experience",
+				type: "experience",
+				title: "Freelance",
+				icon: "",
+				columns: 1,
+				hidden: false,
+				showHeading: true,
+				keepTogether: false,
+				startOnNewPage: false,
+				items: [
+					{
+						id: "one",
+						hidden: false,
+						company: "Self-employed",
+						position: "Consultant",
+						location: "Remote",
+						period: "2023",
+						website: { url: "", label: "", inlineLink: false },
+						description: "<ul><li><p>Advised startups</p></li></ul>",
+						roles: [],
+					},
+				],
+			},
+			{
+				id: "custom-notes",
+				type: "summary",
+				title: "Notes",
+				icon: "",
+				columns: 1,
+				hidden: false,
+				showHeading: true,
+				keepTogether: false,
+				startOnNewPage: false,
+				items: [{ id: "note", hidden: false, content: "<p>A free-form note.</p>" }],
+			},
+		];
+		data.metadata.layout.pages = [{ fullWidth: true, main: ["custom-experience", "custom-notes"], sidebar: [] }];
+		const lines = buildDocument(data, (id) => data.customSections.find((section) => section.id === id)?.title)
+			.blocks.map(plain)
+			.filter((line) => line && line !== data.basics.name);
+		expect(lines).toEqual([
+			"Freelance",
+			"Self-employed — Consultant<tab>2023",
+			"Remote",
+			"Advised startups",
+			"Notes",
+			"A free-form note.",
+		]);
+	});
+});

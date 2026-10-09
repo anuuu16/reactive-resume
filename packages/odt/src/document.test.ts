@@ -173,3 +173,33 @@ describe("styles.xml", () => {
 		expect(xml).toContain('fo:margin-right="14pt" style:writing-mode="rl-tb"');
 	});
 });
+
+describe("pictures", () => {
+	const picture = { path: "Pictures/picture.png", bytes: new Uint8Array([0x89, 0x50]), mediaType: "image/png" };
+	const withPicture = (): OdtDocument => ({
+		...document([
+			paragraph([
+				{ kind: "image", href: "Pictures/picture.png", width: 64, height: 32, border: { width: 1, color: "#dc2626" } },
+			]),
+		]),
+		pictures: [picture],
+	});
+
+	it("draws the picture as a frame anchored in the text, and lists it in the manifest", () => {
+		const parts = renderOdtParts(withPicture());
+		expect(parts["content.xml"]).toContain(
+			'<draw:frame draw:style-name="fr1" draw:name="Picture1" text:anchor-type="as-char" svg:width="64pt" svg:height="32pt"><draw:image xlink:href="Pictures/picture.png" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad"/></draw:frame>',
+		);
+		expect(parts["content.xml"]).toContain(
+			'<style:graphic-properties style:vertical-pos="middle" style:vertical-rel="baseline" fo:border="1pt solid #dc2626" fo:padding="0pt"/>',
+		);
+		expect(parts["META-INF/manifest.xml"]).toContain(
+			'<manifest:file-entry manifest:full-path="Pictures/picture.png" manifest:media-type="image/png"/>',
+		);
+	});
+
+	it("stores the picture bytes in the package", () => {
+		const files = unzipSync(packageOdt(withPicture()));
+		expect(files["Pictures/picture.png"]).toEqual(picture.bytes);
+	});
+});

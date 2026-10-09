@@ -84,6 +84,7 @@ export class AutomaticStyles {
 	private readonly paragraphs = new Map<string, string>();
 	private readonly spans = new Map<string, string>();
 	private readonly definitions: string[] = [];
+	private readonly graphics = new Map<string, string>();
 	private tables = 0;
 
 	/** The style name for a paragraph; `Standard` when it carries no properties of its own. */
@@ -116,6 +117,27 @@ export class AutomaticStyles {
 		this.spans.set(properties, name);
 		this.definitions.push(
 			`<style:style${attributes({ "style:name": name, "style:family": "text" })}>${properties}</style:style>`,
+		);
+		return name;
+	}
+
+	/** The style of a picture frame anchored in the text, with an optional border. */
+	graphic(border?: { width: number; color: string }): string {
+		const key = border ? `${pt(border.width)} solid ${border.color}` : "none";
+		const existing = this.graphics.get(key);
+		if (existing) return existing;
+
+		const name = `fr${this.graphics.size + 1}`;
+		this.graphics.set(key, name);
+		this.definitions.push(
+			`<style:style${attributes({ "style:name": name, "style:family": "graphic" })}><style:graphic-properties${attributes(
+				{
+					"style:vertical-pos": "middle",
+					"style:vertical-rel": "baseline",
+					"fo:border": key,
+					"fo:padding": border ? pt(0) : undefined,
+				},
+			)}/></style:style>`,
 		);
 		return name;
 	}
