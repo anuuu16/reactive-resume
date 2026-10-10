@@ -25,8 +25,8 @@
 		"test:agent": "vitest run --reporter=agent --reporter=json --outputFile.json=reports/vitest-results.json --passWithNoTests"
 	},
 	"dependencies": {
-		"@formepdf/core": "0.28.0",
-		"@formepdf/react": "0.28.0",
+		"@formepdf/core": "0.10.5",
+		"@formepdf/react": "0.10.5",
 		"@reactive-resume/fonts": "workspace:*",
 		"@reactive-resume/resume": "workspace:*",
 		"@reactive-resume/schema": "workspace:*",
@@ -39,12 +39,12 @@
 		"react-reconciler": "0.34.0"
 	},
 	"devDependencies": {
-		"@napi-rs/canvas": "1.0.10",
+		"@napi-rs/canvas": "1.0.9",
 		"@reactive-resume/config": "workspace:*",
 		"@types/react": "catalog:",
 		"@types/react-reconciler": "^0.33.1",
 		"@typescript/native-preview": "catalog:",
-		"pdfjs-dist": "6.4.299",
+		"pdfjs-dist": "6.3.289",
 		"typescript": "catalog:"
 	}
 }
