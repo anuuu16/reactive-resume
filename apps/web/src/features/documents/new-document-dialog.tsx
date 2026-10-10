@@ -11,6 +11,7 @@ import { DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@re
 import { Icon } from "@reactive-resume/ui/components/icon";
 import { Input } from "@reactive-resume/ui/components/input";
 import { Spinner } from "@reactive-resume/ui/components/spinner";
+import { SwitchRow } from "@reactive-resume/ui/components/switch";
 import { toast } from "@reactive-resume/ui/components/toast";
 import { generateRandomName } from "@reactive-resume/utils/string";
 import { cn } from "@reactive-resume/utils/style";
@@ -576,6 +577,9 @@ function CopyForJob({ initialSourceId, initialJobId, onBack, onCreated }: CopyFo
 	const [sourceId, setSourceId] = useState(initialSourceId);
 	const [jobId, setJobId] = useState<string | null>(initialJobId ?? null);
 	const [name, setName] = useState<string | null>(null);
+	// Linked, the copy is a variant: fixes made to the source later can be taken in without losing the tailoring.
+	// Off unless asked: a copy for a job is a plain copy, as it always was.
+	const [linked, setLinked] = useState(false);
 	const { mutateAsync: copyForJob, isPending } = useMutation(orpc.documents.copyForJob.mutationOptions());
 
 	const source = resumes.find((resume) => resume.id === sourceId) ?? resumes[0];
@@ -588,6 +592,7 @@ function CopyForJob({ initialSourceId, initialJobId, onBack, onCreated }: CopyFo
 		if (!source) return;
 		const input = {
 			resumeId: source.id,
+			linked,
 			...(job ? { applicationId: job.id } : {}),
 			...(finalName ? { name: finalName } : {}),
 		};
@@ -699,6 +704,19 @@ function CopyForJob({ initialSourceId, initialJobId, onBack, onCreated }: CopyFo
 					<Trans>Suggested from the source and the job. Change it anytime.</Trans>
 				</span>
 			</div>
+
+			<SwitchRow
+				checked={linked}
+				onCheckedChange={setLinked}
+				disabled={!source}
+				label={<Trans>Keep linked to the original as a variant</Trans>}
+				description={
+					<Trans>
+						When the original changes later (a fixed typo, a new job), this copy shows the updates and lets you take
+						them in. Its own tailoring is kept.
+					</Trans>
+				}
+			/>
 
 			<div className="flex flex-wrap justify-end gap-2">
 				<Button variant="ghost" onClick={onBack}>

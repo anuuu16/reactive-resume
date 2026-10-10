@@ -140,3 +140,64 @@ describe("posting import", () => {
 		expect(generateText).not.toHaveBeenCalled();
 	});
 });
+
+describe("tailorResume", () => {
+	const context = {
+		user: {
+			id: "u1",
+			name: "Test",
+			email: "test@example.com",
+			emailVerified: true,
+			createdAt: new Date(),
+			updatedAt: new Date(),
+		},
+		locale: "en-US" as const,
+		reqHeaders: new Headers(),
+	};
+	const resume = {
+		id: "r1",
+		tags: ["main"],
+		data: { basics: { name: "Alex" }, summary: { content: "<p>Old</p>" } },
+	};
+
+	beforeEach(async () => {
+		vi.mocked(generateText).mockReset();
+		vi.mocked(aiProvidersService.getDefaultRunnable).mockResolvedValue({
+			provider: "openai",
+			model: "gpt-5",
+			apiKey: "test",
+		} as never);
+		vi.mocked(generateText).mockResolvedValue({ text: JSON.stringify({ summary: "<p>New</p>" }) } as never);
+		const { applicationService } = await import("./service");
+		vi.mocked(applicationService.getById).mockResolvedValue({
+			id: "a1",
+			resumeId: "r1",
+			company: "Lumen",
+			role: "Engineer",
+			jobDescription: "Build things",
+		} as never);
+		const { resumeService } = await import("../resume/service");
+		vi.mocked(resumeService.getById)
+			.mockReset()
+			.mockResolvedValue(resume as never);
+		vi.mocked(resumeService.create).mockReset().mockResolvedValue("copy");
+	});
+
+	it("makes a copy on its own unless asked to keep it linked as a variant", async () => {
+		const { resumeService } = await import("../resume/service");
+
+		await call(aiRouter.tailorResume, { id: "a1" }, { context });
+		expect(resumeService.create).toHaveBeenLastCalledWith(expect.not.objectContaining({ base: expect.anything() }));
+		expect(resumeService.create).toHaveBeenLastCalledWith(
+			expect.objectContaining({
+				tags: ["main", "tailored"],
+				data: expect.objectContaining({ summary: { content: "<p>New</p>" } }),
+			}),
+		);
+
+		await call(aiRouter.tailorResume, { id: "a1", linked: true }, { context });
+		expect(resumeService.create).toHaveBeenLastCalledWith(
+			expect.objectContaining({ base: { id: "r1", data: resume.data } }),
+		);
+	});
+});

@@ -60,6 +60,15 @@ Not an alphabetic character.
 **Builder** — the editor where a resume is composed. A tool, not a construction worker or a
 person who builds.
 
+**Variant** — a resume made from another resume that stays linked to it, so it can take in the other's later
+changes while keeping its own edits. A version of the document for one purpose, such as one job. Not a genetic
+or product variant, and not "version" (which is a saved state in History).
+
+**Base** — the resume a variant was made from and follows; "Variant of Main resume", "Updates from base",
+"Take base's". The original, the source document. Not a military base, a chemical base, a database, or a
+foundation. In `base-updates-dialog.tsx`, "Keep mine" / "Take base's" choose between the variant's own value and
+the base resume's value.
+
 **Template** — a visual design for a resume. Not a "model" in the machine-learning sense, and
 not a "sample" or "example" document. Beware in languages where the natural word for template
 is also the word for model: the app uses "model" separately, for AI models.

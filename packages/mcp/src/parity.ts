@@ -25,6 +25,11 @@ const PARITY_PROCEDURES = {
 	"resume.getBySlug": router.resume.getBySlug,
 	"resume.checkSlug": router.resume.checkSlug,
 	"resume.update": router.resume.update,
+	"resume.createVariant": router.resume.createVariant,
+	"resume.getVariantStatus": router.resume.getVariantStatus,
+	"resume.pullBaseUpdates": router.resume.pullBaseUpdates,
+	"resume.detachVariant": router.resume.detachVariant,
+	"resume.listVariantUpdates": router.resume.listVariantUpdates,
 	"resume.statistics.getDailyById": router.resume.statistics.getDailyById,
 	"resume.statistics.recordDownload": router.resume.statistics.recordDownload,
 	"resume.updates.subscribe": router.resume.updates.subscribe,
@@ -130,6 +135,7 @@ const readOnlyPosts = new Set([
 ]);
 const exportPaths = new Set(["rest.documentExports.resume", "rest.documentExports.letter"]);
 const destructiveWrites = new Set([
+	"resume.detachVariant",
 	"career.saveProfile",
 	"career.saveStory",
 	"career.saveSchedule",

@@ -1,7 +1,7 @@
 import type { DocumentSummary } from "./filter";
 import { t } from "@lingui/core/macro";
 import { useLingui } from "@lingui/react";
-import { Trans } from "@lingui/react/macro";
+import { Plural, Trans } from "@lingui/react/macro";
 import { Link, useNavigate } from "@tanstack/react-router";
 import { useState } from "react";
 import { ContextMenu, ContextMenuTrigger } from "@reactive-resume/ui/components/context-menu";
@@ -13,6 +13,7 @@ import { DocumentMenuContent, useDocumentActions } from "./document-actions";
 import { daysLeftInTrash } from "./filter";
 import { useNewDocumentsStore } from "./new-documents";
 import { ResumeThumbnail } from "./resume-thumbnail";
+import { useVariantUpdateCount } from "@/features/resume/variants/queries";
 import { isImeComposing } from "@/libs/keyboard";
 import { formatRelativeTime } from "@/libs/locale";
 import { ENTER_CLASS, stagger } from "@/libs/motion";
@@ -31,6 +32,58 @@ function useDocumentMeta(document: DocumentSummary) {
 	const type = document.type === "resume" ? t`Resume` : t`Letter`;
 	if (document.trashedAt) return t`${type} · ${daysLeftInTrash(document.trashedAt)} days left`;
 	return t`${type} · Edited ${formatRelativeTime(document.updatedAt, i18n.locale)}`;
+}
+
+/**
+ * A variant's line under the meta: "Variant of Main resume", or "3 updates from base" (a link into the editor's
+ * review) when the base changed. A base shows how many variants were made from it.
+ */
+function VariantLine({ document }: { document: DocumentSummary }) {
+	const pending = useVariantUpdateCount(document.id, document.base !== null && !document.trashedAt);
+
+	if (document.base) {
+		if (pending > 0 && !document.trashedAt) {
+			return (
+				<Link
+					to="/builder/$resumeId"
+					params={{ resumeId: document.id }}
+					search={{ variant: "updates" }}
+					title={t`Review what changed in ${document.base.name}`}
+					className="flex min-w-0 items-center gap-1 text-xs font-semibold text-accent-text hover:underline"
+				>
+					<Icon name="git-merge" size={14} className="shrink-0" />
+					<span className="truncate">
+						<Plural value={pending} one="# update from base" other="# updates from base" />
+					</span>
+				</Link>
+			);
+		}
+		return (
+			<span className="flex min-w-0 items-center gap-1 text-xs text-ink-2" title={t`Variant of ${document.base.name}`}>
+				<Icon name="git-branch" size={14} className="shrink-0" />
+				<span className="truncate">
+					<Trans>Variant of {document.base.name}</Trans>
+					{document.base.trashedAt && (
+						<span className="text-ink-3">
+							{" "}
+							<Trans>(in Trash)</Trans>
+						</span>
+					)}
+				</span>
+			</span>
+		);
+	}
+	if (document.variants > 0) {
+		return (
+			<span className="flex min-w-0 items-center gap-1 text-xs text-ink-2">
+				<Icon name="git-branch" size={14} className="shrink-0" />
+				<span className="truncate">
+					<Plural value={document.variants} one="# variant" other="# variants" />
+				</span>
+			</span>
+		);
+	}
+	return null;
 }
 
 /** Opens the document in its editor: resumes and letters share the editor shell. */
@@ -182,6 +235,7 @@ export function DocumentCard({ document, onTags, onLink, introIndex }: DocumentI
 								<span className="truncate">{document.application.company}</span>
 							</span>
 						)}
+						<VariantLine document={document} />
 					</div>
 					<DropdownMenu>
 						<DropdownMenuTrigger
@@ -251,6 +305,11 @@ export function DocumentRow({ document, onTags, onLink, introIndex }: DocumentIt
 						)}
 						{document.isLocked && <Icon name="lock" size={16} className="shrink-0 text-ink-3" />}
 					</span>
+					{(document.base || document.variants > 0) && (
+						<span className="mt-0.5 block ps-[34px]">
+							<VariantLine document={document} />
+						</span>
+					)}
 				</td>
 				<td className="px-2 text-sm text-ink-2 max-sm:hidden">
 					{document.type === "resume" ? <Trans>Resume</Trans> : <Trans>Letter</Trans>}

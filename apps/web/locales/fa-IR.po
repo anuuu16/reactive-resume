@@ -72,9 +72,23 @@ msgstr "\"{written}\" به Skills اضافه شد"
 msgid "“How did you measure the onboarding redesign?”"
 msgstr "«بازطراحی تجربهٔ شروع کار را چگونه سنجیدید؟»"
 
+#: src/features/resume/variants/labels.ts
+msgid "(empty)"
+msgstr ""
+
+#: src/features/documents/document-card.tsx
+#: src/features/resume/variants/variant-indicator.tsx
+#: src/routes/builder/$resumeId/-components/document-details.tsx
+msgid "(in Trash)"
+msgstr ""
+
 #: src/features/applications/components/import-applications-sheet.tsx
 msgid "(no header)"
 msgstr "(بدون هدر)"
+
+#: src/features/resume/variants/labels.ts
+msgid "(none)"
+msgstr ""
 
 #. placeholder {0}: open.jdCount
 #. placeholder {1}: open.label
@@ -107,6 +121,11 @@ msgstr "{0, plural, one {# درخواست} other {# درخواست}}"
 #: src/features/resume/editor/write/rich-text-editor.tsx
 msgid "{0, plural, one {# character} other {# characters}}"
 msgstr "{0, plural, one {کاراکتر #} other {کاراکترهای #}}"
+
+#. placeholder {0}: conflicts.length
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "{0, plural, one {# conflict} other {# conflicts}}"
+msgstr ""
 
 #. placeholder {0}: result.contactsSkipped
 #: src/features/applications/components/import-applications-sheet.tsx
@@ -162,6 +181,16 @@ msgstr "{0, plural, one {# انتخاب شد} other {# انتخاب شد}}"
 #: src/features/career/coach-thread.tsx
 msgid "{0, plural, one {# story} other {# stories}}"
 msgstr "{0, plural, one {# داستان} other {# داستان}}"
+
+#. placeholder {0}: updates.length
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "{0, plural, one {# update} other {# updates}}"
+msgstr ""
+
+#. placeholder {0}: document.variants
+#: src/features/documents/document-card.tsx
+msgid "{0, plural, one {# variant} other {# variants}}"
+msgstr ""
 
 #. placeholder {0}: remembered.ids.length
 #: src/features/career/coach-thread.tsx
@@ -233,6 +262,11 @@ msgstr "{0} · {providerLabel}. این درخواست و دانسته‌های �
 msgid "{0} (copy)"
 msgstr "{0} (کپی)"
 
+#. placeholder {0}: data.name
+#: src/dialogs/resume/index.tsx
+msgid "{0} (variant)"
+msgstr ""
+
 #. placeholder {0}: insights.total
 #: src/features/applications/components/insights-view.tsx
 msgid "{0} active applications"
@@ -255,9 +289,16 @@ msgid "{0} edits applied"
 msgstr "{0} ویرایش اعمال شد"
 
 #. placeholder {0}: step.entries
+#. placeholder {0}: value.length
 #: src/features/documents/new-document-dialog.tsx
+#: src/features/resume/variants/labels.ts
 msgid "{0} entries"
 msgstr "ورودی های {0}"
+
+#. placeholder {0}: value.length
+#: src/features/resume/variants/labels.ts
+msgid "{0} entries in the base's order"
+msgstr ""
 
 #. placeholder {0}: step.flagged
 #: src/features/documents/new-document-dialog.tsx
@@ -292,6 +333,16 @@ msgstr "{0} در {1} برابر با {2} در منطقهٔ زمانی شما ({p
 #: src/features/career/workspace/shell.tsx
 msgid "{0} interview"
 msgstr "مصاحبه {0}"
+
+#. placeholder {0}: base.name
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "{0} is in Trash. Restore it to see its changes, or unlink this variant."
+msgstr ""
+
+#. placeholder {0}: base.name
+#: src/features/resume/variants/variant-indicator.tsx
+msgid "{0} is in Trash. Restore it to see its changes."
+msgstr ""
 
 #. placeholder {0}: i18n.number(row.minutes)
 #. placeholder {0}: row.minutes
@@ -434,6 +485,10 @@ msgstr "فقط {company}"
 #: src/routes/dashboard/applications/index.tsx
 msgid "{company}: no reply for {days} days. A short follow-up is usually fine now."
 msgstr "{company}: هیچ پاسخی برای روز {days} وجود ندارد. یک پیگیری کوتاه معمولاً در حال حاضر خوب است."
+
+#: src/features/resume/variants/variant-indicator.tsx
+msgid "{conflicts, plural, one {# conflict} other {# conflicts}}"
+msgstr ""
 
 #: src/features/career/coach-thread.tsx
 msgid "{connection} didn't respond."
@@ -622,6 +677,11 @@ msgstr "{passed} از {total}"
 msgid "{passedRules} of {totalRules} checks pass."
 msgstr "{passedRules} از {totalRules} چک پاس می شود."
 
+#: src/features/documents/document-card.tsx
+#: src/features/resume/variants/variant-indicator.tsx
+msgid "{pending, plural, one {# update from base} other {# updates from base}}"
+msgstr ""
+
 #: src/routes/builder/$resumeId/-components/page-canvas.tsx
 msgid "{pendingOnPage, plural, one {# proposed edit on this page · nothing changes until you accept} other {# proposed edits on this page · nothing changes until you accept}}"
 msgstr "{pendingOnPage, plural, one {# ویرایش پیشنهادی در این صفحه را پیشنهاد کرد · تا زمانی که قبول نکنید هیچ تغییری نمی کند} other {ویرایش‌های پیشنهادی # در این صفحه · تا زمانی که نپذیرید چیزی تغییر نمی‌کند}}"
@@ -686,6 +746,14 @@ msgstr "{toCheck, plural, one {فیلد # نیاز به نگاه دارد.} othe
 #: src/features/resume/editor/write/section-row.tsx
 msgid "{toCheck, plural, one {# to check} other {# to check}}"
 msgstr "{toCheck, plural, one {# برای بررسی} other {# برای بررسی}}"
+
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "{total, plural, one {Take # change} other {Take # changes}}"
+msgstr ""
+
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "{total, plural, one {Took # change from {baseName}. The state before is saved in History.} other {Took # changes from {baseName}. The state before is saved in History.}}"
+msgstr ""
 
 #. placeholder {0}: daysLeftInTrash(document.trashedAt)
 #: src/features/documents/document-card.tsx
@@ -960,6 +1028,10 @@ msgstr "تناسب قوی، با یک پرسش باز"
 #: src/features/career/workspace/prepare.tsx
 msgid "A timed plan, your opening, the stories to bring and questions to ask. It becomes your checklist 10 minutes before the call."
 msgstr "یک برنامهٔ زمان‌بندی‌شده، شروع صحبت شما، داستان‌هایی که باید بیاورید و پرسش‌هایی که باید بپرسید. ۱۰ دقیقه پیش از تماس، به چک‌لیست شما تبدیل می‌شود."
+
+#: src/dialogs/resume/index.tsx
+msgid "A variant starts as a copy and stays linked to the original. Tailor it freely; when the original changes, the variant shows those changes and lets you take them in."
+msgstr ""
 
 #: src/features/ats-checker/messages.ts
 msgid "A web address is written without https://."
@@ -1361,6 +1433,10 @@ msgstr "برای ذخیره، ابتدا بنویسید چه اتفاقی افت
 msgid "Add your name"
 msgstr "نام خود را اضافه کنید"
 
+#: src/features/resume/variants/labels.ts
+msgid "Added"
+msgstr ""
+
 #. placeholder {0}: role.trim()
 #. placeholder {1}: company.trim()
 #: src/features/applications/components/add-application-dialog.tsx
@@ -1371,6 +1447,10 @@ msgstr "{0} در {1} اضافه شد"
 #: src/features/career/shared.tsx
 msgid "Added by you"
 msgstr "افزوده‌شده توسط شما"
+
+#: src/features/resume/variants/labels.ts
+msgid "Added entry"
+msgstr ""
 
 #: src/features/career/coach-thread.tsx
 msgid "Added to Knowledge as a preference."
@@ -1589,6 +1669,10 @@ msgstr "یک سازنده رزومه منبع باز"
 #: src/components/layout/error-screen.tsx
 msgid "An unexpected error stopped this page from loading. You can try again or head back."
 msgstr "یک خطای غیرمنتظره مانع از بارگیری این صفحه شد. می‌توانید دوباره امتحان کنید یا به عقب برگردید."
+
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "An update left unticked is kept as it is here, and isn't offered again unless the base changes it once more."
+msgstr ""
 
 #. placeholder {0}: others.length
 #: src/features/applications/components/detail/contacts.tsx
@@ -1855,6 +1939,7 @@ msgid "Are you sure you want to close this dialog?"
 msgstr "آیا مطمئن هستید که می‌خواهید این گفتگو را ببندید؟"
 
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Area of study"
 msgstr "حوزه تحصیلی"
 
@@ -2028,6 +2113,7 @@ msgid "Avoid heavy letter-spacing effects, then re-export."
 msgstr "از افکت‌های فاصله‌گذاری زیاد بین حروف پرهیز کنید، سپس دوباره خروجی بگیرید."
 
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Awarder"
 msgstr "جایزه دهنده"
 
@@ -2109,6 +2195,10 @@ msgstr "بنر"
 msgid "Barista, 2012"
 msgstr "باریستا، 2012"
 
+#: src/routes/builder/$resumeId/-components/document-menu.tsx
+msgid "Base is in Trash · Open Trash"
+msgstr ""
+
 #: src/features/career/offers.tsx
 msgid "Base salary"
 msgstr "حقوق پایه"
@@ -2187,6 +2277,10 @@ msgstr "عرض حاشیه"
 #: src/features/career/offers.tsx
 msgid "Both offers cover everything compared here."
 msgstr "هر دو پیشنهاد همهٔ مواردی را که اینجا مقایسه شده پوشش می‌دهند."
+
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "Both the base and this variant changed these. Pick which version to keep for each."
+msgstr ""
 
 #: src/features/ats-checker/messages.ts
 msgid "Break the resume into the usual sections so it can be segmented."
@@ -2370,6 +2464,10 @@ msgstr "تغییر منطقهٔ زمانی"
 msgid "Changed elsewhere"
 msgstr "جای دیگر تغییر کرد"
 
+#: src/features/resume/variants/labels.ts
+msgid "Changed in both"
+msgstr ""
+
 #: src/features/assistant/conversation.tsx
 msgid "Changed the resume directly (an earlier conversation)"
 msgstr "رزومه را مستقیماً تغییر داد (مکالمه قبلی)"
@@ -2416,6 +2514,10 @@ msgstr "فایل دیگری را بررسی کنید"
 #: src/features/homepage/check.tsx
 msgid "Check any PDF, no account needed"
 msgstr "هر PDF را بررسی کنید، بدون نیاز به حساب"
+
+#: src/features/resume/variants/labels.ts
+msgid "Check choices"
+msgstr ""
 
 #: src/features/career/workspace/apply.tsx
 msgid "Check every claim, date and result against your experience."
@@ -2568,6 +2670,10 @@ msgstr "Claude Desktop"
 msgid "Clear"
 msgstr "پاک کردن"
 
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "Clear all"
+msgstr ""
+
 #: src/features/resume/editor/write/rich-text-editor.tsx
 msgid "Clear formatting"
 msgstr "قالب بندی را پاک کنید"
@@ -2607,6 +2713,7 @@ msgstr "شناسه مشتری"
 #: src/features/career/workspace/coach-sheet.tsx
 #: src/features/career/workspace/prepare.tsx
 #: src/features/resume/editor/check/page-layer.tsx
+#: src/features/resume/variants/base-updates-dialog.tsx
 #: src/routes/builder/$resumeId/-components/share-sheet.tsx
 #: src/routes/builder/letter/-components/share-sheet.tsx
 msgid "Close"
@@ -2660,6 +2767,7 @@ msgstr "ستون {header} به"
 
 #: src/features/applications/components/import-applications-sheet.tsx
 #: src/features/resume/editor/write/section-row.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Columns"
 msgstr "ستون‌ها"
 
@@ -2696,6 +2804,7 @@ msgstr "کوتاه و مختصر"
 #: src/features/applications/components/import-applications-sheet.tsx
 #: src/features/resume/editor/check/job-match.tsx
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 #: src/routes/builder/letter/-components/write-panel.tsx
 msgid "Company"
 msgstr "شرکت"
@@ -2873,6 +2982,7 @@ msgstr "مخاطبان"
 msgid "Contain"
 msgstr "نمایش کامل"
 
+#: src/features/resume/variants/labels.ts
 #: src/routes/builder/$resumeId/-components/editor-shell.tsx
 msgid "Content"
 msgstr "محتوا"
@@ -3358,6 +3468,7 @@ msgstr "تغییرات ذخیره نشد. دوباره تلاش کنید."
 
 #: src/features/letters/store.ts
 #: src/features/resume/share/history-tab.tsx
+#: src/features/resume/variants/base-updates-dialog.tsx
 #: src/routes/builder/letter/-components/letter-bar.tsx
 #: src/routes/builder/letter/-components/share-sheet.tsx
 #: src/routes/builder/letter/$coverLetterId.tsx
@@ -3525,6 +3636,10 @@ msgstr "کلید ایجاد کنید"
 msgid "Create one now"
 msgstr "همین حالا یکی بسازید"
 
+#: src/dialogs/resume/index.tsx
+msgid "Create variant"
+msgstr ""
+
 #: src/features/documents/documents-page.tsx
 #: src/features/resume/share/format.ts
 #: src/features/settings/ai/api-keys.tsx
@@ -3540,6 +3655,10 @@ msgstr "ایجاد \"{finalName}\""
 #: src/features/documents/new-document-dialog.tsx
 msgid "Created and linked to {0}"
 msgstr "ایجاد و به {0} پیوند داده شد"
+
+#: src/dialogs/resume/index.tsx
+msgid "Creating the variant..."
+msgstr ""
 
 #: src/features/resume/editor/write/picture-settings.tsx
 msgid "Crop and Upload"
@@ -3588,12 +3707,17 @@ msgid "Custom OAuth"
 msgstr "OAuth سفارشی"
 
 #: src/features/resume/editor/write/add-section.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Custom section"
 msgstr "بخش سفارشی"
 
 #: src/libs/resume/section.tsx
 msgid "Custom Sections"
 msgstr "بخش‌های سفارشی"
+
+#: src/features/resume/variants/labels.ts
+msgid "Custom styles"
+msgstr ""
 
 #: src/libs/resume/section.tsx
 msgid "Custom Styles"
@@ -3646,6 +3770,7 @@ msgstr "فرمت تاریخ"
 #: src/features/resume/editor/check/issues.ts
 #: src/features/resume/editor/check/parser-view.tsx
 #: src/features/resume/editor/write/dates-field.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Dates"
 msgstr "تاریخ‌ها"
 
@@ -3692,6 +3817,7 @@ msgid "Default"
 msgstr "پیش‌فرض"
 
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Degree"
 msgstr "مدرک"
 
@@ -3858,6 +3984,7 @@ msgid "Describe the role"
 msgstr "نقش را شرح دهید"
 
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Description"
 msgstr "توضیحات"
 
@@ -3868,6 +3995,7 @@ msgstr "شرح نقش {0}"
 
 #: src/features/homepage/design.tsx
 #: src/features/homepage/header.tsx
+#: src/features/resume/variants/labels.ts
 #: src/libs/resume/section.tsx
 #: src/routes/builder/$resumeId/-components/design-panel.tsx
 #: src/routes/builder/$resumeId/-components/editor-bar.tsx
@@ -4329,8 +4457,17 @@ msgid "Edit…"
 msgstr "ویرایش…"
 
 #: src/features/documents/documents-page.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Edited"
 msgstr "ویرایش شد"
+
+#: src/features/resume/variants/labels.ts
+msgid "Edited an entry you removed"
+msgstr ""
+
+#: src/features/resume/variants/labels.ts
+msgid "Edited in the base, removed here"
+msgstr ""
 
 #: src/features/resume/editor/page-overlay.tsx
 msgid "Editing"
@@ -4367,6 +4504,7 @@ msgstr "تحصیلات"
 
 #: src/features/resume/editor/check/parser-view.tsx
 #: src/features/resume/editor/write/basics-card.tsx
+#: src/features/resume/variants/labels.ts
 #: src/features/settings/account/profile.tsx
 msgid "Email"
 msgstr "ایمیل"
@@ -4871,6 +5009,10 @@ msgstr "مناسب برای صفحات {authored}: {details}"
 msgid "Fits on one page: {details}"
 msgstr "متناسب با یک صفحه: {details}"
 
+#: src/dialogs/resume/index.tsx
+msgid "Fix a typo or add a job in the original, and this copy can pull it in. Its own edits are kept."
+msgstr ""
+
 #: src/features/resume/editor/check/issues.ts
 msgid "Fix the date"
 msgstr "تاریخ را ثابت کنید"
@@ -4900,6 +5042,7 @@ msgid "Flatten the form so the text is part of the page."
 msgstr "فرم را مسطح کنید تا متن بخشی از صفحه شود."
 
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Fluency"
 msgstr "روان بودن"
 
@@ -5079,6 +5222,10 @@ msgstr "از «مناسب»"
 msgid "from the assistant or API"
 msgstr "از دستیار یا API"
 
+#: src/features/resume/share/format.ts
+msgid "from the base resume"
+msgstr ""
+
 #: src/features/career/knowledge/facts.tsx
 msgid "From your cover letter"
 msgstr "از نامهٔ پوششی شما"
@@ -5196,6 +5343,7 @@ msgid "Google"
 msgstr "گوگل"
 
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Grade"
 msgstr "نمره"
 
@@ -5238,6 +5386,7 @@ msgid "Heading changed"
 msgstr "عنوان تغییر کرد"
 
 #: src/features/resume/editor/write/basics-card.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Headline"
 msgstr "تیتر"
 
@@ -5273,6 +5422,7 @@ msgstr "سلام Alex، خوشحالیم که تأیید کنیم: امروز س
 #: src/components/level/combobox.tsx
 #: src/features/resume/editor/write/entries.tsx
 #: src/features/resume/editor/write/entry-card.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Hidden"
 msgstr "پنهان"
 
@@ -5425,6 +5575,7 @@ msgid "I withdrew"
 msgstr "من عقب نشینی کردم"
 
 #: src/components/level/combobox.tsx
+#: src/features/resume/variants/labels.ts
 #: src/routes/builder/$resumeId/-sidebar/right/sections/design.tsx
 msgid "Icon"
 msgstr "آیکون"
@@ -5721,6 +5872,7 @@ msgid "Issue ignored"
 msgstr "موضوع نادیده گرفته شد"
 
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Issuer"
 msgstr "صادرکننده"
 
@@ -5775,6 +5927,10 @@ msgstr "ورودی ها پس از 30 روز برای همیشه حذف می شو
 #: src/features/documents/trash-page.tsx
 msgid "Items you move here stay for 30 days."
 msgstr "ورودی هایی که به اینجا منتقل می کنید 30 روز باقی می مانند."
+
+#: src/routes/builder/$resumeId/-components/document-menu.tsx
+msgid "its base"
+msgstr ""
 
 #. placeholder {0}: providers[0]?.label ?? ""
 #: src/features/career/schedule-sheet.tsx
@@ -5878,6 +6034,10 @@ msgstr "هنگامی که از برنامه استفاده نمی‌کنید، �
 msgid "Keep account"
 msgstr "حساب نگه دارید"
 
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "Keep all mine"
+msgstr ""
+
 #: src/features/career/schedule-sheet.tsx
 msgid "Keep editing"
 msgstr "ادامهٔ ویرایش"
@@ -5898,10 +6058,24 @@ msgstr "صادق بمانید"
 msgid "Keep it under 2.5 MB, usually by removing or shrinking images."
 msgstr "آن را زیر ۲.۵ مگابایت نگه دارید، معمولاً با حذف یا کوچک کردن تصاویر."
 
+#. placeholder {0}: data.name
+#: src/dialogs/resume/index.tsx
+msgid "Keep linked to “{0}” as a variant"
+msgstr ""
+
+#: src/features/documents/new-document-dialog.tsx
+msgid "Keep linked to the original as a variant"
+msgstr ""
+
 #: src/features/homepage/write.tsx
 #: src/features/resume/editor/write/improve.tsx
+#: src/features/resume/variants/base-updates-dialog.tsx
 msgid "Keep mine"
 msgstr "مال من رو نگه دار"
+
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "Keep mine for all"
+msgstr ""
 
 #: src/features/resume/editor/write/section-row.tsx
 msgid "Keep on one page"
@@ -5974,6 +6148,7 @@ msgid "Keyword layout"
 msgstr "چیدمان کلمات کلیدی"
 
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Keywords"
 msgstr "کلیدواژه‌ها"
 
@@ -6055,6 +6230,7 @@ msgstr "متن را به‌صورت افقی بچینید. بخش‌های چر�
 
 #: src/features/ats-checker/messages.ts
 #: src/features/resume/editor/check/issues.ts
+#: src/features/resume/variants/labels.ts
 #: src/libs/resume/section.tsx
 msgid "Layout"
 msgstr "چیدمان"
@@ -6194,6 +6370,7 @@ msgid "Letters"
 msgstr "نامه ها"
 
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 #: src/routes/builder/$resumeId/-sidebar/right/sections/design.tsx
 msgid "Level"
 msgstr "سطح"
@@ -6445,6 +6622,7 @@ msgstr "در حال بارگیری فضای کاری…"
 #: src/features/resume/editor/check/parser-view.tsx
 #: src/features/resume/editor/write/basics-card.tsx
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Location"
 msgstr "موقعیت مکانی"
 
@@ -6885,6 +7063,7 @@ msgstr "کار من این بود که علت را پیدا کنم، بدون ا
 #: src/features/documents/trash-page.tsx
 #: src/features/resume/editor/check/parser-view.tsx
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 #: src/features/settings/account/profile.tsx
 #: src/features/settings/ai/api-keys.tsx
 #: src/features/settings/ai/providers.tsx
@@ -6961,6 +7140,7 @@ msgid "Nepali"
 msgstr "نپالی"
 
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Network"
 msgstr "شبکه"
 
@@ -7045,6 +7225,15 @@ msgstr "بخش جدید"
 msgid "New teams at Northwind were stalling in setup; most never got through."
 msgstr "تیم‌های جدید در Northwind در راه‌اندازی گیر می‌کردند؛ بیشترشان هرگز آن را به پایان نمی‌رساندند."
 
+#: src/dialogs/resume/index.tsx
+msgid "New Variant"
+msgstr ""
+
+#: src/features/documents/document-actions.tsx
+#: src/routes/builder/$resumeId/-components/document-menu.tsx
+msgid "New variant…"
+msgstr ""
+
 #: src/features/resume/editor/check/page-layer.tsx
 msgid "Next issue"
 msgstr "شماره بعدی"
@@ -7076,6 +7265,10 @@ msgstr "گام بعدی: {0}. یک یادآور به «امروز» اضافه �
 #: src/features/homepage/remember.tsx
 msgid "Next time, I’d agree how to measure success before the first prototype."
 msgstr "دفعهٔ بعد، پیش از نخستین نمونهٔ اولیه دربارهٔ نحوهٔ سنجش موفقیت توافق می‌کردم."
+
+#: src/features/resume/variants/labels.ts
+msgid "No"
+msgstr ""
 
 #: src/features/applications/components/interview-dialog.tsx
 msgid "No active applications."
@@ -7375,6 +7568,7 @@ msgid "Not in your resume · add only if true"
 msgstr "در رزومه شما نیست · فقط در صورت صحت اضافه کنید"
 
 #: src/features/career/shared.tsx
+#: src/features/resume/variants/base-updates-dialog.tsx
 msgid "Not now"
 msgstr "الان نه"
 
@@ -7439,6 +7633,7 @@ msgstr "اطلاعات"
 #: src/features/applications/components/application-form-sheet.tsx
 #: src/features/applications/components/application-notes.tsx
 #: src/features/applications/components/import-applications-sheet.tsx
+#: src/features/resume/variants/labels.ts
 #: src/libs/resume/section.tsx
 #: src/routes/builder/$resumeId/-components/document-menu.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/sections/notes.tsx
@@ -7477,6 +7672,10 @@ msgstr "هنوز چیزی برنامه ریزی نشده است"
 #: src/features/career/today.tsx
 msgid "Nothing scheduled yet."
 msgstr "هنوز چیزی زمان‌بندی نشده است."
+
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "Nothing taken. {baseName} is now the reference for this variant."
+msgstr ""
 
 #: src/features/career/workspace/messages.tsx
 msgid "Nothing to apply"
@@ -7707,6 +7906,14 @@ msgstr "صفحه عمومی را باز کنید"
 msgid "Open story"
 msgstr "باز کردن داستان"
 
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "Open the base"
+msgstr ""
+
+#: src/routes/builder/$resumeId/-components/document-menu.tsx
+msgid "Open the base resume"
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "Open the exported file and confirm you can select and copy every part of it."
 msgstr "فایل خروجی را باز کنید و مطمئن شوید می‌توانید هر بخش آن را انتخاب و کپی کنید."
@@ -7796,7 +8003,16 @@ msgstr "یا به قول خودت…"
 msgid "Or upload a resume PDF"
 msgstr "یا یک PDF رزومه بارگذاری کنید"
 
+#: src/features/resume/variants/labels.ts
+msgid "Order"
+msgstr ""
+
+#: src/features/resume/variants/labels.ts
+msgid "Order of roles"
+msgstr ""
+
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Organization"
 msgstr "سازمان"
 
@@ -7837,6 +8053,7 @@ msgstr "تاریخ گذشته: متن تغییر کرده است."
 msgid "Own and evolve a design system"
 msgstr "مالکیت و توسعهٔ یک سیستم طراحی"
 
+#: src/features/resume/variants/labels.ts
 #: src/libs/resume/section.tsx
 #: src/routes/builder/$resumeId/-components/design-panel.tsx
 #: src/routes/builder/$resumeId/-components/editor-shell.tsx
@@ -8064,6 +8281,7 @@ msgstr "فارسی"
 #: src/features/resume/editor/check/parser-view.tsx
 #: src/features/resume/editor/write/basics-card.tsx
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Phone"
 msgstr "تلفن"
 
@@ -8107,6 +8325,7 @@ msgstr "دو نمونه انتخاب کنید"
 msgid "Picking your stories"
 msgstr "در حال انتخاب داستان‌های شما"
 
+#: src/features/resume/variants/labels.ts
 #: src/libs/resume/section.tsx
 msgid "Picture"
 msgstr "تصویر"
@@ -8178,6 +8397,7 @@ msgid "Portuguese (Portugal)"
 msgstr "پرتغالی (پرتغال)"
 
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Position"
 msgstr "موقعیت شغلی"
 
@@ -8388,6 +8608,7 @@ msgid "Product designer with nine years of experience building <0>design systems
 msgstr "طراح محصول با نه سال تجربه در ساخت <0>سیستم‌های طراحی</0> و محصولات مبتنی بر پژوهش برای تیم‌های B2B."
 
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Proficiency"
 msgstr "مهارت"
 
@@ -8480,6 +8701,7 @@ msgid "Publications"
 msgstr "انتشارها"
 
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Publisher"
 msgstr "منتشرکننده"
 
@@ -8990,6 +9212,19 @@ msgstr "این رمز عبور حذف شود؟"
 msgid "Remove this photo?"
 msgstr "این عکس حذف شود؟"
 
+#: src/features/resume/variants/base-updates-dialog.tsx
+#: src/features/resume/variants/labels.ts
+msgid "Removed"
+msgstr ""
+
+#: src/features/resume/variants/labels.ts
+msgid "Removed entry"
+msgstr ""
+
+#: src/features/resume/variants/labels.ts
+msgid "Removed in the base, edited here"
+msgstr ""
+
 #: src/features/career/coach.tsx
 #: src/features/documents/document-actions.tsx
 #: src/features/settings/account/security.tsx
@@ -9023,6 +9258,10 @@ msgstr "سفارش مجدد {0}"
 #: src/features/resume/editor/write/section-row.tsx
 msgid "Reorder {title}"
 msgstr "سفارش مجدد {title}"
+
+#: src/features/resume/variants/labels.ts
+msgid "Reordered"
+msgstr ""
 
 #. placeholder {0}: jd.stuffedTerms.join(", ")
 #: src/features/ats-checker/report/jd-coverage.tsx
@@ -9276,9 +9515,19 @@ msgstr "«بازبینی پاسخ من» پرسش، آنچه گفتید، این
 msgid "Review required form answers and remove unsupported claims."
 msgstr "پاسخ‌های الزامی فرم را بازبینی کنید و ادعاهای بی‌پشتوانه را حذف کنید."
 
+#. placeholder {0}: base.name
+#: src/features/resume/variants/variant-indicator.tsx
+msgid "Review the changes made to {0}"
+msgstr ""
+
 #: src/features/career/workspace/apply.tsx
 msgid "Review the selected resume and cover letter in their editors."
 msgstr "رزومه و نامهٔ پوششی انتخاب‌شده را در ویرایشگرهایشان بازبینی کنید."
+
+#. placeholder {0}: document.base.name
+#: src/features/documents/document-card.tsx
+msgid "Review what changed in {0}"
+msgstr ""
 
 #: src/features/resume/editor/check/writing-tab.tsx
 msgid "Review writing"
@@ -9322,6 +9571,7 @@ msgstr "همین حالا"
 #: src/features/applications/components/interview-dialog.tsx
 #: src/features/applications/components/list-view.tsx
 #: src/features/resume/editor/check/job-match.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Role"
 msgstr "موقعیت شغلی"
 
@@ -9652,6 +9902,7 @@ msgid "Schedules"
 msgstr "زمان‌بندی‌ها"
 
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "School"
 msgstr "مدرسه"
 
@@ -9800,6 +10051,10 @@ msgstr "انتخاب کنید"
 #: src/features/applications/components/list-view.tsx
 msgid "Select {0} at {1}"
 msgstr "{0} را در {1} انتخاب کنید"
+
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "Select all"
+msgstr ""
 
 #: src/features/settings/integrations/components/ai-provider-picker.tsx
 msgid "Select an AI provider"
@@ -10091,6 +10346,10 @@ msgstr "نمایش الگوها"
 #: src/features/resume/editor/check/check-panel.tsx
 msgid "Show them again"
 msgstr "دوباره بهشون نشون بده"
+
+#: src/features/resume/variants/labels.ts
+msgid "Shown"
+msgstr ""
 
 #: src/features/applications/components/interview-dialog.tsx
 msgid "Shown in your timezone."
@@ -10659,6 +10918,10 @@ msgstr "تقویت کنید"
 msgid "Stronger verb"
 msgstr "فعل قوی تر"
 
+#: src/features/resume/variants/labels.ts
+msgid "Style rules"
+msgstr ""
+
 #: src/features/resume/stylesheet/toolbar.tsx
 msgid "Stylesheet editor"
 msgstr "ویرایشگر استایل‌شیت"
@@ -10842,6 +11105,14 @@ msgstr "با آگهی شغلی {0} سازگار شوید"
 msgid "Tailored vs. base resume"
 msgstr "رزومه اقتباسی در مقابل پایه"
 
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "Take all from base"
+msgstr ""
+
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "Take base's"
+msgstr ""
+
 #: src/libs/locale.ts
 msgid "Tamil"
 msgstr "تامیلی"
@@ -10884,6 +11155,7 @@ msgstr "از زمانی بگویید که با همکاری اختلاف‌نظ�
 msgid "Telugu"
 msgstr "تلوگویی"
 
+#: src/features/resume/variants/labels.ts
 #: src/libs/resume/section.tsx
 #: src/routes/builder/$resumeId/-components/design-panel.tsx
 #: src/routes/builder/$resumeId/-components/document-details.tsx
@@ -11057,6 +11329,10 @@ msgstr "دستیار در این سرور تنظیم نشده است. هر کس�
 #: src/features/assistant/provider-setup.tsx
 msgid "The assistant uses your own key. Nothing is sent anywhere until you connect one."
 msgstr "دستیار از کلید شما استفاده می کند. تا زمانی که یکی را وصل نکنید، هیچ چیز به جایی ارسال نمی شود."
+
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "The base changed again. Have a look at the new conflicts."
+msgstr ""
 
 #: src/features/settings/ai/web-access.tsx
 msgid "The built-in reader remains active."
@@ -11292,6 +11568,11 @@ msgstr "متن به‌صورت غیرقابل خواندن استخراج می�
 msgid "The top of the first page does not look like a name."
 msgstr "بالای صفحهٔ اول شبیه یک نام نیست."
 
+#. placeholder {0}: data.name
+#: src/dialogs/resume/index.tsx
+msgid "The variant is ready. It stays linked to “{0}”."
+msgstr ""
+
 #. Menu item that opens appearance theme selection submenu
 #: src/features/command-palette/pages/navigation.tsx
 #: src/features/command-palette/pages/preferences/theme.tsx
@@ -11501,6 +11782,10 @@ msgstr "این رزومه طولانی است."
 msgid "This resume is password protected"
 msgstr "این رزومه با رمز عبور محافظت شده است"
 
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "This resume isn't linked to a base anymore. Its base was deleted, or it was unlinked."
+msgstr ""
+
 #: src/features/resume/editor/check/job-match.tsx
 msgid "This resume isn't linked to an application yet."
 msgstr "این رزومه هنوز به یک درخواست شغلی مرتبط نیست."
@@ -11508,6 +11793,10 @@ msgstr "این رزومه هنوز به یک درخواست شغلی مرتبط 
 #: src/features/resume/public/public-resume.tsx
 msgid "This resume isn't shared right now."
 msgstr "این رزومه در حال حاضر به اشتراک گذاشته نشده است."
+
+#: src/routes/builder/$resumeId/-components/document-menu.tsx
+msgid "This resume keeps everything as it is, but changes made to the base won't be offered anymore."
+msgstr ""
 
 #: src/features/resume/builder/draft.ts
 msgid "This resume was updated by an AI agent."
@@ -11608,6 +11897,7 @@ msgstr "نکته"
 
 #: src/features/career/knowledge/stories.tsx
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Title"
 msgstr "عنوان"
 
@@ -11640,6 +11930,10 @@ msgstr "برای سرفصل های روی سفید خیلی سبک است. مم�
 #: src/features/settings/ai/web-access.tsx
 msgid "Too many requests. Try again later."
 msgstr "درخواست های خیلی زیاد بعداً دوباره امتحان کنید."
+
+#: src/features/resume/share/format.ts
+msgid "Took updates from base"
+msgstr ""
 
 #: src/features/homepage/sections.tsx
 msgid "Total"
@@ -11868,6 +12162,7 @@ msgstr "به‌جای آن تایپ کنید"
 msgid "typed"
 msgstr "تایپی"
 
+#: src/features/resume/variants/labels.ts
 #: src/libs/resume/section.tsx
 msgid "Typography"
 msgstr "تایپوگرافی"
@@ -11915,12 +12210,25 @@ msgid "Unknown"
 msgstr "نامعلوم"
 
 #: src/features/documents/document-actions.tsx
+#: src/routes/builder/$resumeId/-components/document-menu.tsx
 msgid "Unlink"
 msgstr "لغو پیوند"
+
+#: src/routes/builder/$resumeId/-components/document-menu.tsx
+msgid "Unlink from {baseName}?"
+msgstr ""
+
+#: src/routes/builder/$resumeId/-components/document-menu.tsx
+msgid "Unlink from base…"
+msgstr ""
 
 #: src/features/resume/editor/check/job-match.tsx
 msgid "Unlink this application"
 msgstr "پیوند این درخواست شغلی را لغو کنید"
+
+#: src/routes/builder/$resumeId/-components/document-menu.tsx
+msgid "Unlinked from {baseName}. This is a resume of its own now."
+msgstr ""
 
 #: src/features/settings/account/auth-hooks.ts
 msgid "Unlinking your {providerName} account..."
@@ -11943,6 +12251,10 @@ msgstr "باز کردن قفل ویرایش"
 msgid "Unlock it first"
 msgstr "ابتدا آن را باز کنید"
 
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "Unlock the resume first"
+msgstr ""
+
 #: src/features/settings/account/security.tsx
 msgid "Unnamed passkey"
 msgstr "کلید عبور نام‌گذاری‌نشده"
@@ -11951,6 +12263,10 @@ msgstr "کلید عبور نام‌گذاری‌نشده"
 #: src/features/resume/stylesheet/targets.ts
 msgid "Untitled"
 msgstr "بدون عنوان"
+
+#: src/features/resume/variants/labels.ts
+msgid "Untitled entry"
+msgstr ""
 
 #: src/features/documents/new-document-dialog.tsx
 msgid "Untitled letter"
@@ -11971,6 +12287,11 @@ msgstr "تا ۲ دقیقه. کلمات شما هم‌زمان با صحبت نم
 #: src/features/ats-checker/checker.tsx
 msgid "Up to 25 MB · checked in your browser, never uploaded"
 msgstr "حداکثر 25 MB · در مرورگر شما بررسی شده است، هرگز آپلود نشده است"
+
+#. placeholder {0}: base.name
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "Up to date. Nothing changed in {0} since this variant last took its changes."
+msgstr ""
 
 #: src/features/applications/components/calendar-view.tsx
 msgid "Upcoming interviews"
@@ -12001,6 +12322,23 @@ msgstr "به روز شد"
 #: src/features/applications/components/list-view.tsx
 msgid "Updated {0}"
 msgstr "{0} به روز شد"
+
+#: src/features/resume/variants/labels.ts
+msgid "Updated settings"
+msgstr ""
+
+#. placeholder {0}: base.name
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "Updates from {0}"
+msgstr ""
+
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "Updates from base"
+msgstr ""
+
+#: src/routes/builder/$resumeId/-components/document-menu.tsx
+msgid "Updates from base…"
+msgstr ""
 
 #: src/dialogs/auth/change-password.tsx
 msgid "Updating your password..."
@@ -12169,6 +12507,7 @@ msgstr "پژوهش کاربر"
 #. Label for username input on registration form
 #: src/features/auth/pages/register.tsx
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 #: src/features/settings/account/profile.tsx
 msgid "Username"
 msgstr "نام کاربری"
@@ -12204,6 +12543,21 @@ msgstr "ارزش‌گذاری و رقیق‌شدن نامعلوم"
 #: src/features/career/offers.tsx
 msgid "Value uncertain"
 msgstr "ارزش نامعلوم"
+
+#: src/routes/builder/$resumeId/-components/document-details.tsx
+msgid "Variant of"
+msgstr ""
+
+#. placeholder {0}: base.name
+#. placeholder {0}: document.base.name
+#: src/features/documents/document-card.tsx
+#: src/features/resume/variants/variant-indicator.tsx
+msgid "Variant of {0}"
+msgstr ""
+
+#: src/routes/builder/$resumeId/-components/document-details.tsx
+msgid "Variants"
+msgstr ""
 
 #: src/features/ats-checker/messages.ts
 msgid "Vary the openings so the section does not read as boilerplate."
@@ -12316,6 +12670,7 @@ msgid "Views and downloads"
 msgstr "مشاهده و دانلود"
 
 #: src/features/homepage/share.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Visibility"
 msgstr "دید"
 
@@ -12409,8 +12764,13 @@ msgid "Web search failed: {0}"
 msgstr "جستجوی وب ناموفق بود: {0}"
 
 #: src/features/resume/editor/write/basics-card.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Website"
 msgstr "وب‌سایت"
+
+#: src/features/resume/variants/labels.ts
+msgid "Website label"
+msgstr ""
 
 #: src/features/career/today.tsx
 msgid "Weekly at {clock} · next {next}"
@@ -12440,6 +12800,15 @@ msgstr "آنچه یک انسان می‌بیند"
 #: src/features/career/coach.tsx
 msgid "What are you working on?"
 msgstr "روی چه چیزی کار می‌کنید؟"
+
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "What changed in the base resume. Your own edits to this variant stay as they are."
+msgstr ""
+
+#. placeholder {0}: formatRelativeTime(status.syncedAt, i18n.locale)
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "What changed in the base since {0}. Your own edits to this variant stay as they are."
+msgstr ""
 
 #: src/features/career/knowledge/stories.tsx
 msgid "What changed? Leave blank if you can’t support it."
@@ -12575,6 +12944,10 @@ msgstr "چه کار می کند"
 #: src/features/career/offers.tsx
 msgid "When do they need your answer?"
 msgstr "تا کی به پاسخ شما نیاز دارند؟"
+
+#: src/features/documents/new-document-dialog.tsx
+msgid "When the original changes later (a fixed typo, a new job), this copy shows the updates and lets you take them in. Its own tailoring is kept."
+msgstr ""
 
 #: src/features/career/coach.tsx
 msgid "When you press send, {shared} go to {connection}."
@@ -12781,6 +13154,10 @@ msgstr "نوشتن، تطبیق و ارسال"
 #: src/features/career/offers.tsx
 msgid "Written offer"
 msgstr "پیشنهاد کتبی"
+
+#: src/features/resume/variants/labels.ts
+msgid "Yes"
+msgstr ""
 
 #: src/features/homepage/faq.tsx
 msgid "Yes. Every feature is free: all {templates} templates, PDF and Word downloads, the ATS checker, cover letters and the job tracker. There are no ads, no tracking and no paid tier. Donations pay for hosting and development."

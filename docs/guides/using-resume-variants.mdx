@@ -1,0 +1,93 @@
+---
+title: "Using resume variants"
+description: "Keep tailored copies linked to your main resume, so a fixed typo or a new job reaches every one of them without undoing their own edits."
+---
+
+A copy made with **Duplicate** is on its own: fix a typo or add a job in your main resume and every tailored copy goes stale. A **variant** is a copy that stays linked to the resume it was made from, its **base**. You edit the variant as freely as any resume: reword the summary, hide or reorder entries, remove bullets. When the base changes, the variant shows **N updates from base** and lets you take those changes in, one by one, keeping everything you changed yourself. Where both the base and the variant changed the same thing, you pick a side.
+
+<Note>
+  The link goes one way. Editing a variant never changes its base. Editing the base never changes a variant until you
+  take the updates in.
+</Note>
+
+## Make a variant
+
+From **Documents**, open a resume's **⋯** menu and select **New variant…**. In the editor, open the document menu under the resume name and select **New variant…**. Either way, the dialog suggests the name "_name_ (variant)" and keeps the original's tags; the **Keep linked to “_name_” as a variant** switch is on. Select **Create variant** to open the variant in the editor.
+
+The same switch sits at the bottom of the **Duplicate** dialog, off by default, so a duplicate can become a variant instead.
+
+**Copy a resume for a job** can make a variant too: turn on **Keep linked to the original as a variant** in that dialog. It's off by default, so a copy for a job is a plain copy unless you ask; a copy tailored to one job is exactly the kind of resume that benefits from keeping up with its base. See [Tailoring a resume for a job](/guides/tailoring-a-resume-for-a-job). The API's tailored-resume operation for an application (`tailor_resume_for_application` over MCP) makes a plain copy unless asked for a variant with `linked: true`.
+
+A variant can itself be the base of further variants.
+
+## See what changed in the base
+
+- In **Documents**, a variant's card shows **Variant of _base_** under its name. When the base changed since the variant last took its updates, the card shows **N updates from base** instead; select it to open the review in the editor. The base's card shows how many variants were made from it.
+- In the editor, the same line sits under the resume name, next to the save state. Select it, or choose **Updates from base…** in the document menu, to review the changes.
+- **Details** in the document menu lists the base, and the variants made from this resume.
+
+The count includes every change waiting for you: updates you can take as they are, and conflicts that need a decision. Changes in the base's design settings (template, page, typography, layout) count too, so a variant that tries a different template shows a conflict if the base changes its template afterwards.
+
+## Take updates from the base
+
+<Steps>
+  <Step title="Open the review">
+    Select **N updates from base** under the resume name, or **Updates from base…** in the document menu. The dialog
+    lists what changed in the base since this variant was made or last took its updates.
+  </Step>
+  <Step title="Decide each conflict">
+    **Conflicts** are values both the base and this variant changed: the same summary reworded on both sides, an entry
+    the base edited that you removed here, or an entry you edited here that the base removed. Each shows both versions.
+    Select **Keep mine** or **Take base's** for every conflict, or **Keep all mine** / **Take all from base** to decide
+    them at once. The button at the bottom stays off until every conflict has a side.
+  </Step>
+  <Step title="Untick updates you don't want">
+    **Updates** are changes only the base made. They're all ticked. Untick any you don't want in this variant; it is
+    kept as it is here.
+  </Step>
+  <Step title="Take the changes">
+    Select **Take N changes**. Your unsaved edits are saved first, the state before is saved in History as **Took
+    updates from base**, and the chosen changes are applied.
+  </Step>
+</Steps>
+
+What's compared:
+
+- Each field on its own: the name, the headline, the summary, an entry's description, an entry's dates, a section's title or visibility. A base edit to an entry's description doesn't touch the entry's visibility, so an entry hidden in the variant takes the new description and stays hidden.
+- Entries by identity, not position. An entry added in the base is added to the variant next to the same neighbour; an entry removed in the base is removed from the variant, unless you edited it here, which is a conflict. Entries you added to the variant are never touched.
+- The order of entries. When only the base reordered a section, the variant follows; entries only the variant has keep their place. When both reordered, it's a conflict.
+
+An update you untick, and a conflict you keep, aren't offered again: after taking the updates, the base as it is now becomes the variant's reference. They come back only when the base changes that value once more.
+
+<Tip>
+  Everything can be undone. Taking updates saves a version first; open **History** and restore **Took updates from
+  base** to go back. See [Undoing changes and version history](/guides/undoing-changes-and-version-history).
+</Tip>
+
+## When the base is in Trash, restored, or deleted
+
+- **In Trash.** The variant keeps its link and says so: "Variant of _base_ (in Trash)" in Documents and under the resume name, and **Base is in Trash · Open Trash** in the document menu. No updates are offered and none are counted while the base waits there; the review explains it and asks you to restore the base or unlink.
+- **Restored.** Everything carries on where it left off. Changes the base made before it went to Trash are offered again, since the variant's reference never moved.
+- **Deleted for good.** The variant becomes a resume of its own, with everything it had, including updates it took earlier. The "Variant of" line and the base items in the document menu go away (an editor that was open at the time learns it on its next check), and **Updates from base…** says the resume isn't linked anymore.
+
+A variant's own trip to Trash doesn't touch its base: while in Trash it isn't counted among the base's variants or as having updates to take; once restored, both return.
+
+## Unlink a variant
+
+In the editor, open the document menu and select **Unlink from base…**, then confirm. The resume keeps everything as it is; changes made to the base are simply no longer offered. Unlinking can't be undone, though you can make a new variant from the base at any time.
+
+## Locked variants
+
+A locked variant still shows what changed in the base, but can't take updates until it's unlocked. See [Managing documents](/guides/managing-documents#lock-a-document).
+
+## Through the API
+
+Variants are available to API clients and the MCP server:
+
+- `POST /resumes/{id}/variants` creates a variant of a resume.
+- `GET /resumes/{id}/variant` returns the base, the resume's own variants, and the base's pending changes, each with a `key`, where it lands, and the base's, the variant's and the starting values.
+- `POST /resumes/{id}/variant/pull` takes the changes in. Pass `decisions` of `{ key, take: "base" | "mine" }`: updates not listed are taken; every conflict must be listed.
+- `POST /resumes/{id}/variant/detach` unlinks a variant.
+- `GET /resumes/variant-updates` counts the pending changes of every variant whose base changed.
+
+See [Using the API](/guides/using-the-api) and [Using the MCP server](/guides/using-the-mcp-server).

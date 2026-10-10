@@ -50,6 +50,7 @@ export function EditorShell() {
 	useEffect(() => resetEditor, [resetEditor]);
 	useOpenVersionFromUrl();
 	useOpenAssistantFromUrl();
+	useOpenBaseUpdatesFromUrl();
 
 	return (
 		<Tabs value={mode} onValueChange={(value) => setMode(value as EditorMode)} className="contents">
@@ -105,6 +106,23 @@ function useOpenVersionFromUrl() {
 			replace: true,
 		});
 	}, [version, navigate]);
+}
+
+/** `?variant=updates` opens the review of the base's changes, then leaves the URL. */
+function useOpenBaseUpdatesFromUrl() {
+	const { variant } = routeApi.useSearch();
+	const navigate = routeApi.useNavigate();
+
+	useEffect(() => {
+		if (variant !== "updates") return;
+		useEditorStore.getState().setBaseUpdatesOpen(true);
+		void navigate({
+			to: ".",
+			resetScroll: false,
+			search: (current: ReturnType<typeof routeApi.useSearch>) => ({ ...current, variant: undefined }),
+			replace: true,
+		});
+	}, [variant, navigate]);
 }
 
 /** `?assistant=` or `?ask=` opens the assistant on that conversation or question, then leaves the URL. */

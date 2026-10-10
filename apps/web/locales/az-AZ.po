@@ -72,9 +72,23 @@ msgstr "“{written}” Bacarıqlara əlavə edildi"
 msgid "“How did you measure the onboarding redesign?”"
 msgstr "“Onboarding-in yenidən dizaynını necə ölçdünüz?”"
 
+#: src/features/resume/variants/labels.ts
+msgid "(empty)"
+msgstr ""
+
+#: src/features/documents/document-card.tsx
+#: src/features/resume/variants/variant-indicator.tsx
+#: src/routes/builder/$resumeId/-components/document-details.tsx
+msgid "(in Trash)"
+msgstr ""
+
 #: src/features/applications/components/import-applications-sheet.tsx
 msgid "(no header)"
 msgstr "(başlıq yoxdur)"
+
+#: src/features/resume/variants/labels.ts
+msgid "(none)"
+msgstr ""
 
 #. placeholder {0}: open.jdCount
 #. placeholder {1}: open.label
@@ -107,6 +121,11 @@ msgstr "{0, plural, one {# müraciət} other {# müraciət}}"
 #: src/features/resume/editor/write/rich-text-editor.tsx
 msgid "{0, plural, one {# character} other {# characters}}"
 msgstr "{0, plural, one {# simvolu} other {# simvolları}}"
+
+#. placeholder {0}: conflicts.length
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "{0, plural, one {# conflict} other {# conflicts}}"
+msgstr ""
 
 #. placeholder {0}: result.contactsSkipped
 #: src/features/applications/components/import-applications-sheet.tsx
@@ -162,6 +181,16 @@ msgstr "{0, plural, one {# seçildi} other {# seçildi}}"
 #: src/features/career/coach-thread.tsx
 msgid "{0, plural, one {# story} other {# stories}}"
 msgstr "{0, plural, one {# hekayə} other {# hekayə}}"
+
+#. placeholder {0}: updates.length
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "{0, plural, one {# update} other {# updates}}"
+msgstr ""
+
+#. placeholder {0}: document.variants
+#: src/features/documents/document-card.tsx
+msgid "{0, plural, one {# variant} other {# variants}}"
+msgstr ""
 
 #. placeholder {0}: remembered.ids.length
 #: src/features/career/coach-thread.tsx
@@ -233,6 +262,11 @@ msgstr "{0} · {providerLabel}. Bu müraciəti və Biliklərinizi göndərir; pr
 msgid "{0} (copy)"
 msgstr "{0} (nüsxə)"
 
+#. placeholder {0}: data.name
+#: src/dialogs/resume/index.tsx
+msgid "{0} (variant)"
+msgstr ""
+
 #. placeholder {0}: insights.total
 #: src/features/applications/components/insights-view.tsx
 msgid "{0} active applications"
@@ -255,9 +289,16 @@ msgid "{0} edits applied"
 msgstr "{0} redaktə tətbiq edildi"
 
 #. placeholder {0}: step.entries
+#. placeholder {0}: value.length
 #: src/features/documents/new-document-dialog.tsx
+#: src/features/resume/variants/labels.ts
 msgid "{0} entries"
 msgstr "{0} girişləri"
+
+#. placeholder {0}: value.length
+#: src/features/resume/variants/labels.ts
+msgid "{0} entries in the base's order"
+msgstr ""
 
 #. placeholder {0}: step.flagged
 #: src/features/documents/new-document-dialog.tsx
@@ -292,6 +333,16 @@ msgstr "{1} vaxtı ilə {0} sizin saat qurşağınızda ({preferredZone}) {2} de
 #: src/features/career/workspace/shell.tsx
 msgid "{0} interview"
 msgstr "{0} müsahibəsi"
+
+#. placeholder {0}: base.name
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "{0} is in Trash. Restore it to see its changes, or unlink this variant."
+msgstr ""
+
+#. placeholder {0}: base.name
+#: src/features/resume/variants/variant-indicator.tsx
+msgid "{0} is in Trash. Restore it to see its changes."
+msgstr ""
 
 #. placeholder {0}: i18n.number(row.minutes)
 #. placeholder {0}: row.minutes
@@ -434,6 +485,10 @@ msgstr "Yalnız {company}"
 #: src/routes/dashboard/applications/index.tsx
 msgid "{company}: no reply for {days} days. A short follow-up is usually fine now."
 msgstr "{company}: {days} günlər ərzində cavab yoxdur. Qısa bir təqib adətən indi yaxşıdır."
+
+#: src/features/resume/variants/variant-indicator.tsx
+msgid "{conflicts, plural, one {# conflict} other {# conflicts}}"
+msgstr ""
 
 #: src/features/career/coach-thread.tsx
 msgid "{connection} didn't respond."
@@ -622,6 +677,11 @@ msgstr "{passed} və {total}"
 msgid "{passedRules} of {totalRules} checks pass."
 msgstr "{passedRules} {totalRules} çekləri keçir."
 
+#: src/features/documents/document-card.tsx
+#: src/features/resume/variants/variant-indicator.tsx
+msgid "{pending, plural, one {# update from base} other {# updates from base}}"
+msgstr ""
+
 #: src/routes/builder/$resumeId/-components/page-canvas.tsx
 msgid "{pendingOnPage, plural, one {# proposed edit on this page · nothing changes until you accept} other {# proposed edits on this page · nothing changes until you accept}}"
 msgstr "{pendingOnPage, plural, one {# bu səhifədə təklif edilən redaktə · siz qəbul etməyincə heç nə dəyişmir} other {# bu səhifədə təklif edilən redaktələr · siz qəbul etməyincə heç nə dəyişmir}}"
@@ -686,6 +746,14 @@ msgstr "{toCheck, plural, one {# sahəsinə baxmaq lazımdır.} other {# sahəl�
 #: src/features/resume/editor/write/section-row.tsx
 msgid "{toCheck, plural, one {# to check} other {# to check}}"
 msgstr "{toCheck, plural, one {Yoxlamaq üçün #} other {Yoxlamaq üçün #}}"
+
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "{total, plural, one {Take # change} other {Take # changes}}"
+msgstr ""
+
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "{total, plural, one {Took # change from {baseName}. The state before is saved in History.} other {Took # changes from {baseName}. The state before is saved in History.}}"
+msgstr ""
 
 #. placeholder {0}: daysLeftInTrash(document.trashedAt)
 #: src/features/documents/document-card.tsx
@@ -960,6 +1028,10 @@ msgstr "Güclü uyğunluq, aydınlaşdırılmalı bir sualla"
 #: src/features/career/workspace/prepare.tsx
 msgid "A timed plan, your opening, the stories to bring and questions to ask. It becomes your checklist 10 minutes before the call."
 msgstr "Vaxta bölünmüş plan, girişiniz, gətirəcəyiniz hekayələr və verəcəyiniz suallar. Zəngdən 10 dəqiqə əvvəl yoxlama siyahınıza çevrilir."
+
+#: src/dialogs/resume/index.tsx
+msgid "A variant starts as a copy and stays linked to the original. Tailor it freely; when the original changes, the variant shows those changes and lets you take them in."
+msgstr ""
 
 #: src/features/ats-checker/messages.ts
 msgid "A web address is written without https://."
@@ -1361,6 +1433,10 @@ msgstr "Yadda saxlamazdan əvvəl nə baş verdiyini əlavə edin."
 msgid "Add your name"
 msgstr "Adınızı əlavə edin"
 
+#: src/features/resume/variants/labels.ts
+msgid "Added"
+msgstr ""
+
 #. placeholder {0}: role.trim()
 #. placeholder {1}: company.trim()
 #: src/features/applications/components/add-application-dialog.tsx
@@ -1371,6 +1447,10 @@ msgstr "{0}-da {1} əlavə edildi"
 #: src/features/career/shared.tsx
 msgid "Added by you"
 msgstr "Siz əlavə etmisiniz"
+
+#: src/features/resume/variants/labels.ts
+msgid "Added entry"
+msgstr ""
 
 #: src/features/career/coach-thread.tsx
 msgid "Added to Knowledge as a preference."
@@ -1589,6 +1669,10 @@ msgstr "Açıq mənbəli rezyume qurucusu"
 #: src/components/layout/error-screen.tsx
 msgid "An unexpected error stopped this page from loading. You can try again or head back."
 msgstr "Gözlənilməz bir xəta bu səhifənin yüklənməsini dayandırdı. Yenidən cəhd edə və ya geri qayıda bilərsiniz."
+
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "An update left unticked is kept as it is here, and isn't offered again unless the base changes it once more."
+msgstr ""
 
 #. placeholder {0}: others.length
 #: src/features/applications/components/detail/contacts.tsx
@@ -1855,6 +1939,7 @@ msgid "Are you sure you want to close this dialog?"
 msgstr "Bu dialoqu bağlamaq istədiyinizə əminsiniz?"
 
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Area of study"
 msgstr "Təhsil sahəsi"
 
@@ -2028,6 +2113,7 @@ msgid "Avoid heavy letter-spacing effects, then re-export."
 msgstr "Ağır hərflərarası boşluq effektlərindən çəkinin, sonra yenidən ixrac edin."
 
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Awarder"
 msgstr "Mükafat verən"
 
@@ -2109,6 +2195,10 @@ msgstr "Banner"
 msgid "Barista, 2012"
 msgstr "Barista, 2012"
 
+#: src/routes/builder/$resumeId/-components/document-menu.tsx
+msgid "Base is in Trash · Open Trash"
+msgstr ""
+
 #: src/features/career/offers.tsx
 msgid "Base salary"
 msgstr "Əsas maaş"
@@ -2187,6 +2277,10 @@ msgstr "Sərhəd Qalınlığı"
 #: src/features/career/offers.tsx
 msgid "Both offers cover everything compared here."
 msgstr "Hər iki təklif burada müqayisə edilən hər şeyi əhatə edir."
+
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "Both the base and this variant changed these. Pick which version to keep for each."
+msgstr ""
 
 #: src/features/ats-checker/messages.ts
 msgid "Break the resume into the usual sections so it can be segmented."
@@ -2370,6 +2464,10 @@ msgstr "Saat qurşağını dəyiş"
 msgid "Changed elsewhere"
 msgstr "Başqa yerdə dəyişilib"
 
+#: src/features/resume/variants/labels.ts
+msgid "Changed in both"
+msgstr ""
+
 #: src/features/assistant/conversation.tsx
 msgid "Changed the resume directly (an earlier conversation)"
 msgstr "CV-ni birbaşa dəyişdi (əvvəlki söhbət)"
@@ -2416,6 +2514,10 @@ msgstr "Başqa bir faylı yoxlayın"
 #: src/features/homepage/check.tsx
 msgid "Check any PDF, no account needed"
 msgstr "Hər hansı PDF yoxlayın, hesaba ehtiyac yoxdur"
+
+#: src/features/resume/variants/labels.ts
+msgid "Check choices"
+msgstr ""
 
 #: src/features/career/workspace/apply.tsx
 msgid "Check every claim, date and result against your experience."
@@ -2568,6 +2670,10 @@ msgstr "Claude Desktop"
 msgid "Clear"
 msgstr "Təmizlə"
 
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "Clear all"
+msgstr ""
+
 #: src/features/resume/editor/write/rich-text-editor.tsx
 msgid "Clear formatting"
 msgstr "Formatlaşdırmanı təmizləyin"
@@ -2607,6 +2713,7 @@ msgstr "Müştəri ID"
 #: src/features/career/workspace/coach-sheet.tsx
 #: src/features/career/workspace/prepare.tsx
 #: src/features/resume/editor/check/page-layer.tsx
+#: src/features/resume/variants/base-updates-dialog.tsx
 #: src/routes/builder/$resumeId/-components/share-sheet.tsx
 #: src/routes/builder/letter/-components/share-sheet.tsx
 msgid "Close"
@@ -2660,6 +2767,7 @@ msgstr "{header} sütunu gedir"
 
 #: src/features/applications/components/import-applications-sheet.tsx
 #: src/features/resume/editor/write/section-row.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Columns"
 msgstr "Sütunlar"
 
@@ -2696,6 +2804,7 @@ msgstr "Sıx"
 #: src/features/applications/components/import-applications-sheet.tsx
 #: src/features/resume/editor/check/job-match.tsx
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 #: src/routes/builder/letter/-components/write-panel.tsx
 msgid "Company"
 msgstr "Şirkət"
@@ -2873,6 +2982,7 @@ msgstr "Əlaqə"
 msgid "Contain"
 msgstr "Sığdır"
 
+#: src/features/resume/variants/labels.ts
 #: src/routes/builder/$resumeId/-components/editor-shell.tsx
 msgid "Content"
 msgstr "Məzmun"
@@ -3358,6 +3468,7 @@ msgstr "Dəyişikliklərinizi yadda saxlamaq mümkün olmadı. Yenidən cəhd ed
 
 #: src/features/letters/store.ts
 #: src/features/resume/share/history-tab.tsx
+#: src/features/resume/variants/base-updates-dialog.tsx
 #: src/routes/builder/letter/-components/letter-bar.tsx
 #: src/routes/builder/letter/-components/share-sheet.tsx
 #: src/routes/builder/letter/$coverLetterId.tsx
@@ -3525,6 +3636,10 @@ msgstr "Açar yaradın"
 msgid "Create one now"
 msgstr "İndi birini yaradın"
 
+#: src/dialogs/resume/index.tsx
+msgid "Create variant"
+msgstr ""
+
 #: src/features/documents/documents-page.tsx
 #: src/features/resume/share/format.ts
 #: src/features/settings/ai/api-keys.tsx
@@ -3540,6 +3655,10 @@ msgstr "“{finalName}” yaradıldı"
 #: src/features/documents/new-document-dialog.tsx
 msgid "Created and linked to {0}"
 msgstr "{0} ilə yaradılmış və əlaqələndirilmişdir"
+
+#: src/dialogs/resume/index.tsx
+msgid "Creating the variant..."
+msgstr ""
 
 #: src/features/resume/editor/write/picture-settings.tsx
 msgid "Crop and Upload"
@@ -3588,12 +3707,17 @@ msgid "Custom OAuth"
 msgstr "Fərdiləşdirilmiş OAuth"
 
 #: src/features/resume/editor/write/add-section.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Custom section"
 msgstr "Fərdi bölmə"
 
 #: src/libs/resume/section.tsx
 msgid "Custom Sections"
 msgstr "Xüsusi Bölmələr"
+
+#: src/features/resume/variants/labels.ts
+msgid "Custom styles"
+msgstr ""
 
 #: src/libs/resume/section.tsx
 msgid "Custom Styles"
@@ -3646,6 +3770,7 @@ msgstr "Tarix formatı"
 #: src/features/resume/editor/check/issues.ts
 #: src/features/resume/editor/check/parser-view.tsx
 #: src/features/resume/editor/write/dates-field.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Dates"
 msgstr "Tarixlər"
 
@@ -3692,6 +3817,7 @@ msgid "Default"
 msgstr "Defolt"
 
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Degree"
 msgstr "Dərəcə"
 
@@ -3858,6 +3984,7 @@ msgid "Describe the role"
 msgstr "Rolu təsvir edin"
 
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Description"
 msgstr "Təsvir"
 
@@ -3868,6 +3995,7 @@ msgstr "{0} rolunun təsviri"
 
 #: src/features/homepage/design.tsx
 #: src/features/homepage/header.tsx
+#: src/features/resume/variants/labels.ts
 #: src/libs/resume/section.tsx
 #: src/routes/builder/$resumeId/-components/design-panel.tsx
 #: src/routes/builder/$resumeId/-components/editor-bar.tsx
@@ -4329,8 +4457,17 @@ msgid "Edit…"
 msgstr "Redaktə et..."
 
 #: src/features/documents/documents-page.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Edited"
 msgstr "Redaktə edilib"
+
+#: src/features/resume/variants/labels.ts
+msgid "Edited an entry you removed"
+msgstr ""
+
+#: src/features/resume/variants/labels.ts
+msgid "Edited in the base, removed here"
+msgstr ""
 
 #: src/features/resume/editor/page-overlay.tsx
 msgid "Editing"
@@ -4367,6 +4504,7 @@ msgstr "Təhsil"
 
 #: src/features/resume/editor/check/parser-view.tsx
 #: src/features/resume/editor/write/basics-card.tsx
+#: src/features/resume/variants/labels.ts
 #: src/features/settings/account/profile.tsx
 msgid "Email"
 msgstr "E‑poçt"
@@ -4871,6 +5009,10 @@ msgstr "{authored} səhifələrinə uyğundur: {details}"
 msgid "Fits on one page: {details}"
 msgstr "Bir səhifəyə uyğundur: {details}"
 
+#: src/dialogs/resume/index.tsx
+msgid "Fix a typo or add a job in the original, and this copy can pull it in. Its own edits are kept."
+msgstr ""
+
 #: src/features/resume/editor/check/issues.ts
 msgid "Fix the date"
 msgstr "Tarixi düzəldin"
@@ -4900,6 +5042,7 @@ msgid "Flatten the form so the text is part of the page."
 msgstr "Formu düzləşdirin ki, mətn səhifənin bir hissəsinə çevrilsin."
 
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Fluency"
 msgstr "Səlislik"
 
@@ -5079,6 +5222,10 @@ msgstr "Uyğunluqdan"
 msgid "from the assistant or API"
 msgstr "köməkçidən və ya API"
 
+#: src/features/resume/share/format.ts
+msgid "from the base resume"
+msgstr ""
+
 #: src/features/career/knowledge/facts.tsx
 msgid "From your cover letter"
 msgstr "Müşayiət məktubunuzdan"
@@ -5196,6 +5343,7 @@ msgid "Google"
 msgstr "Google"
 
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Grade"
 msgstr "Qiymət"
 
@@ -5238,6 +5386,7 @@ msgid "Heading changed"
 msgstr "Başlıq dəyişdirildi"
 
 #: src/features/resume/editor/write/basics-card.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Headline"
 msgstr "Sloganınız"
 
@@ -5273,6 +5422,7 @@ msgstr "Salam Alex, təsdiqləməkdən məmnunuq: dizayn komandamızla görüş�
 #: src/components/level/combobox.tsx
 #: src/features/resume/editor/write/entries.tsx
 #: src/features/resume/editor/write/entry-card.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Hidden"
 msgstr "Gizli"
 
@@ -5425,6 +5575,7 @@ msgid "I withdrew"
 msgstr "geri çəkildim"
 
 #: src/components/level/combobox.tsx
+#: src/features/resume/variants/labels.ts
 #: src/routes/builder/$resumeId/-sidebar/right/sections/design.tsx
 msgid "Icon"
 msgstr "İkon"
@@ -5721,6 +5872,7 @@ msgid "Issue ignored"
 msgstr "Məsələ nəzərə alınmadı"
 
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Issuer"
 msgstr "Vərəq verən"
 
@@ -5775,6 +5927,10 @@ msgstr "girişlər 30 gündən sonra həmişəlik silinir."
 #: src/features/documents/trash-page.tsx
 msgid "Items you move here stay for 30 days."
 msgstr "buraya köçürdüyünüz girişlər 30 gün qalır."
+
+#: src/routes/builder/$resumeId/-components/document-menu.tsx
+msgid "its base"
+msgstr ""
 
 #. placeholder {0}: providers[0]?.label ?? ""
 #: src/features/career/schedule-sheet.tsx
@@ -5878,6 +6034,10 @@ msgstr "Tətbiqdən istifadə etmədiyiniz zaman girişi saxlayın."
 msgid "Keep account"
 msgstr "Hesab saxlamaq"
 
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "Keep all mine"
+msgstr ""
+
 #: src/features/career/schedule-sheet.tsx
 msgid "Keep editing"
 msgstr "Redaktəyə davam et"
@@ -5898,10 +6058,24 @@ msgstr "Dürüst olun"
 msgid "Keep it under 2.5 MB, usually by removing or shrinking images."
 msgstr "Adətən şəkilləri silərək və ya kiçildərək 2,5 MB-dan aşağı saxlayın."
 
+#. placeholder {0}: data.name
+#: src/dialogs/resume/index.tsx
+msgid "Keep linked to “{0}” as a variant"
+msgstr ""
+
+#: src/features/documents/new-document-dialog.tsx
+msgid "Keep linked to the original as a variant"
+msgstr ""
+
 #: src/features/homepage/write.tsx
 #: src/features/resume/editor/write/improve.tsx
+#: src/features/resume/variants/base-updates-dialog.tsx
 msgid "Keep mine"
 msgstr "Mənimkini saxla"
+
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "Keep mine for all"
+msgstr ""
 
 #: src/features/resume/editor/write/section-row.tsx
 msgid "Keep on one page"
@@ -5974,6 +6148,7 @@ msgid "Keyword layout"
 msgstr "Açar söz düzümü"
 
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Keywords"
 msgstr "Açar sözlər"
 
@@ -6055,6 +6230,7 @@ msgstr "Mətni üfüqi şəkildə yerləşdirin. Döndərilmiş sətirlər tez-t
 
 #: src/features/ats-checker/messages.ts
 #: src/features/resume/editor/check/issues.ts
+#: src/features/resume/variants/labels.ts
 #: src/libs/resume/section.tsx
 msgid "Layout"
 msgstr "Maket"
@@ -6194,6 +6370,7 @@ msgid "Letters"
 msgstr "Məktublar"
 
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 #: src/routes/builder/$resumeId/-sidebar/right/sections/design.tsx
 msgid "Level"
 msgstr "Səviyyə"
@@ -6445,6 +6622,7 @@ msgstr "İş sahəsi yüklənir…"
 #: src/features/resume/editor/check/parser-view.tsx
 #: src/features/resume/editor/write/basics-card.tsx
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Location"
 msgstr "Məkan"
 
@@ -6885,6 +7063,7 @@ msgstr "Mənim vəzifəm dəstək işini artırmadan səbəbini tapmaq idi."
 #: src/features/documents/trash-page.tsx
 #: src/features/resume/editor/check/parser-view.tsx
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 #: src/features/settings/account/profile.tsx
 #: src/features/settings/ai/api-keys.tsx
 #: src/features/settings/ai/providers.tsx
@@ -6961,6 +7140,7 @@ msgid "Nepali"
 msgstr "Nepal"
 
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Network"
 msgstr "Şəbəkə"
 
@@ -7045,6 +7225,15 @@ msgstr "Yeni bölmə"
 msgid "New teams at Northwind were stalling in setup; most never got through."
 msgstr "Northwind-də yeni komandalar quraşdırmada ilişib qalırdı; çoxu sona çatmırdı."
 
+#: src/dialogs/resume/index.tsx
+msgid "New Variant"
+msgstr ""
+
+#: src/features/documents/document-actions.tsx
+#: src/routes/builder/$resumeId/-components/document-menu.tsx
+msgid "New variant…"
+msgstr ""
+
 #: src/features/resume/editor/check/page-layer.tsx
 msgid "Next issue"
 msgstr "Növbəti məsələ"
@@ -7076,6 +7265,10 @@ msgstr "Növbəti addım: {0}. Bu gün bölməsinə xatırlatma əlavə edir."
 #: src/features/homepage/remember.tsx
 msgid "Next time, I’d agree how to measure success before the first prototype."
 msgstr "Növbəti dəfə uğurun necə ölçüləcəyi barədə ilk prototipdən əvvəl razılaşardım."
+
+#: src/features/resume/variants/labels.ts
+msgid "No"
+msgstr ""
 
 #: src/features/applications/components/interview-dialog.tsx
 msgid "No active applications."
@@ -7375,6 +7568,7 @@ msgid "Not in your resume · add only if true"
 msgstr "CV-nizdə yoxdur · yalnız doğru olduqda əlavə edin"
 
 #: src/features/career/shared.tsx
+#: src/features/resume/variants/base-updates-dialog.tsx
 msgid "Not now"
 msgstr "İndi yox"
 
@@ -7439,6 +7633,7 @@ msgstr "Məlumat"
 #: src/features/applications/components/application-form-sheet.tsx
 #: src/features/applications/components/application-notes.tsx
 #: src/features/applications/components/import-applications-sheet.tsx
+#: src/features/resume/variants/labels.ts
 #: src/libs/resume/section.tsx
 #: src/routes/builder/$resumeId/-components/document-menu.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/sections/notes.tsx
@@ -7477,6 +7672,10 @@ msgstr "Hələ heç nə planlaşdırılmayıb"
 #: src/features/career/today.tsx
 msgid "Nothing scheduled yet."
 msgstr "Hələ heç nə planlaşdırılmayıb."
+
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "Nothing taken. {baseName} is now the reference for this variant."
+msgstr ""
 
 #: src/features/career/workspace/messages.tsx
 msgid "Nothing to apply"
@@ -7707,6 +7906,14 @@ msgstr "Ümumi səhifəni açın"
 msgid "Open story"
 msgstr "Hekayəni aç"
 
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "Open the base"
+msgstr ""
+
+#: src/routes/builder/$resumeId/-components/document-menu.tsx
+msgid "Open the base resume"
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "Open the exported file and confirm you can select and copy every part of it."
 msgstr "İxrac edilmiş faylı açın və onun hər hissəsini seçib kopyalaya bildiyinizi təsdiqləyin."
@@ -7796,7 +8003,16 @@ msgstr "Ya da öz sözlərinizlə..."
 msgid "Or upload a resume PDF"
 msgstr "Və ya CV PDF-i yükləyin"
 
+#: src/features/resume/variants/labels.ts
+msgid "Order"
+msgstr ""
+
+#: src/features/resume/variants/labels.ts
+msgid "Order of roles"
+msgstr ""
+
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Organization"
 msgstr "Təşkilat"
 
@@ -7837,6 +8053,7 @@ msgstr "Köhnəlmiş: mətn o vaxtdan dəyişdi."
 msgid "Own and evolve a design system"
 msgstr "Dizayn sisteminə sahiblik etmək və onu inkişaf etdirmək"
 
+#: src/features/resume/variants/labels.ts
 #: src/libs/resume/section.tsx
 #: src/routes/builder/$resumeId/-components/design-panel.tsx
 #: src/routes/builder/$resumeId/-components/editor-shell.tsx
@@ -8064,6 +8281,7 @@ msgstr "Fars"
 #: src/features/resume/editor/check/parser-view.tsx
 #: src/features/resume/editor/write/basics-card.tsx
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Phone"
 msgstr "Telefon"
 
@@ -8107,6 +8325,7 @@ msgstr "İki nümunə seçin"
 msgid "Picking your stories"
 msgstr "Hekayələriniz seçilir"
 
+#: src/features/resume/variants/labels.ts
 #: src/libs/resume/section.tsx
 msgid "Picture"
 msgstr "Şəkil"
@@ -8178,6 +8397,7 @@ msgid "Portuguese (Portugal)"
 msgstr "Portuqal (Portuqaliya)"
 
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Position"
 msgstr "Vəzifə"
 
@@ -8388,6 +8608,7 @@ msgid "Product designer with nine years of experience building <0>design systems
 msgstr "B2B komandaları üçün <0>dizayn sistemləri</0> və araşdırmaya əsaslanan məhsullar yaratmaqda doqquz illik təcrübəsi olan məhsul dizayneri."
 
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Proficiency"
 msgstr "Bacarıq Səviyyəsi"
 
@@ -8480,6 +8701,7 @@ msgid "Publications"
 msgstr "Nəşrlər"
 
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Publisher"
 msgstr "Nəşriyyatçı"
 
@@ -8990,6 +9212,19 @@ msgstr "Bu keçid açarı silinsin?"
 msgid "Remove this photo?"
 msgstr "Bu foto silinsin?"
 
+#: src/features/resume/variants/base-updates-dialog.tsx
+#: src/features/resume/variants/labels.ts
+msgid "Removed"
+msgstr ""
+
+#: src/features/resume/variants/labels.ts
+msgid "Removed entry"
+msgstr ""
+
+#: src/features/resume/variants/labels.ts
+msgid "Removed in the base, edited here"
+msgstr ""
+
 #: src/features/career/coach.tsx
 #: src/features/documents/document-actions.tsx
 #: src/features/settings/account/security.tsx
@@ -9023,6 +9258,10 @@ msgstr "{0} yenidən sıralayın"
 #: src/features/resume/editor/write/section-row.tsx
 msgid "Reorder {title}"
 msgstr "{title} yenidən sıralayın"
+
+#: src/features/resume/variants/labels.ts
+msgid "Reordered"
+msgstr ""
 
 #. placeholder {0}: jd.stuffedTerms.join(", ")
 #: src/features/ats-checker/report/jd-coverage.tsx
@@ -9276,9 +9515,19 @@ msgstr "“Cavabımı nəzərdən keçir” sualı, dediklərinizi, bu iş elan�
 msgid "Review required form answers and remove unsupported claims."
 msgstr "Tələb olunan forma cavablarını nəzərdən keçirin və dəstəklənməyən iddiaları silin."
 
+#. placeholder {0}: base.name
+#: src/features/resume/variants/variant-indicator.tsx
+msgid "Review the changes made to {0}"
+msgstr ""
+
 #: src/features/career/workspace/apply.tsx
 msgid "Review the selected resume and cover letter in their editors."
 msgstr "Seçilmiş CV və müşayiət məktubunu öz redaktorlarında nəzərdən keçirin."
+
+#. placeholder {0}: document.base.name
+#: src/features/documents/document-card.tsx
+msgid "Review what changed in {0}"
+msgstr ""
 
 #: src/features/resume/editor/check/writing-tab.tsx
 msgid "Review writing"
@@ -9322,6 +9571,7 @@ msgstr "Elə indi"
 #: src/features/applications/components/interview-dialog.tsx
 #: src/features/applications/components/list-view.tsx
 #: src/features/resume/editor/check/job-match.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Role"
 msgstr "Vəzifə"
 
@@ -9652,6 +9902,7 @@ msgid "Schedules"
 msgstr "Cədvəllər"
 
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "School"
 msgstr "Məktəb"
 
@@ -9800,6 +10051,10 @@ msgstr "seçin"
 #: src/features/applications/components/list-view.tsx
 msgid "Select {0} at {1}"
 msgstr "{1}-da {0} seçin"
+
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "Select all"
+msgstr ""
 
 #: src/features/settings/integrations/components/ai-provider-picker.tsx
 msgid "Select an AI provider"
@@ -10091,6 +10346,10 @@ msgstr "Şablonları göstərin"
 #: src/features/resume/editor/check/check-panel.tsx
 msgid "Show them again"
 msgstr "Onları yenidən göstərin"
+
+#: src/features/resume/variants/labels.ts
+msgid "Shown"
+msgstr ""
 
 #: src/features/applications/components/interview-dialog.tsx
 msgid "Shown in your timezone."
@@ -10659,6 +10918,10 @@ msgstr "Gücləndir"
 msgid "Stronger verb"
 msgstr "Daha güclü fel"
 
+#: src/features/resume/variants/labels.ts
+msgid "Style rules"
+msgstr ""
+
 #: src/features/resume/stylesheet/toolbar.tsx
 msgid "Stylesheet editor"
 msgstr "Stil cədvəli redaktoru"
@@ -10842,6 +11105,14 @@ msgstr "{0} iş elanına uyğunlaşdırın"
 msgid "Tailored vs. base resume"
 msgstr "uyğunlaşdırılmış və əsas rezyume"
 
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "Take all from base"
+msgstr ""
+
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "Take base's"
+msgstr ""
+
 #: src/libs/locale.ts
 msgid "Tamil"
 msgstr "Tamil"
@@ -10884,6 +11155,7 @@ msgstr "Həmkarınızla razılaşmadığınız bir hal haqqında danışın. Bun
 msgid "Telugu"
 msgstr "Teluqu"
 
+#: src/features/resume/variants/labels.ts
 #: src/libs/resume/section.tsx
 #: src/routes/builder/$resumeId/-components/design-panel.tsx
 #: src/routes/builder/$resumeId/-components/document-details.tsx
@@ -11057,6 +11329,10 @@ msgstr "Köməkçi bu serverdə quraşdırılmayıb. Kim işlədirsə, ENCRYPTIO
 #: src/features/assistant/provider-setup.tsx
 msgid "The assistant uses your own key. Nothing is sent anywhere until you connect one."
 msgstr "Köməkçi öz açarınızdan istifadə edir. Siz birini bağlayana qədər heç bir yerə heç nə göndərilmir."
+
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "The base changed again. Have a look at the new conflicts."
+msgstr ""
 
 #: src/features/settings/ai/web-access.tsx
 msgid "The built-in reader remains active."
@@ -11292,6 +11568,11 @@ msgstr "Mətn oxunmaz şəkildə çıxır."
 msgid "The top of the first page does not look like a name."
 msgstr "Birinci səhifənin yuxarı hissəsi ad kimi görünmür."
 
+#. placeholder {0}: data.name
+#: src/dialogs/resume/index.tsx
+msgid "The variant is ready. It stays linked to “{0}”."
+msgstr ""
+
 #. Menu item that opens appearance theme selection submenu
 #: src/features/command-palette/pages/navigation.tsx
 #: src/features/command-palette/pages/preferences/theme.tsx
@@ -11501,6 +11782,10 @@ msgstr "Bu CV uzundur."
 msgid "This resume is password protected"
 msgstr "Bu CV parolla qorunur"
 
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "This resume isn't linked to a base anymore. Its base was deleted, or it was unlinked."
+msgstr ""
+
 #: src/features/resume/editor/check/job-match.tsx
 msgid "This resume isn't linked to an application yet."
 msgstr "Bu rezyume hələ iş müraciəti ilə əlaqələndirilməyib."
@@ -11508,6 +11793,10 @@ msgstr "Bu rezyume hələ iş müraciəti ilə əlaqələndirilməyib."
 #: src/features/resume/public/public-resume.tsx
 msgid "This resume isn't shared right now."
 msgstr "Bu rezyume hazırda paylaşılmır."
+
+#: src/routes/builder/$resumeId/-components/document-menu.tsx
+msgid "This resume keeps everything as it is, but changes made to the base won't be offered anymore."
+msgstr ""
 
 #: src/features/resume/builder/draft.ts
 msgid "This resume was updated by an AI agent."
@@ -11608,6 +11897,7 @@ msgstr "Məsləhət"
 
 #: src/features/career/knowledge/stories.tsx
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Title"
 msgstr "Başlıq"
 
@@ -11640,6 +11930,10 @@ msgstr "Ağ başlıqlar üçün çox yüngül. Zəif oxumaq və çap etmək çə
 #: src/features/settings/ai/web-access.tsx
 msgid "Too many requests. Try again later."
 msgstr "Həddindən artıq sorğu. Daha sonra yenidən cəhd edin."
+
+#: src/features/resume/share/format.ts
+msgid "Took updates from base"
+msgstr ""
 
 #: src/features/homepage/sections.tsx
 msgid "Total"
@@ -11868,6 +12162,7 @@ msgstr "Yazaraq cavab ver"
 msgid "typed"
 msgstr "yazılı"
 
+#: src/features/resume/variants/labels.ts
 #: src/libs/resume/section.tsx
 msgid "Typography"
 msgstr "Tipoqrafiya"
@@ -11915,12 +12210,25 @@ msgid "Unknown"
 msgstr "Naməlum"
 
 #: src/features/documents/document-actions.tsx
+#: src/routes/builder/$resumeId/-components/document-menu.tsx
 msgid "Unlink"
 msgstr "Əlaqəni kəsin"
+
+#: src/routes/builder/$resumeId/-components/document-menu.tsx
+msgid "Unlink from {baseName}?"
+msgstr ""
+
+#: src/routes/builder/$resumeId/-components/document-menu.tsx
+msgid "Unlink from base…"
+msgstr ""
 
 #: src/features/resume/editor/check/job-match.tsx
 msgid "Unlink this application"
 msgstr "Bu müraciətin əlaqəsini kəsin"
+
+#: src/routes/builder/$resumeId/-components/document-menu.tsx
+msgid "Unlinked from {baseName}. This is a resume of its own now."
+msgstr ""
 
 #: src/features/settings/account/auth-hooks.ts
 msgid "Unlinking your {providerName} account..."
@@ -11943,6 +12251,10 @@ msgstr "Redaktəni kiliddən çıxarın"
 msgid "Unlock it first"
 msgstr "Əvvəlcə kilidini açın"
 
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "Unlock the resume first"
+msgstr ""
+
 #: src/features/settings/account/security.tsx
 msgid "Unnamed passkey"
 msgstr "Adı olmayan keçid açarı"
@@ -11951,6 +12263,10 @@ msgstr "Adı olmayan keçid açarı"
 #: src/features/resume/stylesheet/targets.ts
 msgid "Untitled"
 msgstr "Başlıqsız"
+
+#: src/features/resume/variants/labels.ts
+msgid "Untitled entry"
+msgstr ""
 
 #: src/features/documents/new-document-dialog.tsx
 msgid "Untitled letter"
@@ -11971,6 +12287,11 @@ msgstr "2 dəqiqəyə qədər. Danışdıqca sözləriniz görünür."
 #: src/features/ats-checker/checker.tsx
 msgid "Up to 25 MB · checked in your browser, never uploaded"
 msgstr "25-ə qədər MB · brauzerinizdə yoxlanılıb, heç vaxt yüklənməyib"
+
+#. placeholder {0}: base.name
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "Up to date. Nothing changed in {0} since this variant last took its changes."
+msgstr ""
 
 #: src/features/applications/components/calendar-view.tsx
 msgid "Upcoming interviews"
@@ -12001,6 +12322,23 @@ msgstr "Yenilənib"
 #: src/features/applications/components/list-view.tsx
 msgid "Updated {0}"
 msgstr "Yenilənmiş {0}"
+
+#: src/features/resume/variants/labels.ts
+msgid "Updated settings"
+msgstr ""
+
+#. placeholder {0}: base.name
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "Updates from {0}"
+msgstr ""
+
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "Updates from base"
+msgstr ""
+
+#: src/routes/builder/$resumeId/-components/document-menu.tsx
+msgid "Updates from base…"
+msgstr ""
 
 #: src/dialogs/auth/change-password.tsx
 msgid "Updating your password..."
@@ -12169,6 +12507,7 @@ msgstr "İstifadəçi tədqiqatı"
 #. Label for username input on registration form
 #: src/features/auth/pages/register.tsx
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 #: src/features/settings/account/profile.tsx
 msgid "Username"
 msgstr "İstifadəçi adı"
@@ -12204,6 +12543,21 @@ msgstr "Qiymətləndirmə və payın sulandırılması qeyri-müəyyəndir"
 #: src/features/career/offers.tsx
 msgid "Value uncertain"
 msgstr "Dəyər qeyri-müəyyəndir"
+
+#: src/routes/builder/$resumeId/-components/document-details.tsx
+msgid "Variant of"
+msgstr ""
+
+#. placeholder {0}: base.name
+#. placeholder {0}: document.base.name
+#: src/features/documents/document-card.tsx
+#: src/features/resume/variants/variant-indicator.tsx
+msgid "Variant of {0}"
+msgstr ""
+
+#: src/routes/builder/$resumeId/-components/document-details.tsx
+msgid "Variants"
+msgstr ""
 
 #: src/features/ats-checker/messages.ts
 msgid "Vary the openings so the section does not read as boilerplate."
@@ -12316,6 +12670,7 @@ msgid "Views and downloads"
 msgstr "Baxışlar və endirmələr"
 
 #: src/features/homepage/share.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Visibility"
 msgstr "Görünüş"
 
@@ -12409,8 +12764,13 @@ msgid "Web search failed: {0}"
 msgstr "Veb axtarış uğursuz oldu: {0}"
 
 #: src/features/resume/editor/write/basics-card.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Website"
 msgstr "Vebsayt"
+
+#: src/features/resume/variants/labels.ts
+msgid "Website label"
+msgstr ""
 
 #: src/features/career/today.tsx
 msgid "Weekly at {clock} · next {next}"
@@ -12440,6 +12800,15 @@ msgstr "İnsanın gördüyü"
 #: src/features/career/coach.tsx
 msgid "What are you working on?"
 msgstr "Nə üzərində işləyirsiniz?"
+
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "What changed in the base resume. Your own edits to this variant stay as they are."
+msgstr ""
+
+#. placeholder {0}: formatRelativeTime(status.syncedAt, i18n.locale)
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "What changed in the base since {0}. Your own edits to this variant stay as they are."
+msgstr ""
 
 #: src/features/career/knowledge/stories.tsx
 msgid "What changed? Leave blank if you can’t support it."
@@ -12575,6 +12944,10 @@ msgstr "Nə işləyir"
 #: src/features/career/offers.tsx
 msgid "When do they need your answer?"
 msgstr "Cavabınız onlara nə vaxt lazımdır?"
+
+#: src/features/documents/new-document-dialog.tsx
+msgid "When the original changes later (a fixed typo, a new job), this copy shows the updates and lets you take them in. Its own tailoring is kept."
+msgstr ""
 
 #: src/features/career/coach.tsx
 msgid "When you press send, {shared} go to {connection}."
@@ -12781,6 +13154,10 @@ msgstr "yazmaq, uyğunlaşdırmaq və göndərmək"
 #: src/features/career/offers.tsx
 msgid "Written offer"
 msgstr "Yazılı təklif"
+
+#: src/features/resume/variants/labels.ts
+msgid "Yes"
+msgstr ""
 
 #: src/features/homepage/faq.tsx
 msgid "Yes. Every feature is free: all {templates} templates, PDF and Word downloads, the ATS checker, cover letters and the job tracker. There are no ads, no tracking and no paid tier. Donations pay for hosting and development."

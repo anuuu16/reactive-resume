@@ -72,9 +72,23 @@ msgstr "\"{written}\" कौशलहरूमा थपियो"
 msgid "“How did you measure the onboarding redesign?”"
 msgstr "\"तपाईंले अनबोर्डिङ पुनःडिजाइन कसरी मापन गर्नुभयो?\""
 
+#: src/features/resume/variants/labels.ts
+msgid "(empty)"
+msgstr ""
+
+#: src/features/documents/document-card.tsx
+#: src/features/resume/variants/variant-indicator.tsx
+#: src/routes/builder/$resumeId/-components/document-details.tsx
+msgid "(in Trash)"
+msgstr ""
+
 #: src/features/applications/components/import-applications-sheet.tsx
 msgid "(no header)"
 msgstr "(हेडर छैन)"
+
+#: src/features/resume/variants/labels.ts
+msgid "(none)"
+msgstr ""
 
 #. placeholder {0}: open.jdCount
 #. placeholder {1}: open.label
@@ -107,6 +121,11 @@ msgstr "{0, plural, one {# आवेदन} other {# आवेदनहरू}}"
 #: src/features/resume/editor/write/rich-text-editor.tsx
 msgid "{0, plural, one {# character} other {# characters}}"
 msgstr "{0, plural, one {# वर्ण} other {# वर्णहरू}}"
+
+#. placeholder {0}: conflicts.length
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "{0, plural, one {# conflict} other {# conflicts}}"
+msgstr ""
 
 #. placeholder {0}: result.contactsSkipped
 #: src/features/applications/components/import-applications-sheet.tsx
@@ -162,6 +181,16 @@ msgstr "{0, plural, one {# चयन गरियो} other {# चयन गर�
 #: src/features/career/coach-thread.tsx
 msgid "{0, plural, one {# story} other {# stories}}"
 msgstr "{0, plural, one {# कथा} other {# कथाहरू}}"
+
+#. placeholder {0}: updates.length
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "{0, plural, one {# update} other {# updates}}"
+msgstr ""
+
+#. placeholder {0}: document.variants
+#: src/features/documents/document-card.tsx
+msgid "{0, plural, one {# variant} other {# variants}}"
+msgstr ""
 
 #. placeholder {0}: remembered.ids.length
 #: src/features/career/coach-thread.tsx
@@ -233,6 +262,11 @@ msgstr "{0} · {providerLabel}। यो आवेदन र तपाईंक�
 msgid "{0} (copy)"
 msgstr "{0} (प्रतिलिपि)"
 
+#. placeholder {0}: data.name
+#: src/dialogs/resume/index.tsx
+msgid "{0} (variant)"
+msgstr ""
+
 #. placeholder {0}: insights.total
 #: src/features/applications/components/insights-view.tsx
 msgid "{0} active applications"
@@ -255,9 +289,16 @@ msgid "{0} edits applied"
 msgstr "{0} सम्पादनहरू लागू गरियो"
 
 #. placeholder {0}: step.entries
+#. placeholder {0}: value.length
 #: src/features/documents/new-document-dialog.tsx
+#: src/features/resume/variants/labels.ts
 msgid "{0} entries"
 msgstr "{0} प्रविष्टिहरू"
+
+#. placeholder {0}: value.length
+#: src/features/resume/variants/labels.ts
+msgid "{0} entries in the base's order"
+msgstr ""
 
 #. placeholder {0}: step.flagged
 #: src/features/documents/new-document-dialog.tsx
@@ -292,6 +333,16 @@ msgstr "{1} मा {0} भनेको तपाईंको समय क्ष
 #: src/features/career/workspace/shell.tsx
 msgid "{0} interview"
 msgstr "{0} अन्तर्वार्ता"
+
+#. placeholder {0}: base.name
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "{0} is in Trash. Restore it to see its changes, or unlink this variant."
+msgstr ""
+
+#. placeholder {0}: base.name
+#: src/features/resume/variants/variant-indicator.tsx
+msgid "{0} is in Trash. Restore it to see its changes."
+msgstr ""
 
 #. placeholder {0}: i18n.number(row.minutes)
 #. placeholder {0}: row.minutes
@@ -434,6 +485,10 @@ msgstr "{company} मात्र"
 #: src/routes/dashboard/applications/index.tsx
 msgid "{company}: no reply for {days} days. A short follow-up is usually fine now."
 msgstr "{company}: {days} दिनको लागि कुनै जवाफ छैन। एक छोटो फलो-अप सामान्यतया ठीक छ।"
+
+#: src/features/resume/variants/variant-indicator.tsx
+msgid "{conflicts, plural, one {# conflict} other {# conflicts}}"
+msgstr ""
 
 #: src/features/career/coach-thread.tsx
 msgid "{connection} didn't respond."
@@ -622,6 +677,11 @@ msgstr "{passed} को {total}"
 msgid "{passedRules} of {totalRules} checks pass."
 msgstr "{passedRules} को {totalRules} चेक पास।"
 
+#: src/features/documents/document-card.tsx
+#: src/features/resume/variants/variant-indicator.tsx
+msgid "{pending, plural, one {# update from base} other {# updates from base}}"
+msgstr ""
+
 #: src/routes/builder/$resumeId/-components/page-canvas.tsx
 msgid "{pendingOnPage, plural, one {# proposed edit on this page · nothing changes until you accept} other {# proposed edits on this page · nothing changes until you accept}}"
 msgstr "{pendingOnPage, plural, one {यस पृष्ठमा # प्रस्तावित सम्पादन · तपाईंले स्वीकार नगरेसम्म केही परिवर्तन हुँदैन} other {यस पृष्ठमा # प्रस्तावित सम्पादनहरू · तपाईंले स्वीकार नगरेसम्म केही परिवर्तन हुँदैन}}"
@@ -686,6 +746,14 @@ msgstr "{toCheck, plural, one {# फिल्डलाई हेर्न आव
 #: src/features/resume/editor/write/section-row.tsx
 msgid "{toCheck, plural, one {# to check} other {# to check}}"
 msgstr "{toCheck, plural, one {# जाँच गर्न} other {# जाँच गर्न}}"
+
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "{total, plural, one {Take # change} other {Take # changes}}"
+msgstr ""
+
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "{total, plural, one {Took # change from {baseName}. The state before is saved in History.} other {Took # changes from {baseName}. The state before is saved in History.}}"
+msgstr ""
 
 #. placeholder {0}: daysLeftInTrash(document.trashedAt)
 #: src/features/documents/document-card.tsx
@@ -960,6 +1028,10 @@ msgstr "बलियो मेल, एउटा प्रश्न समाध�
 #: src/features/career/workspace/prepare.tsx
 msgid "A timed plan, your opening, the stories to bring and questions to ask. It becomes your checklist 10 minutes before the call."
 msgstr "समयबद्ध योजना, तपाईंको सुरुवात, ल्याउनुपर्ने कथाहरू र सोध्नुपर्ने प्रश्नहरू। कलभन्दा 10 मिनेट अघि यो तपाईंको चेकलिस्ट बन्छ।"
+
+#: src/dialogs/resume/index.tsx
+msgid "A variant starts as a copy and stays linked to the original. Tailor it freely; when the original changes, the variant shows those changes and lets you take them in."
+msgstr ""
 
 #: src/features/ats-checker/messages.ts
 msgid "A web address is written without https://."
@@ -1361,6 +1433,10 @@ msgstr "सुरक्षित गर्नुअघि के भयो थ�
 msgid "Add your name"
 msgstr "आफ्नो नाम थप्नुहोस्"
 
+#: src/features/resume/variants/labels.ts
+msgid "Added"
+msgstr ""
+
 #. placeholder {0}: role.trim()
 #. placeholder {1}: company.trim()
 #: src/features/applications/components/add-application-dialog.tsx
@@ -1371,6 +1447,10 @@ msgstr "{0} {1} मा थपियो"
 #: src/features/career/shared.tsx
 msgid "Added by you"
 msgstr "तपाईंले थप्नुभएको"
+
+#: src/features/resume/variants/labels.ts
+msgid "Added entry"
+msgstr ""
 
 #: src/features/career/coach-thread.tsx
 msgid "Added to Knowledge as a preference."
@@ -1589,6 +1669,10 @@ msgstr "खुला स्रोत रिजुमे बिल्डर"
 #: src/components/layout/error-screen.tsx
 msgid "An unexpected error stopped this page from loading. You can try again or head back."
 msgstr "एउटा अप्रत्याशित त्रुटिले यो पृष्ठ लोड हुनबाट रोक्यो। तपाईं फेरि प्रयास गर्न सक्नुहुन्छ वा फिर्ता जान सक्नुहुन्छ।"
+
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "An update left unticked is kept as it is here, and isn't offered again unless the base changes it once more."
+msgstr ""
 
 #. placeholder {0}: others.length
 #: src/features/applications/components/detail/contacts.tsx
@@ -1855,6 +1939,7 @@ msgid "Are you sure you want to close this dialog?"
 msgstr "के तपाईं यो संवाद बन्द गर्न निश्चित हुनुहुन्छ?"
 
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Area of study"
 msgstr "अध्ययन क्षेत्र"
 
@@ -2028,6 +2113,7 @@ msgid "Avoid heavy letter-spacing effects, then re-export."
 msgstr "धेरै अक्षर-स्पेसिङ प्रभावबाट जोगिनुहोस्, त्यसपछि पुनः निर्यात गर्नुहोस्।"
 
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Awarder"
 msgstr "पुरस्कार दिने"
 
@@ -2109,6 +2195,10 @@ msgstr "ब्यानर"
 msgid "Barista, 2012"
 msgstr "बरिस्ता, २०१२"
 
+#: src/routes/builder/$resumeId/-components/document-menu.tsx
+msgid "Base is in Trash · Open Trash"
+msgstr ""
+
 #: src/features/career/offers.tsx
 msgid "Base salary"
 msgstr "आधारभूत तलब"
@@ -2187,6 +2277,10 @@ msgstr "बोर्डर (किनारा) चौडाइ"
 #: src/features/career/offers.tsx
 msgid "Both offers cover everything compared here."
 msgstr "यहाँ तुलना गरिएका सबै कुरा दुवै प्रस्तावमा समेटिएका छन्।"
+
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "Both the base and this variant changed these. Pick which version to keep for each."
+msgstr ""
 
 #: src/features/ats-checker/messages.ts
 msgid "Break the resume into the usual sections so it can be segmented."
@@ -2370,6 +2464,10 @@ msgstr "समय क्षेत्र परिवर्तन गर्नु
 msgid "Changed elsewhere"
 msgstr "अन्यत्र परिवर्तन भयो"
 
+#: src/features/resume/variants/labels.ts
+msgid "Changed in both"
+msgstr ""
+
 #: src/features/assistant/conversation.tsx
 msgid "Changed the resume directly (an earlier conversation)"
 msgstr "सीधै रिज्युमे परिवर्तन गरियो (पहिलेको कुराकानी)"
@@ -2416,6 +2514,10 @@ msgstr "अर्को फाइल जाँच गर्नुहोस्"
 #: src/features/homepage/check.tsx
 msgid "Check any PDF, no account needed"
 msgstr "कुनै पनि PDF जाँच गर्नुहोस्, कुनै खाता आवश्यक छैन"
+
+#: src/features/resume/variants/labels.ts
+msgid "Check choices"
+msgstr ""
 
 #: src/features/career/workspace/apply.tsx
 msgid "Check every claim, date and result against your experience."
@@ -2568,6 +2670,10 @@ msgstr "Claude Desktop"
 msgid "Clear"
 msgstr "खाली गर्नुहोस्"
 
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "Clear all"
+msgstr ""
+
 #: src/features/resume/editor/write/rich-text-editor.tsx
 msgid "Clear formatting"
 msgstr "ढाँचा खाली गर्नुहोस्"
@@ -2607,6 +2713,7 @@ msgstr "ग्राहक आईडी"
 #: src/features/career/workspace/coach-sheet.tsx
 #: src/features/career/workspace/prepare.tsx
 #: src/features/resume/editor/check/page-layer.tsx
+#: src/features/resume/variants/base-updates-dialog.tsx
 #: src/routes/builder/$resumeId/-components/share-sheet.tsx
 #: src/routes/builder/letter/-components/share-sheet.tsx
 msgid "Close"
@@ -2660,6 +2767,7 @@ msgstr "स्तम्भ {header} मा जान्छ"
 
 #: src/features/applications/components/import-applications-sheet.tsx
 #: src/features/resume/editor/write/section-row.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Columns"
 msgstr "स्तम्भहरू"
 
@@ -2696,6 +2804,7 @@ msgstr "संक्षिप्त"
 #: src/features/applications/components/import-applications-sheet.tsx
 #: src/features/resume/editor/check/job-match.tsx
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 #: src/routes/builder/letter/-components/write-panel.tsx
 msgid "Company"
 msgstr "कम्पनी"
@@ -2873,6 +2982,7 @@ msgstr "सम्पर्कहरू"
 msgid "Contain"
 msgstr "पूरै चित्र"
 
+#: src/features/resume/variants/labels.ts
 #: src/routes/builder/$resumeId/-components/editor-shell.tsx
 msgid "Content"
 msgstr "सामग्री"
@@ -3358,6 +3468,7 @@ msgstr "तपाईंका परिवर्तनहरू सुरक्�
 
 #: src/features/letters/store.ts
 #: src/features/resume/share/history-tab.tsx
+#: src/features/resume/variants/base-updates-dialog.tsx
 #: src/routes/builder/letter/-components/letter-bar.tsx
 #: src/routes/builder/letter/-components/share-sheet.tsx
 #: src/routes/builder/letter/$coverLetterId.tsx
@@ -3525,6 +3636,10 @@ msgstr "कुञ्जी सिर्जना गर्नुहोस्"
 msgid "Create one now"
 msgstr "अहिले एउटा सिर्जना गर्नुहोस्"
 
+#: src/dialogs/resume/index.tsx
+msgid "Create variant"
+msgstr ""
+
 #: src/features/documents/documents-page.tsx
 #: src/features/resume/share/format.ts
 #: src/features/settings/ai/api-keys.tsx
@@ -3540,6 +3655,10 @@ msgstr "\"{finalName}\" सिर्जना गरियो"
 #: src/features/documents/new-document-dialog.tsx
 msgid "Created and linked to {0}"
 msgstr "{0} सिर्जना गरी लिङ्क गरिएको छ"
+
+#: src/dialogs/resume/index.tsx
+msgid "Creating the variant..."
+msgstr ""
 
 #: src/features/resume/editor/write/picture-settings.tsx
 msgid "Crop and Upload"
@@ -3588,12 +3707,17 @@ msgid "Custom OAuth"
 msgstr "अनुकूलित OAuth"
 
 #: src/features/resume/editor/write/add-section.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Custom section"
 msgstr "अनुकूलन खण्ड"
 
 #: src/libs/resume/section.tsx
 msgid "Custom Sections"
 msgstr "अनुकूल (Custom) खण्डहरू"
+
+#: src/features/resume/variants/labels.ts
+msgid "Custom styles"
+msgstr ""
 
 #: src/libs/resume/section.tsx
 msgid "Custom Styles"
@@ -3646,6 +3770,7 @@ msgstr "मिति ढाँचा"
 #: src/features/resume/editor/check/issues.ts
 #: src/features/resume/editor/check/parser-view.tsx
 #: src/features/resume/editor/write/dates-field.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Dates"
 msgstr "मितिहरू"
 
@@ -3692,6 +3817,7 @@ msgid "Default"
 msgstr "पूर्वनिर्धारित"
 
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Degree"
 msgstr "डिग्री"
 
@@ -3858,6 +3984,7 @@ msgid "Describe the role"
 msgstr "भूमिका वर्णन गर्नुहोस्"
 
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Description"
 msgstr "विवरण"
 
@@ -3868,6 +3995,7 @@ msgstr "भूमिकाको विवरण {0}"
 
 #: src/features/homepage/design.tsx
 #: src/features/homepage/header.tsx
+#: src/features/resume/variants/labels.ts
 #: src/libs/resume/section.tsx
 #: src/routes/builder/$resumeId/-components/design-panel.tsx
 #: src/routes/builder/$resumeId/-components/editor-bar.tsx
@@ -4329,8 +4457,17 @@ msgid "Edit…"
 msgstr "सम्पादन गर्नुहोस्..."
 
 #: src/features/documents/documents-page.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Edited"
 msgstr "सम्पादन गरियो"
+
+#: src/features/resume/variants/labels.ts
+msgid "Edited an entry you removed"
+msgstr ""
+
+#: src/features/resume/variants/labels.ts
+msgid "Edited in the base, removed here"
+msgstr ""
 
 #: src/features/resume/editor/page-overlay.tsx
 msgid "Editing"
@@ -4367,6 +4504,7 @@ msgstr "शिक्षा"
 
 #: src/features/resume/editor/check/parser-view.tsx
 #: src/features/resume/editor/write/basics-card.tsx
+#: src/features/resume/variants/labels.ts
 #: src/features/settings/account/profile.tsx
 msgid "Email"
 msgstr "इमेल"
@@ -4871,6 +5009,10 @@ msgstr "{authored} पृष्ठहरूमा फिट हुन्छ: {de
 msgid "Fits on one page: {details}"
 msgstr "एक पृष्ठमा फिट हुन्छ: {details}"
 
+#: src/dialogs/resume/index.tsx
+msgid "Fix a typo or add a job in the original, and this copy can pull it in. Its own edits are kept."
+msgstr ""
+
 #: src/features/resume/editor/check/issues.ts
 msgid "Fix the date"
 msgstr "मिति तय गर्नुहोस्"
@@ -4900,6 +5042,7 @@ msgid "Flatten the form so the text is part of the page."
 msgstr "फारामलाई फ्ल्याट गर्नुहोस् ताकि पाठ पृष्ठकै अंश बनोस्।"
 
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Fluency"
 msgstr "भाषा दक्षता (Fluency)"
 
@@ -5079,6 +5222,10 @@ msgstr "उपयुक्तताबाट"
 msgid "from the assistant or API"
 msgstr "सहायक वा API बाट"
 
+#: src/features/resume/share/format.ts
+msgid "from the base resume"
+msgstr ""
+
 #: src/features/career/knowledge/facts.tsx
 msgid "From your cover letter"
 msgstr "तपाईंको आवरण पत्रबाट"
@@ -5196,6 +5343,7 @@ msgid "Google"
 msgstr "गुगल"
 
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Grade"
 msgstr "ग्रेड"
 
@@ -5238,6 +5386,7 @@ msgid "Heading changed"
 msgstr "हेडिङ परिवर्तन भयो"
 
 #: src/features/resume/editor/write/basics-card.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Headline"
 msgstr "मुख्य शीर्षक (Headline)"
 
@@ -5273,6 +5422,7 @@ msgstr "नमस्ते Alex, पुष्टि गर्न पाउँद
 #: src/components/level/combobox.tsx
 #: src/features/resume/editor/write/entries.tsx
 #: src/features/resume/editor/write/entry-card.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Hidden"
 msgstr "लुकाइएको"
 
@@ -5425,6 +5575,7 @@ msgid "I withdrew"
 msgstr "म पछि हटें"
 
 #: src/components/level/combobox.tsx
+#: src/features/resume/variants/labels.ts
 #: src/routes/builder/$resumeId/-sidebar/right/sections/design.tsx
 msgid "Icon"
 msgstr "आइकन"
@@ -5721,6 +5872,7 @@ msgid "Issue ignored"
 msgstr "मुद्दालाई बेवास्ता गरियो"
 
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Issuer"
 msgstr "जारी गर्ने संस्था/व्यक्ति (Issuer)"
 
@@ -5775,6 +5927,10 @@ msgstr "प्रविष्टिहरू 30 दिन पछि स्था
 #: src/features/documents/trash-page.tsx
 msgid "Items you move here stay for 30 days."
 msgstr "तपाईंले यहाँ सार्नुहुने प्रविष्टिहरू ३० दिनसम्म रहन्छन्।"
+
+#: src/routes/builder/$resumeId/-components/document-menu.tsx
+msgid "its base"
+msgstr ""
 
 #. placeholder {0}: providers[0]?.label ?? ""
 #: src/features/career/schedule-sheet.tsx
@@ -5878,6 +6034,10 @@ msgstr "तपाईंले एप प्रयोग नगर्दा प�
 msgid "Keep account"
 msgstr "खाता राख्नुहोस्"
 
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "Keep all mine"
+msgstr ""
+
 #: src/features/career/schedule-sheet.tsx
 msgid "Keep editing"
 msgstr "सम्पादन जारी राख्नुहोस्"
@@ -5898,10 +6058,24 @@ msgstr "इमानदार रहनुहोस्"
 msgid "Keep it under 2.5 MB, usually by removing or shrinking images."
 msgstr "सामान्यतया तस्बिर हटाएर वा साना बनाएर यसलाई 2.5 MB भन्दा कम राख्नुहोस्।"
 
+#. placeholder {0}: data.name
+#: src/dialogs/resume/index.tsx
+msgid "Keep linked to “{0}” as a variant"
+msgstr ""
+
+#: src/features/documents/new-document-dialog.tsx
+msgid "Keep linked to the original as a variant"
+msgstr ""
+
 #: src/features/homepage/write.tsx
 #: src/features/resume/editor/write/improve.tsx
+#: src/features/resume/variants/base-updates-dialog.tsx
 msgid "Keep mine"
 msgstr "मेरो राख्नुहोस्"
+
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "Keep mine for all"
+msgstr ""
 
 #: src/features/resume/editor/write/section-row.tsx
 msgid "Keep on one page"
@@ -5974,6 +6148,7 @@ msgid "Keyword layout"
 msgstr "कीवर्ड लेआउट"
 
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Keywords"
 msgstr "कुञ्जी शब्दहरू (Keywords)"
 
@@ -6055,6 +6230,7 @@ msgstr "पाठलाई तेर्सो रूपमा सजाउनु
 
 #: src/features/ats-checker/messages.ts
 #: src/features/resume/editor/check/issues.ts
+#: src/features/resume/variants/labels.ts
 #: src/libs/resume/section.tsx
 msgid "Layout"
 msgstr "लेआउट"
@@ -6194,6 +6370,7 @@ msgid "Letters"
 msgstr "पत्रहरू"
 
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 #: src/routes/builder/$resumeId/-sidebar/right/sections/design.tsx
 msgid "Level"
 msgstr "स्तर"
@@ -6445,6 +6622,7 @@ msgstr "कार्यक्षेत्र लोड गर्दै…"
 #: src/features/resume/editor/check/parser-view.tsx
 #: src/features/resume/editor/write/basics-card.tsx
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Location"
 msgstr "स्थान"
 
@@ -6885,6 +7063,7 @@ msgstr "मेरो काम सपोर्टको काम नबढा�
 #: src/features/documents/trash-page.tsx
 #: src/features/resume/editor/check/parser-view.tsx
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 #: src/features/settings/account/profile.tsx
 #: src/features/settings/ai/api-keys.tsx
 #: src/features/settings/ai/providers.tsx
@@ -6961,6 +7140,7 @@ msgid "Nepali"
 msgstr "नेपाली"
 
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Network"
 msgstr "नेटवर्क"
 
@@ -7045,6 +7225,15 @@ msgstr "नयाँ खण्ड"
 msgid "New teams at Northwind were stalling in setup; most never got through."
 msgstr "Northwind का नयाँ टोलीहरू सेटअपमा अड्किरहेका थिए; धेरैजसो कहिल्यै पार गर्न सकेनन्।"
 
+#: src/dialogs/resume/index.tsx
+msgid "New Variant"
+msgstr ""
+
+#: src/features/documents/document-actions.tsx
+#: src/routes/builder/$resumeId/-components/document-menu.tsx
+msgid "New variant…"
+msgstr ""
+
 #: src/features/resume/editor/check/page-layer.tsx
 msgid "Next issue"
 msgstr "अर्को अंक"
@@ -7076,6 +7265,10 @@ msgstr "अर्को कदम: {0}। \"आज\" मा रिमाइन�
 #: src/features/homepage/remember.tsx
 msgid "Next time, I’d agree how to measure success before the first prototype."
 msgstr "अर्को पटक, पहिलो प्रोटोटाइपअघि नै सफलता कसरी मापन गर्ने भन्नेमा सहमति गर्थेँ।"
+
+#: src/features/resume/variants/labels.ts
+msgid "No"
+msgstr ""
 
 #: src/features/applications/components/interview-dialog.tsx
 msgid "No active applications."
@@ -7375,6 +7568,7 @@ msgid "Not in your resume · add only if true"
 msgstr "तपाईको रिजुमेमा छैन · सत्य भए मात्र थप्नुहोस्"
 
 #: src/features/career/shared.tsx
+#: src/features/resume/variants/base-updates-dialog.tsx
 msgid "Not now"
 msgstr "अहिले होइन"
 
@@ -7439,6 +7633,7 @@ msgstr "जानकारी"
 #: src/features/applications/components/application-form-sheet.tsx
 #: src/features/applications/components/application-notes.tsx
 #: src/features/applications/components/import-applications-sheet.tsx
+#: src/features/resume/variants/labels.ts
 #: src/libs/resume/section.tsx
 #: src/routes/builder/$resumeId/-components/document-menu.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/sections/notes.tsx
@@ -7477,6 +7672,10 @@ msgstr "अझै केही पनि तय गरिएको छैन"
 #: src/features/career/today.tsx
 msgid "Nothing scheduled yet."
 msgstr "अझै केही तालिकाबद्ध छैन।"
+
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "Nothing taken. {baseName} is now the reference for this variant."
+msgstr ""
 
 #: src/features/career/workspace/messages.tsx
 msgid "Nothing to apply"
@@ -7707,6 +7906,14 @@ msgstr "सार्वजनिक पृष्ठ खोल्नुहोस�
 msgid "Open story"
 msgstr "कथा खोल्नुहोस्"
 
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "Open the base"
+msgstr ""
+
+#: src/routes/builder/$resumeId/-components/document-menu.tsx
+msgid "Open the base resume"
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "Open the exported file and confirm you can select and copy every part of it."
 msgstr "निर्यात गरिएको फाइल खोल्नुहोस् र यसको हरेक भाग चयन र प्रतिलिपि गर्न सकिन्छ भनी पक्का गर्नुहोस्।"
@@ -7796,7 +8003,16 @@ msgstr "वा आफ्नै शब्दमा…"
 msgid "Or upload a resume PDF"
 msgstr "वा रेजुमे PDF अपलोड गर्नुहोस्"
 
+#: src/features/resume/variants/labels.ts
+msgid "Order"
+msgstr ""
+
+#: src/features/resume/variants/labels.ts
+msgid "Order of roles"
+msgstr ""
+
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Organization"
 msgstr "संस्था"
 
@@ -7837,6 +8053,7 @@ msgstr "म्याद सकियो: पाठ पछि परिवर्�
 msgid "Own and evolve a design system"
 msgstr "डिजाइन प्रणालीको जिम्मा लिनुहोस् र यसलाई विकसित गर्नुहोस्"
 
+#: src/features/resume/variants/labels.ts
 #: src/libs/resume/section.tsx
 #: src/routes/builder/$resumeId/-components/design-panel.tsx
 #: src/routes/builder/$resumeId/-components/editor-shell.tsx
@@ -8064,6 +8281,7 @@ msgstr "फारसी"
 #: src/features/resume/editor/check/parser-view.tsx
 #: src/features/resume/editor/write/basics-card.tsx
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Phone"
 msgstr "फोन"
 
@@ -8107,6 +8325,7 @@ msgstr "दुई उदाहरण छान्नुहोस्"
 msgid "Picking your stories"
 msgstr "तपाईंका कथाहरू छान्दै"
 
+#: src/features/resume/variants/labels.ts
 #: src/libs/resume/section.tsx
 msgid "Picture"
 msgstr "तस्बिर"
@@ -8178,6 +8397,7 @@ msgid "Portuguese (Portugal)"
 msgstr "पोर्चुगाली (पोर्चुगल)"
 
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Position"
 msgstr "पद"
 
@@ -8388,6 +8608,7 @@ msgid "Product designer with nine years of experience building <0>design systems
 msgstr "B2B टोलीहरूका लागि <0>डिजाइन प्रणाली</0> र अनुसन्धानमा आधारित उत्पादनहरू बनाउने नौ वर्षको अनुभव भएको उत्पादन डिजाइनर।"
 
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Proficiency"
 msgstr "दक्षता (Proficiency)"
 
@@ -8480,6 +8701,7 @@ msgid "Publications"
 msgstr "प्रकाशनहरू"
 
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Publisher"
 msgstr "प्रकाशक"
 
@@ -8990,6 +9212,19 @@ msgstr "यो पासकी हटाउने हो?"
 msgid "Remove this photo?"
 msgstr "यो तस्बिर हटाउने हो?"
 
+#: src/features/resume/variants/base-updates-dialog.tsx
+#: src/features/resume/variants/labels.ts
+msgid "Removed"
+msgstr ""
+
+#: src/features/resume/variants/labels.ts
+msgid "Removed entry"
+msgstr ""
+
+#: src/features/resume/variants/labels.ts
+msgid "Removed in the base, edited here"
+msgstr ""
+
 #: src/features/career/coach.tsx
 #: src/features/documents/document-actions.tsx
 #: src/features/settings/account/security.tsx
@@ -9023,6 +9258,10 @@ msgstr "{0} पुन: क्रमबद्ध गर्नुहोस्"
 #: src/features/resume/editor/write/section-row.tsx
 msgid "Reorder {title}"
 msgstr "{title} पुन: क्रमबद्ध गर्नुहोस्"
+
+#: src/features/resume/variants/labels.ts
+msgid "Reordered"
+msgstr ""
 
 #. placeholder {0}: jd.stuffedTerms.join(", ")
 #: src/features/ats-checker/report/jd-coverage.tsx
@@ -9276,9 +9515,19 @@ msgstr "\"मेरो जवाफ समीक्षा गर्नुहो�
 msgid "Review required form answers and remove unsupported claims."
 msgstr "आवश्यक फारम जवाफहरू समीक्षा गर्नुहोस् र समर्थन नभएका दाबीहरू हटाउनुहोस्।"
 
+#. placeholder {0}: base.name
+#: src/features/resume/variants/variant-indicator.tsx
+msgid "Review the changes made to {0}"
+msgstr ""
+
 #: src/features/career/workspace/apply.tsx
 msgid "Review the selected resume and cover letter in their editors."
 msgstr "छानिएको बायोडाटा र आवरण पत्र तिनका सम्पादकहरूमा समीक्षा गर्नुहोस्।"
+
+#. placeholder {0}: document.base.name
+#: src/features/documents/document-card.tsx
+msgid "Review what changed in {0}"
+msgstr ""
 
 #: src/features/resume/editor/check/writing-tab.tsx
 msgid "Review writing"
@@ -9322,6 +9571,7 @@ msgstr "अहिले नै"
 #: src/features/applications/components/interview-dialog.tsx
 #: src/features/applications/components/list-view.tsx
 #: src/features/resume/editor/check/job-match.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Role"
 msgstr "पद"
 
@@ -9652,6 +9902,7 @@ msgid "Schedules"
 msgstr "तालिकाहरू"
 
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "School"
 msgstr "विद्यालय/शैक्षिक संस्था"
 
@@ -9800,6 +10051,10 @@ msgstr "चयन गर्नुहोस्"
 #: src/features/applications/components/list-view.tsx
 msgid "Select {0} at {1}"
 msgstr "{1} मा {0} चयन गर्नुहोस्"
+
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "Select all"
+msgstr ""
 
 #: src/features/settings/integrations/components/ai-provider-picker.tsx
 msgid "Select an AI provider"
@@ -10091,6 +10346,10 @@ msgstr "टेम्प्लेटहरू देखाउनुहोस्"
 #: src/features/resume/editor/check/check-panel.tsx
 msgid "Show them again"
 msgstr "तिनीहरूलाई फेरि देखाउनुहोस्"
+
+#: src/features/resume/variants/labels.ts
+msgid "Shown"
+msgstr ""
 
 #: src/features/applications/components/interview-dialog.tsx
 msgid "Shown in your timezone."
@@ -10659,6 +10918,10 @@ msgstr "बलियो बनाउनुहोस्"
 msgid "Stronger verb"
 msgstr "बलियो क्रिया"
 
+#: src/features/resume/variants/labels.ts
+msgid "Style rules"
+msgstr ""
+
 #: src/features/resume/stylesheet/toolbar.tsx
 msgid "Stylesheet editor"
 msgstr "स्टाइलसिट सम्पादक"
@@ -10842,6 +11105,14 @@ msgstr "{0} रोजगार पोस्टिङमा अनुकूलन
 msgid "Tailored vs. base resume"
 msgstr "अनुकूलित बनाम आधार बायोडाटा"
 
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "Take all from base"
+msgstr ""
+
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "Take base's"
+msgstr ""
+
 #: src/libs/locale.ts
 msgid "Tamil"
 msgstr "तमिल"
@@ -10884,6 +11155,7 @@ msgstr "तपाईं कुनै सहकर्मीसँग असहम
 msgid "Telugu"
 msgstr "तेलुगु"
 
+#: src/features/resume/variants/labels.ts
 #: src/libs/resume/section.tsx
 #: src/routes/builder/$resumeId/-components/design-panel.tsx
 #: src/routes/builder/$resumeId/-components/document-details.tsx
@@ -11057,6 +11329,10 @@ msgstr "यस सर्भरमा सहायक सेटअप गरि�
 #: src/features/assistant/provider-setup.tsx
 msgid "The assistant uses your own key. Nothing is sent anywhere until you connect one."
 msgstr "सहायकले तपाईंको आफ्नै कुञ्जी प्रयोग गर्दछ। तपाईंले जडान नगरेसम्म कुनै पनि कुरा कतै पठाइँदैन।"
+
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "The base changed again. Have a look at the new conflicts."
+msgstr ""
 
 #: src/features/settings/ai/web-access.tsx
 msgid "The built-in reader remains active."
@@ -11292,6 +11568,11 @@ msgstr "पाठ पढ्न नसकिने अवस्थामा आ�
 msgid "The top of the first page does not look like a name."
 msgstr "पहिलो पृष्ठको माथिल्लो भाग नाम जस्तो देखिँदैन।"
 
+#. placeholder {0}: data.name
+#: src/dialogs/resume/index.tsx
+msgid "The variant is ready. It stays linked to “{0}”."
+msgstr ""
+
 #. Menu item that opens appearance theme selection submenu
 #: src/features/command-palette/pages/navigation.tsx
 #: src/features/command-palette/pages/preferences/theme.tsx
@@ -11501,6 +11782,10 @@ msgstr "यो बायोडाटा लामो छ।"
 msgid "This resume is password protected"
 msgstr "यो बायोडाटा पासवर्डले सुरक्षित छ"
 
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "This resume isn't linked to a base anymore. Its base was deleted, or it was unlinked."
+msgstr ""
+
 #: src/features/resume/editor/check/job-match.tsx
 msgid "This resume isn't linked to an application yet."
 msgstr "यो रिजुमे अझै जागिरको आवेदनसँग लिङ्क गरिएको छैन।"
@@ -11508,6 +11793,10 @@ msgstr "यो रिजुमे अझै जागिरको आवेद�
 #: src/features/resume/public/public-resume.tsx
 msgid "This resume isn't shared right now."
 msgstr "यो रेजुमे अहिले साझा गरिएको छैन।"
+
+#: src/routes/builder/$resumeId/-components/document-menu.tsx
+msgid "This resume keeps everything as it is, but changes made to the base won't be offered anymore."
+msgstr ""
 
 #: src/features/resume/builder/draft.ts
 msgid "This resume was updated by an AI agent."
@@ -11608,6 +11897,7 @@ msgstr "सुझाव"
 
 #: src/features/career/knowledge/stories.tsx
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Title"
 msgstr "शीर्षक"
 
@@ -11640,6 +11930,10 @@ msgstr "सेतोमा शीर्षकहरूका लागि धे
 #: src/features/settings/ai/web-access.tsx
 msgid "Too many requests. Try again later."
 msgstr "धेरै अनुरोधहरू। पछि फेरि प्रयास गर्नुहोस्।"
+
+#: src/features/resume/share/format.ts
+msgid "Took updates from base"
+msgstr ""
 
 #: src/features/homepage/sections.tsx
 msgid "Total"
@@ -11868,6 +12162,7 @@ msgstr "बरु टाइप गर्नुहोस्"
 msgid "typed"
 msgstr "टाइप गरिएको"
 
+#: src/features/resume/variants/labels.ts
 #: src/libs/resume/section.tsx
 msgid "Typography"
 msgstr "टाइपोग्राफी"
@@ -11915,12 +12210,25 @@ msgid "Unknown"
 msgstr "अज्ञात"
 
 #: src/features/documents/document-actions.tsx
+#: src/routes/builder/$resumeId/-components/document-menu.tsx
 msgid "Unlink"
 msgstr "अनलिंक गर्नुहोस्"
+
+#: src/routes/builder/$resumeId/-components/document-menu.tsx
+msgid "Unlink from {baseName}?"
+msgstr ""
+
+#: src/routes/builder/$resumeId/-components/document-menu.tsx
+msgid "Unlink from base…"
+msgstr ""
 
 #: src/features/resume/editor/check/job-match.tsx
 msgid "Unlink this application"
 msgstr "यो जागिर आवेदन अनलिंक गर्नुहोस्"
+
+#: src/routes/builder/$resumeId/-components/document-menu.tsx
+msgid "Unlinked from {baseName}. This is a resume of its own now."
+msgstr ""
 
 #: src/features/settings/account/auth-hooks.ts
 msgid "Unlinking your {providerName} account..."
@@ -11943,6 +12251,10 @@ msgstr "सम्पादन अनलक गर्नुहोस्"
 msgid "Unlock it first"
 msgstr "पहिले यसलाई अनलक गर्नुहोस्"
 
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "Unlock the resume first"
+msgstr ""
+
 #: src/features/settings/account/security.tsx
 msgid "Unnamed passkey"
 msgstr "अनाम पासकी"
@@ -11951,6 +12263,10 @@ msgstr "अनाम पासकी"
 #: src/features/resume/stylesheet/targets.ts
 msgid "Untitled"
 msgstr "शीर्षकविहीन"
+
+#: src/features/resume/variants/labels.ts
+msgid "Untitled entry"
+msgstr ""
 
 #: src/features/documents/new-document-dialog.tsx
 msgid "Untitled letter"
@@ -11971,6 +12287,11 @@ msgstr "2 मिनेटसम्म। तपाईं बोल्दै ग�
 #: src/features/ats-checker/checker.tsx
 msgid "Up to 25 MB · checked in your browser, never uploaded"
 msgstr "25 MB सम्म · तपाईंको ब्राउजरमा जाँच गरियो, कहिल्यै अपलोड गरिएको छैन"
+
+#. placeholder {0}: base.name
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "Up to date. Nothing changed in {0} since this variant last took its changes."
+msgstr ""
 
 #: src/features/applications/components/calendar-view.tsx
 msgid "Upcoming interviews"
@@ -12001,6 +12322,23 @@ msgstr "अद्यावधिक गरियो"
 #: src/features/applications/components/list-view.tsx
 msgid "Updated {0}"
 msgstr "{0} अद्यावधिक गरियो"
+
+#: src/features/resume/variants/labels.ts
+msgid "Updated settings"
+msgstr ""
+
+#. placeholder {0}: base.name
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "Updates from {0}"
+msgstr ""
+
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "Updates from base"
+msgstr ""
+
+#: src/routes/builder/$resumeId/-components/document-menu.tsx
+msgid "Updates from base…"
+msgstr ""
 
 #: src/dialogs/auth/change-password.tsx
 msgid "Updating your password..."
@@ -12169,6 +12507,7 @@ msgstr "प्रयोगकर्ता अनुसन्धान"
 #. Label for username input on registration form
 #: src/features/auth/pages/register.tsx
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 #: src/features/settings/account/profile.tsx
 msgid "Username"
 msgstr "प्रयोगकर्तानाम (Username)"
@@ -12204,6 +12543,21 @@ msgstr "मूल्याङ्कन र डाइलुसन अनिश्
 #: src/features/career/offers.tsx
 msgid "Value uncertain"
 msgstr "मूल्य अनिश्चित"
+
+#: src/routes/builder/$resumeId/-components/document-details.tsx
+msgid "Variant of"
+msgstr ""
+
+#. placeholder {0}: base.name
+#. placeholder {0}: document.base.name
+#: src/features/documents/document-card.tsx
+#: src/features/resume/variants/variant-indicator.tsx
+msgid "Variant of {0}"
+msgstr ""
+
+#: src/routes/builder/$resumeId/-components/document-details.tsx
+msgid "Variants"
+msgstr ""
 
 #: src/features/ats-checker/messages.ts
 msgid "Vary the openings so the section does not read as boilerplate."
@@ -12316,6 +12670,7 @@ msgid "Views and downloads"
 msgstr "हेराइ र डाउनलोडहरू"
 
 #: src/features/homepage/share.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Visibility"
 msgstr "दृश्यता"
 
@@ -12409,8 +12764,13 @@ msgid "Web search failed: {0}"
 msgstr "वेब खोज असफल भयो: {0}"
 
 #: src/features/resume/editor/write/basics-card.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Website"
 msgstr "वेबसाइट"
+
+#: src/features/resume/variants/labels.ts
+msgid "Website label"
+msgstr ""
 
 #: src/features/career/today.tsx
 msgid "Weekly at {clock} · next {next}"
@@ -12440,6 +12800,15 @@ msgstr "मानिसले के देख्छ"
 #: src/features/career/coach.tsx
 msgid "What are you working on?"
 msgstr "तपाईं केमा काम गर्दै हुनुहुन्छ?"
+
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "What changed in the base resume. Your own edits to this variant stay as they are."
+msgstr ""
+
+#. placeholder {0}: formatRelativeTime(status.syncedAt, i18n.locale)
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "What changed in the base since {0}. Your own edits to this variant stay as they are."
+msgstr ""
 
 #: src/features/career/knowledge/stories.tsx
 msgid "What changed? Leave blank if you can’t support it."
@@ -12575,6 +12944,10 @@ msgstr "के काम गरिरहेको छ"
 #: src/features/career/offers.tsx
 msgid "When do they need your answer?"
 msgstr "उनीहरूलाई तपाईंको जवाफ कहिलेसम्म चाहिन्छ?"
+
+#: src/features/documents/new-document-dialog.tsx
+msgid "When the original changes later (a fixed typo, a new job), this copy shows the updates and lets you take them in. Its own tailoring is kept."
+msgstr ""
 
 #: src/features/career/coach.tsx
 msgid "When you press send, {shared} go to {connection}."
@@ -12781,6 +13154,10 @@ msgstr "लेखन, अनुकूलन र पठाउने"
 #: src/features/career/offers.tsx
 msgid "Written offer"
 msgstr "लिखित प्रस्ताव"
+
+#: src/features/resume/variants/labels.ts
+msgid "Yes"
+msgstr ""
 
 #: src/features/homepage/faq.tsx
 msgid "Yes. Every feature is free: all {templates} templates, PDF and Word downloads, the ATS checker, cover letters and the job tracker. There are no ads, no tracking and no paid tier. Donations pay for hosting and development."

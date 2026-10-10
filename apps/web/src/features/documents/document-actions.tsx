@@ -82,6 +82,10 @@ export function useDocumentActions() {
 		copyForJob: (document: DocumentSummary) =>
 			openDialog("document.new", { step: "copy", sourceResumeId: document.id }),
 
+		/** A copy that stays linked to this resume and can take its later changes in. */
+		newVariant: (document: DocumentSummary) =>
+			openDialog("resume.duplicate", { id: document.id, name: document.name, tags: document.tags, asVariant: true }),
+
 		setLocked: (document: DocumentSummary, isLocked: boolean) => setLocked.mutate({ ...ref(document), isLocked }),
 
 		/** Undoable, so it doesn't ask first. */
@@ -139,7 +143,7 @@ type DocumentMenuProps = {
 	variant?: "dropdown" | "context";
 };
 
-/** Open, Rename, Duplicate, Copy for a job (or Link to application), Tags, Lock, then Move to Trash. */
+/** Open, Rename, Duplicate, New variant, Copy for a job (or Link to application), Tags, Lock, then Move to Trash. */
 export function DocumentMenuContent({
 	document,
 	onOpen,
@@ -158,6 +162,9 @@ export function DocumentMenuContent({
 		{ icon: "arrow-square-out", label: t`Open`, onSelect: onOpen },
 		{ icon: "pencil-simple", label: t`Rename`, onSelect: onRename, disabled: document.isLocked },
 		{ icon: "copy", label: t`Duplicate`, onSelect: () => void actions.duplicate(document) },
+		...(document.type === "resume"
+			? [{ icon: "git-branch", label: t`New variant…`, onSelect: () => actions.newVariant(document) } as MenuEntry]
+			: []),
 		document.type === "resume"
 			? { icon: "briefcase", label: t`Copy for a job…`, onSelect: () => actions.copyForJob(document) }
 			: { icon: "briefcase", label: t`Link to application…`, onSelect: onLink, disabled: document.isLocked },

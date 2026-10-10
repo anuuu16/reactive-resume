@@ -596,8 +596,10 @@ export function registerTools(
 	server.registerTool(
 		T.tailorResumeForApplication,
 		TOOL_META[T.tailorResumeForApplication],
-		withErrorHandling("tailoring resume for application", async ({ id }: { id: string }) =>
-			json(await client.applications.ai.tailorResume({ id })),
+		withErrorHandling(
+			"tailoring resume for application",
+			async ({ id, linked }: { id: string; linked?: boolean | undefined }) =>
+				json(await client.applications.ai.tailorResume({ id, linked: linked ?? false })),
 		),
 	);
 

@@ -58,6 +58,8 @@ export const authService = {
 				isPublic: schema.resume.isPublic,
 				showDownloadButtons: schema.resume.showDownloadButtons,
 				isLocked: schema.resume.isLocked,
+				// A variant's link to its base, so the export keeps which resume was made from which.
+				baseResumeId: schema.resume.baseResumeId,
 				createdAt: schema.resume.createdAt,
 				updatedAt: schema.resume.updatedAt,
 			})

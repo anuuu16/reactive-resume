@@ -30,6 +30,15 @@ export const restAliases = {
 		operationId: "patchResumeMetadata",
 	}),
 	resumeCopy: router.resume.duplicate.route({ path: "/resumes/{id}/copies", operationId: "createResumeCopy" }),
+	resumeBaseUpdatePull: router.resume.pullBaseUpdates.route({
+		path: "/resumes/{id}/variant/pulls",
+		operationId: "createResumeBaseUpdatePull",
+	}),
+	resumeVariantLink: router.resume.detachVariant.route({
+		method: "DELETE",
+		path: "/resumes/{id}/variant",
+		operationId: "deleteResumeVariantLink",
+	}),
 	resumeImport: router.resume.import.route({ path: "/resumes/imports", operationId: "createResumeImport" }),
 	resumeLock: router.resume.setLocked.route({
 		method: "PUT",

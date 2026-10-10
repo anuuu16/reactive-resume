@@ -22,6 +22,16 @@ import { MCP_TOOL_NAME as T } from "./mcp-tool-names";
 
 // Contracts remain derived from the allowlisted API procedures in parity.ts.
 export const PARITY_TOOL_DESCRIPTIONS: Record<string, string> = {
+	"resume.createVariant":
+		"Create a variant: a copy that stays linked to the base resume it was made from. Unlike duplicate_resume, a variant can later list what changed in the base (api_resume_get_variant_status) and take those changes in while keeping its own edits (api_resume_pull_base_updates). Use it for job-specific versions of a main resume.",
+	"resume.getVariantStatus":
+		"Read a resume's variant links: the base it's a variant of, the variants made from it, and the base's changes since the variant last pulled, as updates (takeable as they are) and conflicts (both sides changed the same value; each needs a decision). Every change has a key, a location for people, and the base's, the variant's and the starting values.",
+	"resume.pullBaseUpdates":
+		'Take the base resume\'s changes into a variant. Updates are taken unless decided "mine"; conflicts are taken only when decided "base", and every conflict listed by api_resume_get_variant_status must be decided or the call fails with VARIANT_CONFLICTS_UNDECIDED. The variant\'s own edits stay; the result is saved as a version.',
+	"resume.detachVariant":
+		"Unlink a variant from its base. It keeps its data and becomes a resume of its own; the base's later changes are no longer offered.",
+	"resume.listVariantUpdates":
+		"Count, for each live variant whose base changed since it last pulled, the updates it can take and the conflicts to decide. Up-to-date variants are left out.",
 	"agent.threads.start":
 		"Start a document, application, or general career conversation using a tested saved AI provider. For scope=document, choose exactly one resumeId or coverLetterId. For scope=application, provide applicationId. For scope=career, omit document and application IDs.",
 	"career.profile":
@@ -883,9 +893,17 @@ const BASE_TOOL_META = {
 	[T.tailorResumeForApplication]: {
 		title: "Tailor Resume For Application",
 		description:
-			"Send the full linked resume and job description to your configured AI provider to rewrite the summary in a new private resume copy. Requires an enabled, tested default AI provider, a linked resume, and a job description. Replaces the application's resume link with the new copy and adds a timeline note; the original resume is unchanged.",
+			"Send the full linked resume and job description to your configured AI provider to rewrite the summary in a new private resume copy. Requires an enabled, tested default AI provider, a linked resume, and a job description. Replaces the application's resume link with the new copy and adds a timeline note; the original resume is unchanged. With linked=true the copy is a variant of the original: api_resume_get_variant_status lists the original's later changes and api_resume_pull_base_updates takes them in.",
 		outputSchema: z.object({ resumeId: z.string(), name: z.string() }),
-		inputSchema: wireInput(z.strictObject({ id: applicationIdSchema })),
+		inputSchema: wireInput(
+			z.strictObject({
+				id: applicationIdSchema,
+				linked: z
+					.boolean()
+					.optional()
+					.describe("Keep the copy linked to the original as a variant. Default false: the copy is on its own."),
+			}),
+		),
 		annotations: { ...WRITE_NON_IDEMPOTENT, destructiveHint: true, openWorldHint: true },
 	},
 	[T.draftApplicationMessage]: {

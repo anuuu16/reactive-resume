@@ -67,9 +67,23 @@ msgstr "“{written}” added to Skills"
 msgid "“How did you measure the onboarding redesign?”"
 msgstr "“How did you measure the onboarding redesign?”"
 
+#: src/features/resume/variants/labels.ts
+msgid "(empty)"
+msgstr "(empty)"
+
+#: src/features/documents/document-card.tsx
+#: src/features/resume/variants/variant-indicator.tsx
+#: src/routes/builder/$resumeId/-components/document-details.tsx
+msgid "(in Trash)"
+msgstr "(in Trash)"
+
 #: src/features/applications/components/import-applications-sheet.tsx
 msgid "(no header)"
 msgstr "(no header)"
+
+#: src/features/resume/variants/labels.ts
+msgid "(none)"
+msgstr "(none)"
 
 #. placeholder {0}: open.jdCount
 #. placeholder {1}: open.label
@@ -102,6 +116,11 @@ msgstr "{0, plural, one {# application} other {# applications}}"
 #: src/features/resume/editor/write/rich-text-editor.tsx
 msgid "{0, plural, one {# character} other {# characters}}"
 msgstr "{0, plural, one {# character} other {# characters}}"
+
+#. placeholder {0}: conflicts.length
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "{0, plural, one {# conflict} other {# conflicts}}"
+msgstr "{0, plural, one {# conflict} other {# conflicts}}"
 
 #. placeholder {0}: result.contactsSkipped
 #: src/features/applications/components/import-applications-sheet.tsx
@@ -157,6 +176,16 @@ msgstr "{0, plural, one {# selected} other {# selected}}"
 #: src/features/career/coach-thread.tsx
 msgid "{0, plural, one {# story} other {# stories}}"
 msgstr "{0, plural, one {# story} other {# stories}}"
+
+#. placeholder {0}: updates.length
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "{0, plural, one {# update} other {# updates}}"
+msgstr "{0, plural, one {# update} other {# updates}}"
+
+#. placeholder {0}: document.variants
+#: src/features/documents/document-card.tsx
+msgid "{0, plural, one {# variant} other {# variants}}"
+msgstr "{0, plural, one {# variant} other {# variants}}"
 
 #. placeholder {0}: remembered.ids.length
 #: src/features/career/coach-thread.tsx
@@ -228,6 +257,11 @@ msgstr "{0} · {providerLabel}. Sends this application and your Knowledge; your 
 msgid "{0} (copy)"
 msgstr "{0} (copy)"
 
+#. placeholder {0}: data.name
+#: src/dialogs/resume/index.tsx
+msgid "{0} (variant)"
+msgstr "{0} (variant)"
+
 #. placeholder {0}: insights.total
 #: src/features/applications/components/insights-view.tsx
 msgid "{0} active applications"
@@ -250,9 +284,16 @@ msgid "{0} edits applied"
 msgstr "{0} edits applied"
 
 #. placeholder {0}: step.entries
+#. placeholder {0}: value.length
 #: src/features/documents/new-document-dialog.tsx
+#: src/features/resume/variants/labels.ts
 msgid "{0} entries"
 msgstr "{0} entries"
+
+#. placeholder {0}: value.length
+#: src/features/resume/variants/labels.ts
+msgid "{0} entries in the base's order"
+msgstr "{0} entries in the base's order"
 
 #. placeholder {0}: step.flagged
 #: src/features/documents/new-document-dialog.tsx
@@ -287,6 +328,16 @@ msgstr "{0} in {1} is {2} in your timezone ({preferredZone})."
 #: src/features/career/workspace/shell.tsx
 msgid "{0} interview"
 msgstr "{0} interview"
+
+#. placeholder {0}: base.name
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "{0} is in Trash. Restore it to see its changes, or unlink this variant."
+msgstr "{0} is in Trash. Restore it to see its changes, or unlink this variant."
+
+#. placeholder {0}: base.name
+#: src/features/resume/variants/variant-indicator.tsx
+msgid "{0} is in Trash. Restore it to see its changes."
+msgstr "{0} is in Trash. Restore it to see its changes."
 
 #. placeholder {0}: i18n.number(row.minutes)
 #. placeholder {0}: row.minutes
@@ -429,6 +480,10 @@ msgstr "{company} only"
 #: src/routes/dashboard/applications/index.tsx
 msgid "{company}: no reply for {days} days. A short follow-up is usually fine now."
 msgstr "{company}: no reply for {days} days. A short follow-up is usually fine now."
+
+#: src/features/resume/variants/variant-indicator.tsx
+msgid "{conflicts, plural, one {# conflict} other {# conflicts}}"
+msgstr "{conflicts, plural, one {# conflict} other {# conflicts}}"
 
 #: src/features/career/coach-thread.tsx
 msgid "{connection} didn't respond."
@@ -617,6 +672,11 @@ msgstr "{passed} of {total}"
 msgid "{passedRules} of {totalRules} checks pass."
 msgstr "{passedRules} of {totalRules} checks pass."
 
+#: src/features/documents/document-card.tsx
+#: src/features/resume/variants/variant-indicator.tsx
+msgid "{pending, plural, one {# update from base} other {# updates from base}}"
+msgstr "{pending, plural, one {# update from base} other {# updates from base}}"
+
 #: src/routes/builder/$resumeId/-components/page-canvas.tsx
 msgid "{pendingOnPage, plural, one {# proposed edit on this page · nothing changes until you accept} other {# proposed edits on this page · nothing changes until you accept}}"
 msgstr "{pendingOnPage, plural, one {# proposed edit on this page · nothing changes until you accept} other {# proposed edits on this page · nothing changes until you accept}}"
@@ -681,6 +741,14 @@ msgstr "{toCheck, plural, one {# field needs a look.} other {# fields need a loo
 #: src/features/resume/editor/write/section-row.tsx
 msgid "{toCheck, plural, one {# to check} other {# to check}}"
 msgstr "{toCheck, plural, one {# to check} other {# to check}}"
+
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "{total, plural, one {Take # change} other {Take # changes}}"
+msgstr "{total, plural, one {Take # change} other {Take # changes}}"
+
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "{total, plural, one {Took # change from {baseName}. The state before is saved in History.} other {Took # changes from {baseName}. The state before is saved in History.}}"
+msgstr "{total, plural, one {Took # change from {baseName}. The state before is saved in History.} other {Took # changes from {baseName}. The state before is saved in History.}}"
 
 #. placeholder {0}: daysLeftInTrash(document.trashedAt)
 #: src/features/documents/document-card.tsx
@@ -955,6 +1023,10 @@ msgstr "A strong match, with one question to resolve"
 #: src/features/career/workspace/prepare.tsx
 msgid "A timed plan, your opening, the stories to bring and questions to ask. It becomes your checklist 10 minutes before the call."
 msgstr "A timed plan, your opening, the stories to bring and questions to ask. It becomes your checklist 10 minutes before the call."
+
+#: src/dialogs/resume/index.tsx
+msgid "A variant starts as a copy and stays linked to the original. Tailor it freely; when the original changes, the variant shows those changes and lets you take them in."
+msgstr "A variant starts as a copy and stays linked to the original. Tailor it freely; when the original changes, the variant shows those changes and lets you take them in."
 
 #: src/features/ats-checker/messages.ts
 msgid "A web address is written without https://."
@@ -1356,6 +1428,10 @@ msgstr "Add what happened before you can save."
 msgid "Add your name"
 msgstr "Add your name"
 
+#: src/features/resume/variants/labels.ts
+msgid "Added"
+msgstr "Added"
+
 #. placeholder {0}: role.trim()
 #. placeholder {1}: company.trim()
 #: src/features/applications/components/add-application-dialog.tsx
@@ -1366,6 +1442,10 @@ msgstr "Added {0} at {1}"
 #: src/features/career/shared.tsx
 msgid "Added by you"
 msgstr "Added by you"
+
+#: src/features/resume/variants/labels.ts
+msgid "Added entry"
+msgstr "Added entry"
 
 #: src/features/career/coach-thread.tsx
 msgid "Added to Knowledge as a preference."
@@ -1584,6 +1664,10 @@ msgstr "An open-source resume builder"
 #: src/components/layout/error-screen.tsx
 msgid "An unexpected error stopped this page from loading. You can try again or head back."
 msgstr "An unexpected error stopped this page from loading. You can try again or head back."
+
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "An update left unticked is kept as it is here, and isn't offered again unless the base changes it once more."
+msgstr "An update left unticked is kept as it is here, and isn't offered again unless the base changes it once more."
 
 #. placeholder {0}: others.length
 #: src/features/applications/components/detail/contacts.tsx
@@ -1850,6 +1934,7 @@ msgid "Are you sure you want to close this dialog?"
 msgstr "Are you sure you want to close this dialog?"
 
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Area of study"
 msgstr "Area of study"
 
@@ -2023,6 +2108,7 @@ msgid "Avoid heavy letter-spacing effects, then re-export."
 msgstr "Avoid heavy letter-spacing effects, then re-export."
 
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Awarder"
 msgstr "Awarder"
 
@@ -2104,6 +2190,10 @@ msgstr "Banner"
 msgid "Barista, 2012"
 msgstr "Barista, 2012"
 
+#: src/routes/builder/$resumeId/-components/document-menu.tsx
+msgid "Base is in Trash · Open Trash"
+msgstr "Base is in Trash · Open Trash"
+
 #: src/features/career/offers.tsx
 msgid "Base salary"
 msgstr "Base salary"
@@ -2182,6 +2272,10 @@ msgstr "Border Width"
 #: src/features/career/offers.tsx
 msgid "Both offers cover everything compared here."
 msgstr "Both offers cover everything compared here."
+
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "Both the base and this variant changed these. Pick which version to keep for each."
+msgstr "Both the base and this variant changed these. Pick which version to keep for each."
 
 #: src/features/ats-checker/messages.ts
 msgid "Break the resume into the usual sections so it can be segmented."
@@ -2365,6 +2459,10 @@ msgstr "Change timezone"
 msgid "Changed elsewhere"
 msgstr "Changed elsewhere"
 
+#: src/features/resume/variants/labels.ts
+msgid "Changed in both"
+msgstr "Changed in both"
+
 #: src/features/assistant/conversation.tsx
 msgid "Changed the resume directly (an earlier conversation)"
 msgstr "Changed the resume directly (an earlier conversation)"
@@ -2411,6 +2509,10 @@ msgstr "Check another file"
 #: src/features/homepage/check.tsx
 msgid "Check any PDF, no account needed"
 msgstr "Check any PDF, no account needed"
+
+#: src/features/resume/variants/labels.ts
+msgid "Check choices"
+msgstr "Check choices"
 
 #: src/features/career/workspace/apply.tsx
 msgid "Check every claim, date and result against your experience."
@@ -2563,6 +2665,10 @@ msgstr "Claude Desktop"
 msgid "Clear"
 msgstr "Clear"
 
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "Clear all"
+msgstr "Clear all"
+
 #: src/features/resume/editor/write/rich-text-editor.tsx
 msgid "Clear formatting"
 msgstr "Clear formatting"
@@ -2602,6 +2708,7 @@ msgstr "Client ID"
 #: src/features/career/workspace/coach-sheet.tsx
 #: src/features/career/workspace/prepare.tsx
 #: src/features/resume/editor/check/page-layer.tsx
+#: src/features/resume/variants/base-updates-dialog.tsx
 #: src/routes/builder/$resumeId/-components/share-sheet.tsx
 #: src/routes/builder/letter/-components/share-sheet.tsx
 msgid "Close"
@@ -2655,6 +2762,7 @@ msgstr "Column {header} goes to"
 
 #: src/features/applications/components/import-applications-sheet.tsx
 #: src/features/resume/editor/write/section-row.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Columns"
 msgstr "Columns"
 
@@ -2691,6 +2799,7 @@ msgstr "Compact"
 #: src/features/applications/components/import-applications-sheet.tsx
 #: src/features/resume/editor/check/job-match.tsx
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 #: src/routes/builder/letter/-components/write-panel.tsx
 msgid "Company"
 msgstr "Company"
@@ -2868,6 +2977,7 @@ msgstr "Contacts"
 msgid "Contain"
 msgstr "Contain"
 
+#: src/features/resume/variants/labels.ts
 #: src/routes/builder/$resumeId/-components/editor-shell.tsx
 msgid "Content"
 msgstr "Content"
@@ -3353,6 +3463,7 @@ msgstr "Couldn't save your changes. Please try again."
 
 #: src/features/letters/store.ts
 #: src/features/resume/share/history-tab.tsx
+#: src/features/resume/variants/base-updates-dialog.tsx
 #: src/routes/builder/letter/-components/letter-bar.tsx
 #: src/routes/builder/letter/-components/share-sheet.tsx
 #: src/routes/builder/letter/$coverLetterId.tsx
@@ -3520,6 +3631,10 @@ msgstr "Create key"
 msgid "Create one now"
 msgstr "Create one now"
 
+#: src/dialogs/resume/index.tsx
+msgid "Create variant"
+msgstr "Create variant"
+
 #: src/features/documents/documents-page.tsx
 #: src/features/resume/share/format.ts
 #: src/features/settings/ai/api-keys.tsx
@@ -3535,6 +3650,10 @@ msgstr "Created “{finalName}”"
 #: src/features/documents/new-document-dialog.tsx
 msgid "Created and linked to {0}"
 msgstr "Created and linked to {0}"
+
+#: src/dialogs/resume/index.tsx
+msgid "Creating the variant..."
+msgstr "Creating the variant..."
 
 #: src/features/resume/editor/write/picture-settings.tsx
 msgid "Crop and Upload"
@@ -3583,12 +3702,17 @@ msgid "Custom OAuth"
 msgstr "Custom OAuth"
 
 #: src/features/resume/editor/write/add-section.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Custom section"
 msgstr "Custom section"
 
 #: src/libs/resume/section.tsx
 msgid "Custom Sections"
 msgstr "Custom Sections"
+
+#: src/features/resume/variants/labels.ts
+msgid "Custom styles"
+msgstr "Custom styles"
 
 #: src/libs/resume/section.tsx
 msgid "Custom Styles"
@@ -3641,6 +3765,7 @@ msgstr "Date format"
 #: src/features/resume/editor/check/issues.ts
 #: src/features/resume/editor/check/parser-view.tsx
 #: src/features/resume/editor/write/dates-field.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Dates"
 msgstr "Dates"
 
@@ -3687,6 +3812,7 @@ msgid "Default"
 msgstr "Default"
 
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Degree"
 msgstr "Degree"
 
@@ -3853,6 +3979,7 @@ msgid "Describe the role"
 msgstr "Describe the role"
 
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Description"
 msgstr "Description"
 
@@ -3863,6 +3990,7 @@ msgstr "Description of role {0}"
 
 #: src/features/homepage/design.tsx
 #: src/features/homepage/header.tsx
+#: src/features/resume/variants/labels.ts
 #: src/libs/resume/section.tsx
 #: src/routes/builder/$resumeId/-components/design-panel.tsx
 #: src/routes/builder/$resumeId/-components/editor-bar.tsx
@@ -4324,8 +4452,17 @@ msgid "Edit…"
 msgstr "Edit…"
 
 #: src/features/documents/documents-page.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Edited"
 msgstr "Edited"
+
+#: src/features/resume/variants/labels.ts
+msgid "Edited an entry you removed"
+msgstr "Edited an entry you removed"
+
+#: src/features/resume/variants/labels.ts
+msgid "Edited in the base, removed here"
+msgstr "Edited in the base, removed here"
 
 #: src/features/resume/editor/page-overlay.tsx
 msgid "Editing"
@@ -4362,6 +4499,7 @@ msgstr "Education"
 
 #: src/features/resume/editor/check/parser-view.tsx
 #: src/features/resume/editor/write/basics-card.tsx
+#: src/features/resume/variants/labels.ts
 #: src/features/settings/account/profile.tsx
 msgid "Email"
 msgstr "Email"
@@ -4866,6 +5004,10 @@ msgstr "Fits on {authored} pages: {details}"
 msgid "Fits on one page: {details}"
 msgstr "Fits on one page: {details}"
 
+#: src/dialogs/resume/index.tsx
+msgid "Fix a typo or add a job in the original, and this copy can pull it in. Its own edits are kept."
+msgstr "Fix a typo or add a job in the original, and this copy can pull it in. Its own edits are kept."
+
 #: src/features/resume/editor/check/issues.ts
 msgid "Fix the date"
 msgstr "Fix the date"
@@ -4895,6 +5037,7 @@ msgid "Flatten the form so the text is part of the page."
 msgstr "Flatten the form so the text is part of the page."
 
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Fluency"
 msgstr "Fluency"
 
@@ -5074,6 +5217,10 @@ msgstr "From Fit"
 msgid "from the assistant or API"
 msgstr "from the assistant or API"
 
+#: src/features/resume/share/format.ts
+msgid "from the base resume"
+msgstr "from the base resume"
+
 #: src/features/career/knowledge/facts.tsx
 msgid "From your cover letter"
 msgstr "From your cover letter"
@@ -5191,6 +5338,7 @@ msgid "Google"
 msgstr "Google"
 
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Grade"
 msgstr "Grade"
 
@@ -5233,6 +5381,7 @@ msgid "Heading changed"
 msgstr "Heading changed"
 
 #: src/features/resume/editor/write/basics-card.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Headline"
 msgstr "Headline"
 
@@ -5268,6 +5417,7 @@ msgstr "Hi Alex, great to confirm: you’ll meet our design team today at {time}
 #: src/components/level/combobox.tsx
 #: src/features/resume/editor/write/entries.tsx
 #: src/features/resume/editor/write/entry-card.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Hidden"
 msgstr "Hidden"
 
@@ -5420,6 +5570,7 @@ msgid "I withdrew"
 msgstr "I withdrew"
 
 #: src/components/level/combobox.tsx
+#: src/features/resume/variants/labels.ts
 #: src/routes/builder/$resumeId/-sidebar/right/sections/design.tsx
 msgid "Icon"
 msgstr "Icon"
@@ -5716,6 +5867,7 @@ msgid "Issue ignored"
 msgstr "Issue ignored"
 
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Issuer"
 msgstr "Issuer"
 
@@ -5770,6 +5922,10 @@ msgstr "Items are deleted permanently after 30 days."
 #: src/features/documents/trash-page.tsx
 msgid "Items you move here stay for 30 days."
 msgstr "Items you move here stay for 30 days."
+
+#: src/routes/builder/$resumeId/-components/document-menu.tsx
+msgid "its base"
+msgstr "its base"
 
 #. placeholder {0}: providers[0]?.label ?? ""
 #: src/features/career/schedule-sheet.tsx
@@ -5873,6 +6029,10 @@ msgstr "Keep access when you are not using the application."
 msgid "Keep account"
 msgstr "Keep account"
 
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "Keep all mine"
+msgstr "Keep all mine"
+
 #: src/features/career/schedule-sheet.tsx
 msgid "Keep editing"
 msgstr "Keep editing"
@@ -5893,10 +6053,24 @@ msgstr "Keep it honest"
 msgid "Keep it under 2.5 MB, usually by removing or shrinking images."
 msgstr "Keep it under 2.5 MB, usually by removing or shrinking images."
 
+#. placeholder {0}: data.name
+#: src/dialogs/resume/index.tsx
+msgid "Keep linked to “{0}” as a variant"
+msgstr "Keep linked to “{0}” as a variant"
+
+#: src/features/documents/new-document-dialog.tsx
+msgid "Keep linked to the original as a variant"
+msgstr "Keep linked to the original as a variant"
+
 #: src/features/homepage/write.tsx
 #: src/features/resume/editor/write/improve.tsx
+#: src/features/resume/variants/base-updates-dialog.tsx
 msgid "Keep mine"
 msgstr "Keep mine"
+
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "Keep mine for all"
+msgstr "Keep mine for all"
 
 #: src/features/resume/editor/write/section-row.tsx
 msgid "Keep on one page"
@@ -5969,6 +6143,7 @@ msgid "Keyword layout"
 msgstr "Keyword layout"
 
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Keywords"
 msgstr "Keywords"
 
@@ -6050,6 +6225,7 @@ msgstr "Lay the text out horizontally. Rotated runs are often dropped or misplac
 
 #: src/features/ats-checker/messages.ts
 #: src/features/resume/editor/check/issues.ts
+#: src/features/resume/variants/labels.ts
 #: src/libs/resume/section.tsx
 msgid "Layout"
 msgstr "Layout"
@@ -6189,6 +6365,7 @@ msgid "Letters"
 msgstr "Letters"
 
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 #: src/routes/builder/$resumeId/-sidebar/right/sections/design.tsx
 msgid "Level"
 msgstr "Level"
@@ -6440,6 +6617,7 @@ msgstr "Loading workspace…"
 #: src/features/resume/editor/check/parser-view.tsx
 #: src/features/resume/editor/write/basics-card.tsx
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Location"
 msgstr "Location"
 
@@ -6880,6 +7058,7 @@ msgstr "My job was to find out why, without adding support work."
 #: src/features/documents/trash-page.tsx
 #: src/features/resume/editor/check/parser-view.tsx
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 #: src/features/settings/account/profile.tsx
 #: src/features/settings/ai/api-keys.tsx
 #: src/features/settings/ai/providers.tsx
@@ -6956,6 +7135,7 @@ msgid "Nepali"
 msgstr "Nepali"
 
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Network"
 msgstr "Network"
 
@@ -7040,6 +7220,15 @@ msgstr "New section"
 msgid "New teams at Northwind were stalling in setup; most never got through."
 msgstr "New teams at Northwind were stalling in setup; most never got through."
 
+#: src/dialogs/resume/index.tsx
+msgid "New Variant"
+msgstr "New Variant"
+
+#: src/features/documents/document-actions.tsx
+#: src/routes/builder/$resumeId/-components/document-menu.tsx
+msgid "New variant…"
+msgstr "New variant…"
+
 #: src/features/resume/editor/check/page-layer.tsx
 msgid "Next issue"
 msgstr "Next issue"
@@ -7071,6 +7260,10 @@ msgstr "Next step: {0}. Adds a reminder to Today."
 #: src/features/homepage/remember.tsx
 msgid "Next time, I’d agree how to measure success before the first prototype."
 msgstr "Next time, I’d agree how to measure success before the first prototype."
+
+#: src/features/resume/variants/labels.ts
+msgid "No"
+msgstr "No"
 
 #: src/features/applications/components/interview-dialog.tsx
 msgid "No active applications."
@@ -7370,6 +7563,7 @@ msgid "Not in your resume · add only if true"
 msgstr "Not in your resume · add only if true"
 
 #: src/features/career/shared.tsx
+#: src/features/resume/variants/base-updates-dialog.tsx
 msgid "Not now"
 msgstr "Not now"
 
@@ -7434,6 +7628,7 @@ msgstr "Note"
 #: src/features/applications/components/application-form-sheet.tsx
 #: src/features/applications/components/application-notes.tsx
 #: src/features/applications/components/import-applications-sheet.tsx
+#: src/features/resume/variants/labels.ts
 #: src/libs/resume/section.tsx
 #: src/routes/builder/$resumeId/-components/document-menu.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/sections/notes.tsx
@@ -7472,6 +7667,10 @@ msgstr "Nothing scheduled yet"
 #: src/features/career/today.tsx
 msgid "Nothing scheduled yet."
 msgstr "Nothing scheduled yet."
+
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "Nothing taken. {baseName} is now the reference for this variant."
+msgstr "Nothing taken. {baseName} is now the reference for this variant."
 
 #: src/features/career/workspace/messages.tsx
 msgid "Nothing to apply"
@@ -7702,6 +7901,14 @@ msgstr "Open public page"
 msgid "Open story"
 msgstr "Open story"
 
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "Open the base"
+msgstr "Open the base"
+
+#: src/routes/builder/$resumeId/-components/document-menu.tsx
+msgid "Open the base resume"
+msgstr "Open the base resume"
+
 #: src/features/ats-checker/messages.ts
 msgid "Open the exported file and confirm you can select and copy every part of it."
 msgstr "Open the exported file and confirm you can select and copy every part of it."
@@ -7791,7 +7998,16 @@ msgstr "Or in your own words…"
 msgid "Or upload a resume PDF"
 msgstr "Or upload a resume PDF"
 
+#: src/features/resume/variants/labels.ts
+msgid "Order"
+msgstr "Order"
+
+#: src/features/resume/variants/labels.ts
+msgid "Order of roles"
+msgstr "Order of roles"
+
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Organization"
 msgstr "Organization"
 
@@ -7832,6 +8048,7 @@ msgstr "Out of date: the text has changed since."
 msgid "Own and evolve a design system"
 msgstr "Own and evolve a design system"
 
+#: src/features/resume/variants/labels.ts
 #: src/libs/resume/section.tsx
 #: src/routes/builder/$resumeId/-components/design-panel.tsx
 #: src/routes/builder/$resumeId/-components/editor-shell.tsx
@@ -8059,6 +8276,7 @@ msgstr "Persian"
 #: src/features/resume/editor/check/parser-view.tsx
 #: src/features/resume/editor/write/basics-card.tsx
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Phone"
 msgstr "Phone"
 
@@ -8102,6 +8320,7 @@ msgstr "Pick two examples"
 msgid "Picking your stories"
 msgstr "Picking your stories"
 
+#: src/features/resume/variants/labels.ts
 #: src/libs/resume/section.tsx
 msgid "Picture"
 msgstr "Picture"
@@ -8173,6 +8392,7 @@ msgid "Portuguese (Portugal)"
 msgstr "Portuguese (Portugal)"
 
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Position"
 msgstr "Position"
 
@@ -8383,6 +8603,7 @@ msgid "Product designer with nine years of experience building <0>design systems
 msgstr "Product designer with nine years of experience building <0>design systems</0> and research-led products for B2B teams."
 
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Proficiency"
 msgstr "Proficiency"
 
@@ -8475,6 +8696,7 @@ msgid "Publications"
 msgstr "Publications"
 
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Publisher"
 msgstr "Publisher"
 
@@ -8985,6 +9207,19 @@ msgstr "Remove this passkey?"
 msgid "Remove this photo?"
 msgstr "Remove this photo?"
 
+#: src/features/resume/variants/base-updates-dialog.tsx
+#: src/features/resume/variants/labels.ts
+msgid "Removed"
+msgstr "Removed"
+
+#: src/features/resume/variants/labels.ts
+msgid "Removed entry"
+msgstr "Removed entry"
+
+#: src/features/resume/variants/labels.ts
+msgid "Removed in the base, edited here"
+msgstr "Removed in the base, edited here"
+
 #: src/features/career/coach.tsx
 #: src/features/documents/document-actions.tsx
 #: src/features/settings/account/security.tsx
@@ -9018,6 +9253,10 @@ msgstr "Reorder {0}"
 #: src/features/resume/editor/write/section-row.tsx
 msgid "Reorder {title}"
 msgstr "Reorder {title}"
+
+#: src/features/resume/variants/labels.ts
+msgid "Reordered"
+msgstr "Reordered"
 
 #. placeholder {0}: jd.stuffedTerms.join(", ")
 #: src/features/ats-checker/report/jd-coverage.tsx
@@ -9271,9 +9510,19 @@ msgstr "Review my answer sends the question, what you said, this posting and you
 msgid "Review required form answers and remove unsupported claims."
 msgstr "Review required form answers and remove unsupported claims."
 
+#. placeholder {0}: base.name
+#: src/features/resume/variants/variant-indicator.tsx
+msgid "Review the changes made to {0}"
+msgstr "Review the changes made to {0}"
+
 #: src/features/career/workspace/apply.tsx
 msgid "Review the selected resume and cover letter in their editors."
 msgstr "Review the selected resume and cover letter in their editors."
+
+#. placeholder {0}: document.base.name
+#: src/features/documents/document-card.tsx
+msgid "Review what changed in {0}"
+msgstr "Review what changed in {0}"
 
 #: src/features/resume/editor/check/writing-tab.tsx
 msgid "Review writing"
@@ -9317,6 +9566,7 @@ msgstr "Right now"
 #: src/features/applications/components/interview-dialog.tsx
 #: src/features/applications/components/list-view.tsx
 #: src/features/resume/editor/check/job-match.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Role"
 msgstr "Role"
 
@@ -9647,6 +9897,7 @@ msgid "Schedules"
 msgstr "Schedules"
 
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "School"
 msgstr "School"
 
@@ -9795,6 +10046,10 @@ msgstr "Select"
 #: src/features/applications/components/list-view.tsx
 msgid "Select {0} at {1}"
 msgstr "Select {0} at {1}"
+
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "Select all"
+msgstr "Select all"
 
 #: src/features/settings/integrations/components/ai-provider-picker.tsx
 msgid "Select an AI provider"
@@ -10086,6 +10341,10 @@ msgstr "Show templates"
 #: src/features/resume/editor/check/check-panel.tsx
 msgid "Show them again"
 msgstr "Show them again"
+
+#: src/features/resume/variants/labels.ts
+msgid "Shown"
+msgstr "Shown"
 
 #: src/features/applications/components/interview-dialog.tsx
 msgid "Shown in your timezone."
@@ -10654,6 +10913,10 @@ msgstr "Strengthen"
 msgid "Stronger verb"
 msgstr "Stronger verb"
 
+#: src/features/resume/variants/labels.ts
+msgid "Style rules"
+msgstr "Style rules"
+
 #: src/features/resume/stylesheet/toolbar.tsx
 msgid "Stylesheet editor"
 msgstr "Stylesheet editor"
@@ -10837,6 +11100,14 @@ msgstr "Tailor to the {0} posting"
 msgid "Tailored vs. base resume"
 msgstr "Tailored vs. base resume"
 
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "Take all from base"
+msgstr "Take all from base"
+
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "Take base's"
+msgstr "Take base's"
+
 #: src/libs/locale.ts
 msgid "Tamil"
 msgstr "Tamil"
@@ -10879,6 +11150,7 @@ msgstr "Tell me about a time you disagreed with a colleague. How did you resolve
 msgid "Telugu"
 msgstr "Telugu"
 
+#: src/features/resume/variants/labels.ts
 #: src/libs/resume/section.tsx
 #: src/routes/builder/$resumeId/-components/design-panel.tsx
 #: src/routes/builder/$resumeId/-components/document-details.tsx
@@ -11052,6 +11324,10 @@ msgstr "The assistant isn't set up on this server. Whoever runs it needs to set 
 #: src/features/assistant/provider-setup.tsx
 msgid "The assistant uses your own key. Nothing is sent anywhere until you connect one."
 msgstr "The assistant uses your own key. Nothing is sent anywhere until you connect one."
+
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "The base changed again. Have a look at the new conflicts."
+msgstr "The base changed again. Have a look at the new conflicts."
 
 #: src/features/settings/ai/web-access.tsx
 msgid "The built-in reader remains active."
@@ -11287,6 +11563,11 @@ msgstr "The text comes out unreadable."
 msgid "The top of the first page does not look like a name."
 msgstr "The top of the first page does not look like a name."
 
+#. placeholder {0}: data.name
+#: src/dialogs/resume/index.tsx
+msgid "The variant is ready. It stays linked to “{0}”."
+msgstr "The variant is ready. It stays linked to “{0}”."
+
 #. Menu item that opens appearance theme selection submenu
 #: src/features/command-palette/pages/navigation.tsx
 #: src/features/command-palette/pages/preferences/theme.tsx
@@ -11496,6 +11777,10 @@ msgstr "This resume is long."
 msgid "This resume is password protected"
 msgstr "This resume is password protected"
 
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "This resume isn't linked to a base anymore. Its base was deleted, or it was unlinked."
+msgstr "This resume isn't linked to a base anymore. Its base was deleted, or it was unlinked."
+
 #: src/features/resume/editor/check/job-match.tsx
 msgid "This resume isn't linked to an application yet."
 msgstr "This resume isn't linked to an application yet."
@@ -11503,6 +11788,10 @@ msgstr "This resume isn't linked to an application yet."
 #: src/features/resume/public/public-resume.tsx
 msgid "This resume isn't shared right now."
 msgstr "This resume isn't shared right now."
+
+#: src/routes/builder/$resumeId/-components/document-menu.tsx
+msgid "This resume keeps everything as it is, but changes made to the base won't be offered anymore."
+msgstr "This resume keeps everything as it is, but changes made to the base won't be offered anymore."
 
 #: src/features/resume/builder/draft.ts
 msgid "This resume was updated by an AI agent."
@@ -11603,6 +11892,7 @@ msgstr "Tip"
 
 #: src/features/career/knowledge/stories.tsx
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Title"
 msgstr "Title"
 
@@ -11635,6 +11925,10 @@ msgstr "Too light for headings on white. It may be hard to read and print faintl
 #: src/features/settings/ai/web-access.tsx
 msgid "Too many requests. Try again later."
 msgstr "Too many requests. Try again later."
+
+#: src/features/resume/share/format.ts
+msgid "Took updates from base"
+msgstr "Took updates from base"
 
 #: src/features/homepage/sections.tsx
 msgid "Total"
@@ -11863,6 +12157,7 @@ msgstr "Type instead"
 msgid "typed"
 msgstr "typed"
 
+#: src/features/resume/variants/labels.ts
 #: src/libs/resume/section.tsx
 msgid "Typography"
 msgstr "Typography"
@@ -11910,12 +12205,25 @@ msgid "Unknown"
 msgstr "Unknown"
 
 #: src/features/documents/document-actions.tsx
+#: src/routes/builder/$resumeId/-components/document-menu.tsx
 msgid "Unlink"
 msgstr "Unlink"
+
+#: src/routes/builder/$resumeId/-components/document-menu.tsx
+msgid "Unlink from {baseName}?"
+msgstr "Unlink from {baseName}?"
+
+#: src/routes/builder/$resumeId/-components/document-menu.tsx
+msgid "Unlink from base…"
+msgstr "Unlink from base…"
 
 #: src/features/resume/editor/check/job-match.tsx
 msgid "Unlink this application"
 msgstr "Unlink this application"
+
+#: src/routes/builder/$resumeId/-components/document-menu.tsx
+msgid "Unlinked from {baseName}. This is a resume of its own now."
+msgstr "Unlinked from {baseName}. This is a resume of its own now."
 
 #: src/features/settings/account/auth-hooks.ts
 msgid "Unlinking your {providerName} account..."
@@ -11938,6 +12246,10 @@ msgstr "Unlock editing"
 msgid "Unlock it first"
 msgstr "Unlock it first"
 
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "Unlock the resume first"
+msgstr "Unlock the resume first"
+
 #: src/features/settings/account/security.tsx
 msgid "Unnamed passkey"
 msgstr "Unnamed passkey"
@@ -11946,6 +12258,10 @@ msgstr "Unnamed passkey"
 #: src/features/resume/stylesheet/targets.ts
 msgid "Untitled"
 msgstr "Untitled"
+
+#: src/features/resume/variants/labels.ts
+msgid "Untitled entry"
+msgstr "Untitled entry"
 
 #: src/features/documents/new-document-dialog.tsx
 msgid "Untitled letter"
@@ -11966,6 +12282,11 @@ msgstr "Up to 2 minutes. Your words appear as you speak."
 #: src/features/ats-checker/checker.tsx
 msgid "Up to 25 MB · checked in your browser, never uploaded"
 msgstr "Up to 25 MB · checked in your browser, never uploaded"
+
+#. placeholder {0}: base.name
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "Up to date. Nothing changed in {0} since this variant last took its changes."
+msgstr "Up to date. Nothing changed in {0} since this variant last took its changes."
 
 #: src/features/applications/components/calendar-view.tsx
 msgid "Upcoming interviews"
@@ -11996,6 +12317,23 @@ msgstr "Updated"
 #: src/features/applications/components/list-view.tsx
 msgid "Updated {0}"
 msgstr "Updated {0}"
+
+#: src/features/resume/variants/labels.ts
+msgid "Updated settings"
+msgstr "Updated settings"
+
+#. placeholder {0}: base.name
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "Updates from {0}"
+msgstr "Updates from {0}"
+
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "Updates from base"
+msgstr "Updates from base"
+
+#: src/routes/builder/$resumeId/-components/document-menu.tsx
+msgid "Updates from base…"
+msgstr "Updates from base…"
 
 #: src/dialogs/auth/change-password.tsx
 msgid "Updating your password..."
@@ -12164,6 +12502,7 @@ msgstr "User research"
 #. Label for username input on registration form
 #: src/features/auth/pages/register.tsx
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 #: src/features/settings/account/profile.tsx
 msgid "Username"
 msgstr "Username"
@@ -12199,6 +12538,21 @@ msgstr "Valuation and dilution uncertain"
 #: src/features/career/offers.tsx
 msgid "Value uncertain"
 msgstr "Value uncertain"
+
+#: src/routes/builder/$resumeId/-components/document-details.tsx
+msgid "Variant of"
+msgstr "Variant of"
+
+#. placeholder {0}: base.name
+#. placeholder {0}: document.base.name
+#: src/features/documents/document-card.tsx
+#: src/features/resume/variants/variant-indicator.tsx
+msgid "Variant of {0}"
+msgstr "Variant of {0}"
+
+#: src/routes/builder/$resumeId/-components/document-details.tsx
+msgid "Variants"
+msgstr "Variants"
 
 #: src/features/ats-checker/messages.ts
 msgid "Vary the openings so the section does not read as boilerplate."
@@ -12311,6 +12665,7 @@ msgid "Views and downloads"
 msgstr "Views and downloads"
 
 #: src/features/homepage/share.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Visibility"
 msgstr "Visibility"
 
@@ -12404,8 +12759,13 @@ msgid "Web search failed: {0}"
 msgstr "Web search failed: {0}"
 
 #: src/features/resume/editor/write/basics-card.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Website"
 msgstr "Website"
+
+#: src/features/resume/variants/labels.ts
+msgid "Website label"
+msgstr "Website label"
 
 #: src/features/career/today.tsx
 msgid "Weekly at {clock} · next {next}"
@@ -12435,6 +12795,15 @@ msgstr "What a person sees"
 #: src/features/career/coach.tsx
 msgid "What are you working on?"
 msgstr "What are you working on?"
+
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "What changed in the base resume. Your own edits to this variant stay as they are."
+msgstr "What changed in the base resume. Your own edits to this variant stay as they are."
+
+#. placeholder {0}: formatRelativeTime(status.syncedAt, i18n.locale)
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "What changed in the base since {0}. Your own edits to this variant stay as they are."
+msgstr "What changed in the base since {0}. Your own edits to this variant stay as they are."
 
 #: src/features/career/knowledge/stories.tsx
 msgid "What changed? Leave blank if you can’t support it."
@@ -12570,6 +12939,10 @@ msgstr "What's working"
 #: src/features/career/offers.tsx
 msgid "When do they need your answer?"
 msgstr "When do they need your answer?"
+
+#: src/features/documents/new-document-dialog.tsx
+msgid "When the original changes later (a fixed typo, a new job), this copy shows the updates and lets you take them in. Its own tailoring is kept."
+msgstr "When the original changes later (a fixed typo, a new job), this copy shows the updates and lets you take them in. Its own tailoring is kept."
 
 #: src/features/career/coach.tsx
 msgid "When you press send, {shared} go to {connection}."
@@ -12776,6 +13149,10 @@ msgstr "writing, tailoring and sending"
 #: src/features/career/offers.tsx
 msgid "Written offer"
 msgstr "Written offer"
+
+#: src/features/resume/variants/labels.ts
+msgid "Yes"
+msgstr "Yes"
 
 #: src/features/homepage/faq.tsx
 msgid "Yes. Every feature is free: all {templates} templates, PDF and Word downloads, the ATS checker, cover letters and the job tracker. There are no ads, no tracking and no paid tier. Donations pay for hosting and development."

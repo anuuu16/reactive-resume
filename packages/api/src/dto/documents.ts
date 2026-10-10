@@ -20,6 +20,11 @@ const documentSchema = z.object({
 		.object({ id: z.string(), company: z.string(), role: z.string() })
 		.nullable()
 		.describe("The job application this document was made for, if any."),
+	base: z
+		.object({ id: z.string(), name: z.string(), trashedAt: z.date().nullable() })
+		.nullable()
+		.describe("For a resume variant: the base resume it stays linked to."),
+	variants: z.number().int().describe("For a resume: how many live variants were made from it."),
 });
 
 export type DocumentSummary = z.infer<typeof documentSchema>;
@@ -64,6 +69,12 @@ export const documentsDto = {
 			resumeId: z.string().min(1).describe("The resume to copy."),
 			applicationId: z.string().min(1).optional().describe("The job the copy is for; omit for no job yet."),
 			name: z.string().trim().min(1).max(100).optional().describe("Defaults to “{source} — {company}”."),
+			linked: z
+				.boolean()
+				.default(false)
+				.describe(
+					"Make the copy a variant of the source: it stays linked and can pull the source's later changes in (see getResumeVariantStatus).",
+				),
 		}),
 		output: z.string().describe("The ID of the copy."),
 	},

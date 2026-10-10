@@ -21,18 +21,61 @@ const resumeSchema = createSelectSchema(schema.resume, {
 	updatedAt: z.date().describe("The date and time the resume was last updated."),
 })
 	// Trash and automatic naming stay internal to the documents API. getById exposes the application link
-	// explicitly because the editor uses it to select the application a tailored copy belongs to.
-	.omit({ applicationId: true, trashedAt: true, autoName: true });
+	// explicitly because the editor uses it to select the application a tailored copy belongs to, and the base
+	// link because the editor offers the base's updates; the snapshot behind that stays internal.
+	.omit({
+		applicationId: true,
+		trashedAt: true,
+		autoName: true,
+		baseResumeId: true,
+		baseSnapshot: true,
+		baseSyncedAt: true,
+	});
 
 const versionSchema = z.object({
 	id: z.string().describe("The ID of the version."),
 	kind: z
 		.enum(schema.RESUME_VERSION_KINDS)
 		.describe(
-			"What made the version: created, import, auto (an editing session's autosave), named, before-restore, restored, ai (an AI or API edit) or sent.",
+			"What made the version: created, import, auto (an editing session's autosave), named, before-restore, restored, ai (an AI or API edit), sent, or base-update (a variant took its base's changes).",
 		),
 	name: z.string().nullable().describe("The user's name for a named version."),
 	createdAt: z.date().describe("When this state was saved."),
+});
+
+const changeLocationSchema = z.object({
+	scope: z
+		.enum(["basics", "picture", "summary", "section", "sections", "metadata"])
+		.describe("The part of the resume the change is in."),
+	section: z
+		.object({ id: z.string(), title: z.string() })
+		.optional()
+		.describe("The section: a built-in type such as experience, or a custom section's id, with its title."),
+	item: z.object({ id: z.string(), label: z.string() }).optional().describe("The entry, labelled as people know it."),
+	role: z.object({ id: z.string(), label: z.string() }).optional().describe("A role inside an experience entry."),
+	field: z.string().optional().describe("The field inside its owner, such as description or page/marginX."),
+});
+
+const baseChangeSchema = z.object({
+	key: z.string().describe("Identifies the change; decisions refer to it."),
+	kind: z
+		.enum(["edit", "add", "remove", "reorder"])
+		.describe("What the base did: edited a value, added an entry, removed one, or reordered entries."),
+	location: changeLocationSchema,
+	base: z.unknown().optional().describe("The base's value now; absent when the base removed it."),
+	mine: z.unknown().optional().describe("This variant's value; absent when it has none."),
+	ancestor: z.unknown().optional().describe("The value both started from; absent when the base added it."),
+	conflict: z
+		.enum(["both-edited", "edited-here", "removed-here"])
+		.optional()
+		.describe(
+			"Set when this variant changed the same thing: both edited it, the base removed what this variant edited, or the base edited what this variant removed.",
+		),
+});
+
+const baseDecisionSchema = z.object({
+	key: baseChangeSchema.shape.key,
+	take: z.enum(["base", "mine"]).describe("base takes the base's version; mine keeps this variant's."),
 });
 
 export const resumeDto = {
@@ -56,6 +99,7 @@ export const resumeDto = {
 		output: resumeSchema.omit({ password: true, userId: true }).extend({
 			hasPassword: z.boolean(),
 			applicationId: z.string().nullable().describe("The job application this resume was made for, if any."),
+			baseResumeId: z.string().nullable().describe("The base resume this one is a variant of, if any."),
 		}),
 	},
 
@@ -167,6 +211,71 @@ export const resumeDto = {
 	delete: {
 		input: resumeSchema.pick({ id: true }),
 		output: z.void(),
+	},
+
+	createVariant: {
+		input: resumeSchema.pick({ id: true }).extend({
+			name: resumeSchema.shape.name.optional().describe("Defaults to “{base} (variant)”."),
+			tags: resumeSchema.shape.tags.optional().describe("Defaults to the base's tags."),
+			slug: resumeSchema.shape.slug
+				.optional()
+				.describe("The slug of the variant. Generated from the name, and made unique, when omitted."),
+		}),
+		output: z.string().describe("The ID of the new variant."),
+	},
+
+	getVariantStatus: {
+		input: resumeSchema.pick({ id: true }),
+		output: z.object({
+			base: z
+				.object({
+					id: z.string(),
+					name: z.string(),
+					trashedAt: z
+						.date()
+						.nullable()
+						.describe("Set while the base is in Trash; its changes wait until it's restored."),
+					updatedAt: z.date(),
+				})
+				.nullable()
+				.describe("The base this resume is a variant of; null for a resume of its own."),
+			variants: z
+				.array(z.object({ id: z.string(), name: z.string(), updatedAt: z.date() }))
+				.describe("Live variants made from this resume."),
+			syncedAt: z.date().nullable().describe("When the variant last took the base's changes, or was made."),
+			updates: z.array(baseChangeSchema).describe("Changes the base made that this variant can take as they are."),
+			conflicts: z.array(baseChangeSchema).describe("Changes both sides made differently; each needs a decision."),
+		}),
+	},
+
+	pullBaseUpdates: {
+		input: resumeSchema.pick({ id: true }).extend({
+			decisions: z
+				.array(baseDecisionSchema)
+				.max(2000)
+				.default([])
+				.describe(
+					"Per change: take the base's version or keep this variant's. Updates not listed are taken; every conflict must be listed.",
+				),
+		}),
+		output: resumeSchema.omit({ password: true, userId: true }).extend({ hasPassword: z.boolean() }),
+	},
+
+	detachVariant: {
+		input: resumeSchema.pick({ id: true }),
+		output: z.void(),
+	},
+
+	listVariantUpdates: {
+		input: z.void(),
+		output: z.array(
+			z.object({
+				id: z.string().describe("The variant."),
+				baseId: z.string().describe("Its base."),
+				updates: z.number().int().describe("Changes it can take as they are."),
+				conflicts: z.number().int().describe("Changes that need a decision."),
+			}),
+		),
 	},
 
 	listVersions: {

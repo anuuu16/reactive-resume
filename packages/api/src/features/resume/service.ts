@@ -458,6 +458,7 @@ export const resumeService = {
 				updatedAt: schema.resume.updatedAt,
 				hasPassword: sql<boolean>`${schema.resume.password} IS NOT NULL`,
 				applicationId: schema.resume.applicationId,
+				baseResumeId: schema.resume.baseResumeId,
 			})
 			.from(schema.resume)
 			.where(and(eq(schema.resume.id, input.id), eq(schema.resume.userId, input.userId)));
@@ -543,6 +544,12 @@ export const resumeService = {
 		origin?: "created" | "import";
 		/** The name follows the headline until someone renames the resume. */
 		autoName?: boolean;
+		/**
+		 * A variant: the base resume this one is made from and stays linked to, with the base's data as it is now.
+		 * That data is kept as the snapshot the first pull of the base's changes compares against, so `data` may
+		 * already differ from it (a tailored summary, say) without reading as a change in the base.
+		 */
+		base?: { id: string; data: ResumeData };
 	}) => {
 		const id = input.id ?? generateId();
 		const data = parseWritableResumeData(structuredClone(input.data ?? defaultResumeData));
@@ -554,6 +561,8 @@ export const resumeService = {
 				// The resume row comes first: letters an imported file carried are saved linked to it.
 				const stored = structuredClone(data);
 				detachEmbeddedLetters(stored);
+				const baseSnapshot = input.base ? parseWritableResumeData(structuredClone(input.base.data)) : undefined;
+				if (baseSnapshot) detachEmbeddedLetters(baseSnapshot);
 				await tx.insert(schema.resume).values({
 					id,
 					name: input.name,
@@ -562,6 +571,9 @@ export const resumeService = {
 					tags: input.tags,
 					userId: input.userId,
 					data: stored,
+					...(input.base && baseSnapshot
+						? { baseResumeId: input.base.id, baseSnapshot, baseSyncedAt: new Date() }
+						: {}),
 				});
 				await adoptEmbeddedLetters(tx, { userId: input.userId, resumeId: id, resumeName: input.name, data });
 			});
@@ -830,6 +842,17 @@ export const resumeService = {
 			if (resume.isLocked) throw new ORPCError("RESUME_LOCKED", { status: 403 });
 
 			await tx.delete(schema.resume).where(and(eq(schema.resume.id, input.id), eq(schema.resume.userId, input.userId)));
+			// Its variants are resumes of their own now (the link was cleared with the row); the snapshot goes too.
+			await tx
+				.update(schema.resume)
+				.set({ baseSnapshot: null, baseSyncedAt: null })
+				.where(
+					and(
+						eq(schema.resume.userId, input.userId),
+						isNull(schema.resume.baseResumeId),
+						isNotNull(schema.resume.baseSnapshot),
+					),
+				);
 		});
 
 		// Clean up storage files after the DB transaction succeeds

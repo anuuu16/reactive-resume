@@ -1,6 +1,6 @@
 import type { DocumentSummary } from "../../dto/documents";
 import { ORPCError } from "@orpc/client";
-import { and, count, eq, isNotNull, isNull, lt, sql } from "drizzle-orm";
+import { and, count, eq, inArray, isNotNull, isNull, lt, sql } from "drizzle-orm";
 import { db } from "@reactive-resume/db/client";
 import * as schema from "@reactive-resume/db/schema";
 import { applicationService } from "../applications/service";
@@ -138,6 +138,7 @@ export const documentsService = {
 					applicationId: schema.application.id,
 					company: schema.application.company,
 					role: schema.application.role,
+					baseResumeId: schema.resume.baseResumeId,
 				})
 				.from(schema.resume)
 				.leftJoin(schema.application, eq(schema.resume.applicationId, schema.application.id))
@@ -170,17 +171,42 @@ export const documentsService = {
 				),
 		]);
 
-		const toSummary =
-			(type: DocumentType) =>
-			({ applicationId, company, role, ...row }: (typeof resumes)[number]): DocumentSummary => ({
-				type,
-				...row,
-				application: applicationId ? { id: applicationId, company: company ?? "", role: role ?? "" } : null,
-			});
+		// Variants name their base, which may be elsewhere (in Trash, or live while listing Trash).
+		const baseIds = [...new Set(resumes.flatMap((row) => (row.baseResumeId ? [row.baseResumeId] : [])))];
+		const bases =
+			baseIds.length === 0
+				? []
+				: await db
+						.select({ id: schema.resume.id, name: schema.resume.name, trashedAt: schema.resume.trashedAt })
+						.from(schema.resume)
+						.where(and(eq(schema.resume.userId, input.userId), inArray(schema.resume.id, baseIds)));
+		const baseById = new Map(bases.map((base) => [base.id, base]));
+		const variantCounts = new Map<string, number>();
+		if (!input.trashed) {
+			for (const row of resumes) {
+				if (row.baseResumeId) variantCounts.set(row.baseResumeId, (variantCounts.get(row.baseResumeId) ?? 0) + 1);
+			}
+		}
 
-		return [...resumes.map(toSummary("resume")), ...letters.map(toSummary("letter"))].sort(
-			(a, b) => b.updatedAt.getTime() - a.updatedAt.getTime(),
-		);
+		const application = (applicationId: string | null, company: string | null, role: string | null) =>
+			applicationId ? { id: applicationId, company: company ?? "", role: role ?? "" } : null;
+
+		return [
+			...resumes.map(({ applicationId, company, role, baseResumeId, ...row }): DocumentSummary => ({
+				type: "resume",
+				...row,
+				application: application(applicationId, company, role),
+				base: baseById.get(baseResumeId ?? "") ?? null,
+				variants: variantCounts.get(row.id) ?? 0,
+			})),
+			...letters.map(({ applicationId, company, role, ...row }): DocumentSummary => ({
+				type: "letter",
+				...row,
+				application: application(applicationId, company, role),
+				base: null,
+				variants: 0,
+			})),
+		].sort((a, b) => b.updatedAt.getTime() - a.updatedAt.getTime());
 	},
 
 	counts: async (input: { userId: string }) => {
@@ -260,12 +286,16 @@ export const documentsService = {
 		await deleteForGood(input);
 	},
 
-	/** Duplicates a resume for a job, selecting the working copy while preserving submitted versions. */
+	/**
+	 * Duplicates a resume for a job, selecting the working copy while preserving submitted versions. A linked copy
+	 * is a variant: it can take the source's later changes (a fixed typo, a new job) without losing its own.
+	 */
 	copyForJob: async (input: {
 		userId: string;
 		resumeId: string;
 		applicationId?: string | undefined;
 		name?: string | undefined;
+		linked?: boolean | undefined;
 	}) => {
 		const source = await resumeService.getById({ id: input.resumeId, userId: input.userId });
 		const application = input.applicationId ? await assertOwnedApplication(input.userId, input.applicationId) : null;
@@ -276,6 +306,7 @@ export const documentsService = {
 			tags: source.tags,
 			locale: source.data.metadata.page.locale as never,
 			data: source.data,
+			...(input.linked ? { base: { id: source.id, data: source.data } } : {}),
 		});
 
 		if (application) {

@@ -72,6 +72,8 @@ export function getVersionTitle(version: Pick<VersionSummary, "kind" | "name">) 
 		case "sent":
 			// Sent versions are named after the company they went to.
 			return version.name ? t`Sent to ${version.name}` : t`Sent`;
+		case "base-update":
+			return t`Took updates from base`;
 	}
 }
 
@@ -85,6 +87,8 @@ export function getVersionDetail(version: Pick<VersionSummary, "kind">) {
 			return t`autosaved`;
 		case "ai":
 			return t`from the assistant or API`;
+		case "base-update":
+			return t`from the base resume`;
 		default:
 			return t`saved`;
 	}

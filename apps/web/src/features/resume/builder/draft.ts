@@ -28,6 +28,8 @@ export type Resume = {
 	showDownloadButtons?: boolean | undefined;
 	/** The job application this resume was made for; Check's Job match reads its posting. */
 	applicationId?: string | null;
+	/** The base resume this one is a variant of: its changes can be taken in from the document menu. */
+	baseResumeId?: string | null;
 };
 
 // Mirrors the server-side ResumeUpdatedEvent discriminator (packages/api resume/events.ts).

@@ -75,11 +75,14 @@ function useResumeHistory(): HistorySource {
 			if (!(await savePendingChanges(resume.id)))
 				throw new Error(t`Couldn't save your changes. Try again before continuing.`);
 			const restored = await orpc.resume.restoreVersion.call({ resumeId: resume.id, versionId });
-			useResumeStore.getState().replaceResumeFromServer(restored as Resume);
-			queryClient.setQueryData(orpc.resume.getById.queryKey({ input: { id: resume.id } }), {
+			// The links (application, base) aren't in the restore response; they don't change with the data.
+			const next = {
 				...restored,
 				applicationId: resume.applicationId ?? null,
-			});
+				baseResumeId: resume.baseResumeId ?? null,
+			};
+			useResumeStore.getState().replaceResumeFromServer(next as Resume);
+			queryClient.setQueryData(orpc.resume.getById.queryKey({ input: { id: resume.id } }), next);
 			void refresh();
 		},
 		rename: async (versionId, name) => {

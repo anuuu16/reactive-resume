@@ -72,9 +72,23 @@ msgstr "\"{written}\" திறன்களில் சேர்க்கப்
 msgid "“How did you measure the onboarding redesign?”"
 msgstr "“ஆன்போர்டிங் மறுவடிவமைப்பை எப்படி அளவிட்டீர்கள்?”"
 
+#: src/features/resume/variants/labels.ts
+msgid "(empty)"
+msgstr ""
+
+#: src/features/documents/document-card.tsx
+#: src/features/resume/variants/variant-indicator.tsx
+#: src/routes/builder/$resumeId/-components/document-details.tsx
+msgid "(in Trash)"
+msgstr ""
+
 #: src/features/applications/components/import-applications-sheet.tsx
 msgid "(no header)"
 msgstr "(தலைப்பு இல்லை)"
+
+#: src/features/resume/variants/labels.ts
+msgid "(none)"
+msgstr ""
 
 #. placeholder {0}: open.jdCount
 #. placeholder {1}: open.label
@@ -107,6 +121,11 @@ msgstr "{0, plural, one {# விண்ணப்பம்} other {# விண்
 #: src/features/resume/editor/write/rich-text-editor.tsx
 msgid "{0, plural, one {# character} other {# characters}}"
 msgstr "{0, plural, one {# எழுத்து} other {# எழுத்துக்கள்}}"
+
+#. placeholder {0}: conflicts.length
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "{0, plural, one {# conflict} other {# conflicts}}"
+msgstr ""
 
 #. placeholder {0}: result.contactsSkipped
 #: src/features/applications/components/import-applications-sheet.tsx
@@ -162,6 +181,16 @@ msgstr "{0, plural, one {# தேர்ந்தெடுக்கப்பட�
 #: src/features/career/coach-thread.tsx
 msgid "{0, plural, one {# story} other {# stories}}"
 msgstr "{0, plural, one {# கதை} other {# கதைகள்}}"
+
+#. placeholder {0}: updates.length
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "{0, plural, one {# update} other {# updates}}"
+msgstr ""
+
+#. placeholder {0}: document.variants
+#: src/features/documents/document-card.tsx
+msgid "{0, plural, one {# variant} other {# variants}}"
+msgstr ""
 
 #. placeholder {0}: remembered.ids.length
 #: src/features/career/coach-thread.tsx
@@ -233,6 +262,11 @@ msgstr "{0} · {providerLabel}. இந்த விண்ணப்பத்த�
 msgid "{0} (copy)"
 msgstr "{0} (நகல்)"
 
+#. placeholder {0}: data.name
+#: src/dialogs/resume/index.tsx
+msgid "{0} (variant)"
+msgstr ""
+
 #. placeholder {0}: insights.total
 #: src/features/applications/components/insights-view.tsx
 msgid "{0} active applications"
@@ -255,9 +289,16 @@ msgid "{0} edits applied"
 msgstr "{0} திருத்தங்கள் பயன்படுத்தப்பட்டன"
 
 #. placeholder {0}: step.entries
+#. placeholder {0}: value.length
 #: src/features/documents/new-document-dialog.tsx
+#: src/features/resume/variants/labels.ts
 msgid "{0} entries"
 msgstr "{0} உள்ளீடுகள்"
+
+#. placeholder {0}: value.length
+#: src/features/resume/variants/labels.ts
+msgid "{0} entries in the base's order"
+msgstr ""
 
 #. placeholder {0}: step.flagged
 #: src/features/documents/new-document-dialog.tsx
@@ -292,6 +333,16 @@ msgstr "{1}-இல் {0} என்பது உங்கள் நேர மண
 #: src/features/career/workspace/shell.tsx
 msgid "{0} interview"
 msgstr "{0} நேர்காணல்"
+
+#. placeholder {0}: base.name
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "{0} is in Trash. Restore it to see its changes, or unlink this variant."
+msgstr ""
+
+#. placeholder {0}: base.name
+#: src/features/resume/variants/variant-indicator.tsx
+msgid "{0} is in Trash. Restore it to see its changes."
+msgstr ""
 
 #. placeholder {0}: i18n.number(row.minutes)
 #. placeholder {0}: row.minutes
@@ -434,6 +485,10 @@ msgstr "{company} மட்டும்"
 #: src/routes/dashboard/applications/index.tsx
 msgid "{company}: no reply for {days} days. A short follow-up is usually fine now."
 msgstr "{company}: {days} நாட்களுக்கு பதில் இல்லை. ஒரு குறுகிய பின்தொடர்தல் பொதுவாக இப்போது நன்றாக இருக்கிறது."
+
+#: src/features/resume/variants/variant-indicator.tsx
+msgid "{conflicts, plural, one {# conflict} other {# conflicts}}"
+msgstr ""
 
 #: src/features/career/coach-thread.tsx
 msgid "{connection} didn't respond."
@@ -622,6 +677,11 @@ msgstr "{total} இன் {passed}"
 msgid "{passedRules} of {totalRules} checks pass."
 msgstr "{passedRules} of {totalRules} காசோலைகள் பாஸ்."
 
+#: src/features/documents/document-card.tsx
+#: src/features/resume/variants/variant-indicator.tsx
+msgid "{pending, plural, one {# update from base} other {# updates from base}}"
+msgstr ""
+
 #: src/routes/builder/$resumeId/-components/page-canvas.tsx
 msgid "{pendingOnPage, plural, one {# proposed edit on this page · nothing changes until you accept} other {# proposed edits on this page · nothing changes until you accept}}"
 msgstr "{pendingOnPage, plural, one {# இந்தப் பக்கத்தில் திருத்த முன்மொழிந்தது · நீங்கள் ஏற்கும் வரை எதுவும் மாறாது} other {இந்தப் பக்கத்தில் # முன்மொழியப்பட்ட திருத்தங்கள் · நீங்கள் ஏற்கும் வரை எதுவும் மாறாது}}"
@@ -686,6 +746,14 @@ msgstr "{toCheck, plural, one {# புலத்தைப் பார்க்�
 #: src/features/resume/editor/write/section-row.tsx
 msgid "{toCheck, plural, one {# to check} other {# to check}}"
 msgstr "{toCheck, plural, one {சரிபார்க்க #} other {சரிபார்க்க #}}"
+
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "{total, plural, one {Take # change} other {Take # changes}}"
+msgstr ""
+
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "{total, plural, one {Took # change from {baseName}. The state before is saved in History.} other {Took # changes from {baseName}. The state before is saved in History.}}"
+msgstr ""
 
 #. placeholder {0}: daysLeftInTrash(document.trashedAt)
 #: src/features/documents/document-card.tsx
@@ -960,6 +1028,10 @@ msgstr "வலுவான பொருத்தம், தீர்க்க �
 #: src/features/career/workspace/prepare.tsx
 msgid "A timed plan, your opening, the stories to bring and questions to ask. It becomes your checklist 10 minutes before the call."
 msgstr "நேரமிட்ட திட்டம், உங்கள் தொடக்க உரை, கொண்டுசெல்ல வேண்டிய கதைகள், கேட்க வேண்டிய கேள்விகள். அழைப்புக்கு 10 நிமிடங்களுக்கு முன் இது உங்கள் சரிபார்ப்புப் பட்டியலாக மாறும்."
+
+#: src/dialogs/resume/index.tsx
+msgid "A variant starts as a copy and stays linked to the original. Tailor it freely; when the original changes, the variant shows those changes and lets you take them in."
+msgstr ""
 
 #: src/features/ats-checker/messages.ts
 msgid "A web address is written without https://."
@@ -1361,6 +1433,10 @@ msgstr "சேமிப்பதற்கு முன் என்ன நடந
 msgid "Add your name"
 msgstr "உங்கள் பெயரைச் சேர்க்கவும்"
 
+#: src/features/resume/variants/labels.ts
+msgid "Added"
+msgstr ""
+
 #. placeholder {0}: role.trim()
 #. placeholder {1}: company.trim()
 #: src/features/applications/components/add-application-dialog.tsx
@@ -1371,6 +1447,10 @@ msgstr "{1} இல் {0} சேர்க்கப்பட்டது"
 #: src/features/career/shared.tsx
 msgid "Added by you"
 msgstr "நீங்கள் சேர்த்தது"
+
+#: src/features/resume/variants/labels.ts
+msgid "Added entry"
+msgstr ""
 
 #: src/features/career/coach-thread.tsx
 msgid "Added to Knowledge as a preference."
@@ -1589,6 +1669,10 @@ msgstr "ஒரு திறந்த மூல ரெஸ்யூம் பி�
 #: src/components/layout/error-screen.tsx
 msgid "An unexpected error stopped this page from loading. You can try again or head back."
 msgstr "எதிர்பாராத பிழை காரணமாக இந்தப் பக்கம் ஏற்றப்படவில்லை. நீங்கள் மீண்டும் முயற்சிக்கலாம் அல்லது பின்செல்லலாம்."
+
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "An update left unticked is kept as it is here, and isn't offered again unless the base changes it once more."
+msgstr ""
 
 #. placeholder {0}: others.length
 #: src/features/applications/components/detail/contacts.tsx
@@ -1855,6 +1939,7 @@ msgid "Are you sure you want to close this dialog?"
 msgstr "இந்த உரையாடலை மூட விரும்புகிறீர்களா?"
 
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Area of study"
 msgstr "ஆய்வுப் பகுதி"
 
@@ -2028,6 +2113,7 @@ msgid "Avoid heavy letter-spacing effects, then re-export."
 msgstr "கனமான எழுத்திடைவெளி விளைவுகளைத் தவிர்த்து, மீண்டும் ஏற்றுமதி செய்யவும்."
 
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Awarder"
 msgstr "விருது வழங்குபவர்"
 
@@ -2109,6 +2195,10 @@ msgstr "பேனர்"
 msgid "Barista, 2012"
 msgstr "பாரிஸ்டா, 2012"
 
+#: src/routes/builder/$resumeId/-components/document-menu.tsx
+msgid "Base is in Trash · Open Trash"
+msgstr ""
+
 #: src/features/career/offers.tsx
 msgid "Base salary"
 msgstr "அடிப்படைச் சம்பளம்"
@@ -2187,6 +2277,10 @@ msgstr "எல்லையின் அகலம்"
 #: src/features/career/offers.tsx
 msgid "Both offers cover everything compared here."
 msgstr "இங்கே ஒப்பிடப்படும் அனைத்தையும் இரண்டு சலுகைகளும் உள்ளடக்குகின்றன."
+
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "Both the base and this variant changed these. Pick which version to keep for each."
+msgstr ""
 
 #: src/features/ats-checker/messages.ts
 msgid "Break the resume into the usual sections so it can be segmented."
@@ -2370,6 +2464,10 @@ msgstr "நேர மண்டலத்தை மாற்று"
 msgid "Changed elsewhere"
 msgstr "வேறு இடத்திற்கு மாற்றப்பட்டது"
 
+#: src/features/resume/variants/labels.ts
+msgid "Changed in both"
+msgstr ""
+
 #: src/features/assistant/conversation.tsx
 msgid "Changed the resume directly (an earlier conversation)"
 msgstr "ரெஸ்யூமே நேரடியாக மாற்றப்பட்டது (முந்தைய உரையாடல்)"
@@ -2416,6 +2514,10 @@ msgstr "மற்றொரு கோப்பை சரிபார்க்க�
 #: src/features/homepage/check.tsx
 msgid "Check any PDF, no account needed"
 msgstr "எந்த PDF கோப்பையும் சரிபார்க்கலாம், கணக்கு தேவையில்லை"
+
+#: src/features/resume/variants/labels.ts
+msgid "Check choices"
+msgstr ""
 
 #: src/features/career/workspace/apply.tsx
 msgid "Check every claim, date and result against your experience."
@@ -2568,6 +2670,10 @@ msgstr "Claude Desktop"
 msgid "Clear"
 msgstr "அழி"
 
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "Clear all"
+msgstr ""
+
 #: src/features/resume/editor/write/rich-text-editor.tsx
 msgid "Clear formatting"
 msgstr "வடிவமைப்பை அழிக்கவும்"
@@ -2607,6 +2713,7 @@ msgstr "வாடிக்கையாளர் ஐடி"
 #: src/features/career/workspace/coach-sheet.tsx
 #: src/features/career/workspace/prepare.tsx
 #: src/features/resume/editor/check/page-layer.tsx
+#: src/features/resume/variants/base-updates-dialog.tsx
 #: src/routes/builder/$resumeId/-components/share-sheet.tsx
 #: src/routes/builder/letter/-components/share-sheet.tsx
 msgid "Close"
@@ -2660,6 +2767,7 @@ msgstr "நெடுவரிசை {header} செல்கிறது"
 
 #: src/features/applications/components/import-applications-sheet.tsx
 #: src/features/resume/editor/write/section-row.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Columns"
 msgstr "நெடுவரிசைகள்"
 
@@ -2696,6 +2804,7 @@ msgstr "இறுக்கம்"
 #: src/features/applications/components/import-applications-sheet.tsx
 #: src/features/resume/editor/check/job-match.tsx
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 #: src/routes/builder/letter/-components/write-panel.tsx
 msgid "Company"
 msgstr "நிறுவனம்"
@@ -2873,6 +2982,7 @@ msgstr "தொடர்புகள்"
 msgid "Contain"
 msgstr "முழுமையாகக் காட்டு"
 
+#: src/features/resume/variants/labels.ts
 #: src/routes/builder/$resumeId/-components/editor-shell.tsx
 msgid "Content"
 msgstr "உள்ளடக்கம்"
@@ -3358,6 +3468,7 @@ msgstr "உங்கள் மாற்றங்களைச் சேமிக�
 
 #: src/features/letters/store.ts
 #: src/features/resume/share/history-tab.tsx
+#: src/features/resume/variants/base-updates-dialog.tsx
 #: src/routes/builder/letter/-components/letter-bar.tsx
 #: src/routes/builder/letter/-components/share-sheet.tsx
 #: src/routes/builder/letter/$coverLetterId.tsx
@@ -3525,6 +3636,10 @@ msgstr "விசையை உருவாக்கவும்"
 msgid "Create one now"
 msgstr "இப்போதே உருவாக்குங்கள்"
 
+#: src/dialogs/resume/index.tsx
+msgid "Create variant"
+msgstr ""
+
 #: src/features/documents/documents-page.tsx
 #: src/features/resume/share/format.ts
 #: src/features/settings/ai/api-keys.tsx
@@ -3540,6 +3655,10 @@ msgstr "\"{finalName}\" உருவாக்கப்பட்டது"
 #: src/features/documents/new-document-dialog.tsx
 msgid "Created and linked to {0}"
 msgstr "{0} உருவாக்கப்பட்டது மற்றும் இணைக்கப்பட்டது"
+
+#: src/dialogs/resume/index.tsx
+msgid "Creating the variant..."
+msgstr ""
 
 #: src/features/resume/editor/write/picture-settings.tsx
 msgid "Crop and Upload"
@@ -3588,12 +3707,17 @@ msgid "Custom OAuth"
 msgstr "தனிப்பயன் OAuth"
 
 #: src/features/resume/editor/write/add-section.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Custom section"
 msgstr "தனிப்பயன் பிரிவு"
 
 #: src/libs/resume/section.tsx
 msgid "Custom Sections"
 msgstr "தனிப்பயன் பகுதிகள்"
+
+#: src/features/resume/variants/labels.ts
+msgid "Custom styles"
+msgstr ""
 
 #: src/libs/resume/section.tsx
 msgid "Custom Styles"
@@ -3646,6 +3770,7 @@ msgstr "தேதி வடிவம்"
 #: src/features/resume/editor/check/issues.ts
 #: src/features/resume/editor/check/parser-view.tsx
 #: src/features/resume/editor/write/dates-field.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Dates"
 msgstr "தேதிகள்"
 
@@ -3692,6 +3817,7 @@ msgid "Default"
 msgstr "இயல்புநிலை"
 
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Degree"
 msgstr "பட்டம்"
 
@@ -3858,6 +3984,7 @@ msgid "Describe the role"
 msgstr "பாத்திரத்தை விவரிக்கவும்"
 
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Description"
 msgstr "விளக்கம்"
 
@@ -3868,6 +3995,7 @@ msgstr "{0} பங்கு பற்றிய விளக்கம்"
 
 #: src/features/homepage/design.tsx
 #: src/features/homepage/header.tsx
+#: src/features/resume/variants/labels.ts
 #: src/libs/resume/section.tsx
 #: src/routes/builder/$resumeId/-components/design-panel.tsx
 #: src/routes/builder/$resumeId/-components/editor-bar.tsx
@@ -4329,8 +4457,17 @@ msgid "Edit…"
 msgstr "திருத்து…"
 
 #: src/features/documents/documents-page.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Edited"
 msgstr "திருத்தப்பட்டது"
+
+#: src/features/resume/variants/labels.ts
+msgid "Edited an entry you removed"
+msgstr ""
+
+#: src/features/resume/variants/labels.ts
+msgid "Edited in the base, removed here"
+msgstr ""
 
 #: src/features/resume/editor/page-overlay.tsx
 msgid "Editing"
@@ -4367,6 +4504,7 @@ msgstr "கல்வி"
 
 #: src/features/resume/editor/check/parser-view.tsx
 #: src/features/resume/editor/write/basics-card.tsx
+#: src/features/resume/variants/labels.ts
 #: src/features/settings/account/profile.tsx
 msgid "Email"
 msgstr "மின்னஞ்சல்"
@@ -4871,6 +5009,10 @@ msgstr "{authored} பக்கங்களில் பொருந்துக
 msgid "Fits on one page: {details}"
 msgstr "ஒரு பக்கத்தில் பொருந்தும்: {details}"
 
+#: src/dialogs/resume/index.tsx
+msgid "Fix a typo or add a job in the original, and this copy can pull it in. Its own edits are kept."
+msgstr ""
+
 #: src/features/resume/editor/check/issues.ts
 msgid "Fix the date"
 msgstr "தேதியை சரிசெய்யவும்"
@@ -4900,6 +5042,7 @@ msgid "Flatten the form so the text is part of the page."
 msgstr "உரை பக்கத்தின் ஒரு பகுதியாக இருக்கும் வகையில் படிவத்தை தட்டையாக்கவும்."
 
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Fluency"
 msgstr "வழக்காற்றுத் திறன்"
 
@@ -5079,6 +5222,10 @@ msgstr "பொருத்தம் தாவலிலிருந்து"
 msgid "from the assistant or API"
 msgstr "உதவியாளரிடமிருந்து அல்லது API"
 
+#: src/features/resume/share/format.ts
+msgid "from the base resume"
+msgstr ""
+
 #: src/features/career/knowledge/facts.tsx
 msgid "From your cover letter"
 msgstr "உங்கள் கவர் கடிதத்திலிருந்து"
@@ -5196,6 +5343,7 @@ msgid "Google"
 msgstr "கூகிள்"
 
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Grade"
 msgstr "மதிப்பெண்"
 
@@ -5238,6 +5386,7 @@ msgid "Heading changed"
 msgstr "தலைப்பு மாற்றப்பட்டது"
 
 #: src/features/resume/editor/write/basics-card.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Headline"
 msgstr "தலைவரி"
 
@@ -5273,6 +5422,7 @@ msgstr "வணக்கம் Alex, உறுதிப்படுத்து�
 #: src/components/level/combobox.tsx
 #: src/features/resume/editor/write/entries.tsx
 #: src/features/resume/editor/write/entry-card.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Hidden"
 msgstr "மறைக்கப்பட்டது"
 
@@ -5425,6 +5575,7 @@ msgid "I withdrew"
 msgstr "நான் விலகினேன்"
 
 #: src/components/level/combobox.tsx
+#: src/features/resume/variants/labels.ts
 #: src/routes/builder/$resumeId/-sidebar/right/sections/design.tsx
 msgid "Icon"
 msgstr "ஐகான்"
@@ -5721,6 +5872,7 @@ msgid "Issue ignored"
 msgstr "பிரச்சினை புறக்கணிக்கப்பட்டது"
 
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Issuer"
 msgstr "வெளியீட்டாளர்"
 
@@ -5775,6 +5927,10 @@ msgstr "உள்ளீடுகள் 30 நாட்களுக்குப�
 #: src/features/documents/trash-page.tsx
 msgid "Items you move here stay for 30 days."
 msgstr "நீங்கள் இங்கு செல்லும் பதிவுகள் 30 நாட்களுக்கு இருக்கும்."
+
+#: src/routes/builder/$resumeId/-components/document-menu.tsx
+msgid "its base"
+msgstr ""
 
 #. placeholder {0}: providers[0]?.label ?? ""
 #: src/features/career/schedule-sheet.tsx
@@ -5878,6 +6034,10 @@ msgstr "நீங்கள் பயன்பாட்டைப் பயன்�
 msgid "Keep account"
 msgstr "கணக்கு வைத்துக் கொள்ளுங்கள்"
 
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "Keep all mine"
+msgstr ""
+
 #: src/features/career/schedule-sheet.tsx
 msgid "Keep editing"
 msgstr "தொடர்ந்து திருத்து"
@@ -5898,10 +6058,24 @@ msgstr "நேர்மையாக இருங்கள்"
 msgid "Keep it under 2.5 MB, usually by removing or shrinking images."
 msgstr "பொதுவாக படங்களை நீக்கியோ சுருக்கியோ அதை 2.5 MB க்கும் குறைவாக வைத்திருங்கள்."
 
+#. placeholder {0}: data.name
+#: src/dialogs/resume/index.tsx
+msgid "Keep linked to “{0}” as a variant"
+msgstr ""
+
+#: src/features/documents/new-document-dialog.tsx
+msgid "Keep linked to the original as a variant"
+msgstr ""
+
 #: src/features/homepage/write.tsx
 #: src/features/resume/editor/write/improve.tsx
+#: src/features/resume/variants/base-updates-dialog.tsx
 msgid "Keep mine"
 msgstr "என்னுடையதை வைத்துக்கொள்"
+
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "Keep mine for all"
+msgstr ""
 
 #: src/features/resume/editor/write/section-row.tsx
 msgid "Keep on one page"
@@ -5974,6 +6148,7 @@ msgid "Keyword layout"
 msgstr "முக்கியச்சொல் அடுக்கு அமைப்பு"
 
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Keywords"
 msgstr "முக்கிய சொற்கள்"
 
@@ -6055,6 +6230,7 @@ msgstr "உரையை கிடைமட்டமாக அமைக்கவ�
 
 #: src/features/ats-checker/messages.ts
 #: src/features/resume/editor/check/issues.ts
+#: src/features/resume/variants/labels.ts
 #: src/libs/resume/section.tsx
 msgid "Layout"
 msgstr "லேயவுட்"
@@ -6194,6 +6370,7 @@ msgid "Letters"
 msgstr "கடிதங்கள்"
 
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 #: src/routes/builder/$resumeId/-sidebar/right/sections/design.tsx
 msgid "Level"
 msgstr "நிலை"
@@ -6445,6 +6622,7 @@ msgstr "பணியிடத்தை ஏற்றுகிறது…"
 #: src/features/resume/editor/check/parser-view.tsx
 #: src/features/resume/editor/write/basics-card.tsx
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Location"
 msgstr "இடம்"
 
@@ -6885,6 +7063,7 @@ msgstr "ஆதரவுப் பணியைக் கூட்டாமல்,
 #: src/features/documents/trash-page.tsx
 #: src/features/resume/editor/check/parser-view.tsx
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 #: src/features/settings/account/profile.tsx
 #: src/features/settings/ai/api-keys.tsx
 #: src/features/settings/ai/providers.tsx
@@ -6961,6 +7140,7 @@ msgid "Nepali"
 msgstr "நேபாளி"
 
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Network"
 msgstr "நெட்வொர்க்"
 
@@ -7045,6 +7225,15 @@ msgstr "புதிய பிரிவு"
 msgid "New teams at Northwind were stalling in setup; most never got through."
 msgstr "Northwind-இல் புதிய குழுக்கள் அமைவில் தேங்கிக்கொண்டிருந்தன; பெரும்பாலானவை முடிக்கவே இல்லை."
 
+#: src/dialogs/resume/index.tsx
+msgid "New Variant"
+msgstr ""
+
+#: src/features/documents/document-actions.tsx
+#: src/routes/builder/$resumeId/-components/document-menu.tsx
+msgid "New variant…"
+msgstr ""
+
 #: src/features/resume/editor/check/page-layer.tsx
 msgid "Next issue"
 msgstr "அடுத்த இதழ்"
@@ -7076,6 +7265,10 @@ msgstr "அடுத்த படி: {0}. ‘இன்று’ பக்கத
 #: src/features/homepage/remember.tsx
 msgid "Next time, I’d agree how to measure success before the first prototype."
 msgstr "அடுத்த முறை, முதல் முன்மாதிரிக்கு முன்பே வெற்றியை எப்படி அளவிடுவது என்பதில் ஒப்புக்கொள்வேன்."
+
+#: src/features/resume/variants/labels.ts
+msgid "No"
+msgstr ""
 
 #: src/features/applications/components/interview-dialog.tsx
 msgid "No active applications."
@@ -7375,6 +7568,7 @@ msgid "Not in your resume · add only if true"
 msgstr "உங்கள் ரெஸ்யூமில் இல்லை · உண்மை என்றால் மட்டும் சேர்க்கவும்"
 
 #: src/features/career/shared.tsx
+#: src/features/resume/variants/base-updates-dialog.tsx
 msgid "Not now"
 msgstr "இப்போது வேண்டாம்"
 
@@ -7439,6 +7633,7 @@ msgstr "தகவல்"
 #: src/features/applications/components/application-form-sheet.tsx
 #: src/features/applications/components/application-notes.tsx
 #: src/features/applications/components/import-applications-sheet.tsx
+#: src/features/resume/variants/labels.ts
 #: src/libs/resume/section.tsx
 #: src/routes/builder/$resumeId/-components/document-menu.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/sections/notes.tsx
@@ -7477,6 +7672,10 @@ msgstr "இன்னும் எதுவும் திட்டமிடப�
 #: src/features/career/today.tsx
 msgid "Nothing scheduled yet."
 msgstr "இன்னும் எதுவும் அட்டவணையிடப்படவில்லை."
+
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "Nothing taken. {baseName} is now the reference for this variant."
+msgstr ""
 
 #: src/features/career/workspace/messages.tsx
 msgid "Nothing to apply"
@@ -7707,6 +7906,14 @@ msgstr "பொதுப் பக்கத்தைத் திறக்கவ�
 msgid "Open story"
 msgstr "கதையைத் திற"
 
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "Open the base"
+msgstr ""
+
+#: src/routes/builder/$resumeId/-components/document-menu.tsx
+msgid "Open the base resume"
+msgstr ""
+
 #: src/features/ats-checker/messages.ts
 msgid "Open the exported file and confirm you can select and copy every part of it."
 msgstr "ஏற்றுமதி செய்யப்பட்ட கோப்பைத் திறந்து அதன் ஒவ்வொரு பகுதியையும் தேர்ந்தெடுத்து நகலெடுக்க முடிகிறதா என்பதை உறுதிப்படுத்தவும்."
@@ -7796,7 +8003,16 @@ msgstr "அல்லது உங்கள் சொந்த வார்த்
 msgid "Or upload a resume PDF"
 msgstr "அல்லது ரெஸ்யூம் PDF ஐ பதிவேற்றவும்"
 
+#: src/features/resume/variants/labels.ts
+msgid "Order"
+msgstr ""
+
+#: src/features/resume/variants/labels.ts
+msgid "Order of roles"
+msgstr ""
+
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Organization"
 msgstr "நிறுவனம் / அமைப்பு"
 
@@ -7837,6 +8053,7 @@ msgstr "காலாவதியானது: உரை மாற்றப்ப
 msgid "Own and evolve a design system"
 msgstr "வடிவமைப்பு அமைப்பைப் பொறுப்பேற்று மேம்படுத்துதல்"
 
+#: src/features/resume/variants/labels.ts
 #: src/libs/resume/section.tsx
 #: src/routes/builder/$resumeId/-components/design-panel.tsx
 #: src/routes/builder/$resumeId/-components/editor-shell.tsx
@@ -8064,6 +8281,7 @@ msgstr "பேர்ஷியன்"
 #: src/features/resume/editor/check/parser-view.tsx
 #: src/features/resume/editor/write/basics-card.tsx
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Phone"
 msgstr "தொலைபேசி"
 
@@ -8107,6 +8325,7 @@ msgstr "இரண்டு எடுத்துக்காட்டுகள�
 msgid "Picking your stories"
 msgstr "உங்கள் கதைகளைத் தேர்ந்தெடுக்கிறது"
 
+#: src/features/resume/variants/labels.ts
 #: src/libs/resume/section.tsx
 msgid "Picture"
 msgstr "படம்"
@@ -8178,6 +8397,7 @@ msgid "Portuguese (Portugal)"
 msgstr "போர்ச்சுகீஸ் (போர்ச்சுகல்)"
 
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Position"
 msgstr "பதவி"
 
@@ -8388,6 +8608,7 @@ msgid "Product designer with nine years of experience building <0>design systems
 msgstr "B2B குழுக்களுக்காக <0>வடிவமைப்பு அமைப்புகளையும்</0> ஆராய்ச்சி சார்ந்த தயாரிப்புகளையும் உருவாக்குவதில் ஒன்பது ஆண்டுகள் அனுபவமுள்ள தயாரிப்பு வடிவமைப்பாளர்."
 
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Proficiency"
 msgstr "திறமைத் தரம்"
 
@@ -8480,6 +8701,7 @@ msgid "Publications"
 msgstr "வெளியீடுகள்"
 
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Publisher"
 msgstr "பதிப்பாளர்"
 
@@ -8990,6 +9212,19 @@ msgstr "இந்தக் கடவுச் சாவியை அகற்ற
 msgid "Remove this photo?"
 msgstr "இந்தப் படத்தை அகற்றவா?"
 
+#: src/features/resume/variants/base-updates-dialog.tsx
+#: src/features/resume/variants/labels.ts
+msgid "Removed"
+msgstr ""
+
+#: src/features/resume/variants/labels.ts
+msgid "Removed entry"
+msgstr ""
+
+#: src/features/resume/variants/labels.ts
+msgid "Removed in the base, edited here"
+msgstr ""
+
 #: src/features/career/coach.tsx
 #: src/features/documents/document-actions.tsx
 #: src/features/settings/account/security.tsx
@@ -9023,6 +9258,10 @@ msgstr "{0} மறுவரிசைப்படுத்தவும்"
 #: src/features/resume/editor/write/section-row.tsx
 msgid "Reorder {title}"
 msgstr "{title} மறுவரிசைப்படுத்தவும்"
+
+#: src/features/resume/variants/labels.ts
+msgid "Reordered"
+msgstr ""
 
 #. placeholder {0}: jd.stuffedTerms.join(", ")
 #: src/features/ats-checker/report/jd-coverage.tsx
@@ -9276,9 +9515,19 @@ msgstr "‘என் பதிலை மதிப்பாய்வு செய
 msgid "Review required form answers and remove unsupported claims."
 msgstr "தேவையான படிவப் பதில்களை மதிப்பாய்வு செய்து, ஆதாரமற்ற கூற்றுகளை அகற்றவும்."
 
+#. placeholder {0}: base.name
+#: src/features/resume/variants/variant-indicator.tsx
+msgid "Review the changes made to {0}"
+msgstr ""
+
 #: src/features/career/workspace/apply.tsx
 msgid "Review the selected resume and cover letter in their editors."
 msgstr "தேர்ந்தெடுத்த ரெஸ்யூமையும் கவர் கடிதத்தையும் அவற்றின் எடிட்டர்களில் மதிப்பாய்வு செய்யவும்."
+
+#. placeholder {0}: document.base.name
+#: src/features/documents/document-card.tsx
+msgid "Review what changed in {0}"
+msgstr ""
 
 #: src/features/resume/editor/check/writing-tab.tsx
 msgid "Review writing"
@@ -9322,6 +9571,7 @@ msgstr "இப்போதே"
 #: src/features/applications/components/interview-dialog.tsx
 #: src/features/applications/components/list-view.tsx
 #: src/features/resume/editor/check/job-match.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Role"
 msgstr "பதவி"
 
@@ -9652,6 +9902,7 @@ msgid "Schedules"
 msgstr "அட்டவணைகள்"
 
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "School"
 msgstr "பள்ளி"
 
@@ -9800,6 +10051,10 @@ msgstr "தேர்ந்தெடு"
 #: src/features/applications/components/list-view.tsx
 msgid "Select {0} at {1}"
 msgstr "{1} இல் {0}ஐத் தேர்ந்தெடுக்கவும்"
+
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "Select all"
+msgstr ""
 
 #: src/features/settings/integrations/components/ai-provider-picker.tsx
 msgid "Select an AI provider"
@@ -10091,6 +10346,10 @@ msgstr "டெம்ப்ளேட்களைக் காட்டு"
 #: src/features/resume/editor/check/check-panel.tsx
 msgid "Show them again"
 msgstr "அவற்றை மீண்டும் காட்டு"
+
+#: src/features/resume/variants/labels.ts
+msgid "Shown"
+msgstr ""
 
 #: src/features/applications/components/interview-dialog.tsx
 msgid "Shown in your timezone."
@@ -10659,6 +10918,10 @@ msgstr "வலுப்படுத்த வேண்டியவை"
 msgid "Stronger verb"
 msgstr "வலுவான வினைச்சொல்"
 
+#: src/features/resume/variants/labels.ts
+msgid "Style rules"
+msgstr ""
+
 #: src/features/resume/stylesheet/toolbar.tsx
 msgid "Stylesheet editor"
 msgstr "ஸ்டைல்ஷீட் எடிட்டர்"
@@ -10842,6 +11105,14 @@ msgstr "{0} வேலை இடுகைக்கு ஏற்ப"
 msgid "Tailored vs. base resume"
 msgstr "தழுவல் எதிராக அடிப்படை ரெஸ்யூம்"
 
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "Take all from base"
+msgstr ""
+
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "Take base's"
+msgstr ""
+
 #: src/libs/locale.ts
 msgid "Tamil"
 msgstr "தமிழ்"
@@ -10884,6 +11155,7 @@ msgstr "சக ஊழியருடன் கருத்து வேறுப
 msgid "Telugu"
 msgstr "தெலுங்கு"
 
+#: src/features/resume/variants/labels.ts
 #: src/libs/resume/section.tsx
 #: src/routes/builder/$resumeId/-components/design-panel.tsx
 #: src/routes/builder/$resumeId/-components/document-details.tsx
@@ -11057,6 +11329,10 @@ msgstr "இந்தச் சேவையகத்தில் உதவிய�
 #: src/features/assistant/provider-setup.tsx
 msgid "The assistant uses your own key. Nothing is sent anywhere until you connect one."
 msgstr "உதவியாளர் உங்கள் சொந்த விசையைப் பயன்படுத்துகிறார். நீங்கள் ஒன்றை இணைக்கும் வரை எதுவும் எங்கும் அனுப்பப்படாது."
+
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "The base changed again. Have a look at the new conflicts."
+msgstr ""
 
 #: src/features/settings/ai/web-access.tsx
 msgid "The built-in reader remains active."
@@ -11292,6 +11568,11 @@ msgstr "உரை படிக்க முடியாத நிலையில
 msgid "The top of the first page does not look like a name."
 msgstr "முதல் பக்கத்தின் மேற்பகுதி ஒரு பெயர் போல் தெரியவில்லை."
 
+#. placeholder {0}: data.name
+#: src/dialogs/resume/index.tsx
+msgid "The variant is ready. It stays linked to “{0}”."
+msgstr ""
+
 #. Menu item that opens appearance theme selection submenu
 #: src/features/command-palette/pages/navigation.tsx
 #: src/features/command-palette/pages/preferences/theme.tsx
@@ -11501,6 +11782,10 @@ msgstr "இந்த ரெஸ்யூம் நீளமானது."
 msgid "This resume is password protected"
 msgstr "இந்த ரெஸ்யூம் கடவுச்சொல்லால் பாதுகாக்கப்பட்டுள்ளது"
 
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "This resume isn't linked to a base anymore. Its base was deleted, or it was unlinked."
+msgstr ""
+
 #: src/features/resume/editor/check/job-match.tsx
 msgid "This resume isn't linked to an application yet."
 msgstr "இந்த ரெஸ்யூம் இன்னும் வேலை விண்ணப்பத்துடன் இணைக்கப்படவில்லை."
@@ -11508,6 +11793,10 @@ msgstr "இந்த ரெஸ்யூம் இன்னும் வேலை
 #: src/features/resume/public/public-resume.tsx
 msgid "This resume isn't shared right now."
 msgstr "இந்த ரெஸ்யூம் தற்போது பகிரப்படவில்லை."
+
+#: src/routes/builder/$resumeId/-components/document-menu.tsx
+msgid "This resume keeps everything as it is, but changes made to the base won't be offered anymore."
+msgstr ""
 
 #: src/features/resume/builder/draft.ts
 msgid "This resume was updated by an AI agent."
@@ -11608,6 +11897,7 @@ msgstr "குறிப்பு"
 
 #: src/features/career/knowledge/stories.tsx
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Title"
 msgstr "தலைப்பு"
 
@@ -11640,6 +11930,10 @@ msgstr "வெள்ளை நிறத்தில் உள்ள தலைப
 #: src/features/settings/ai/web-access.tsx
 msgid "Too many requests. Try again later."
 msgstr "பல கோரிக்கைகள். பிறகு முயற்சிக்கவும்."
+
+#: src/features/resume/share/format.ts
+msgid "Took updates from base"
+msgstr ""
 
 #: src/features/homepage/sections.tsx
 msgid "Total"
@@ -11868,6 +12162,7 @@ msgstr "பதிலாகத் தட்டச்சு செய்"
 msgid "typed"
 msgstr "தட்டச்சு செய்தது"
 
+#: src/features/resume/variants/labels.ts
 #: src/libs/resume/section.tsx
 msgid "Typography"
 msgstr "எழுத்துரு வடிவமைப்பு"
@@ -11915,12 +12210,25 @@ msgid "Unknown"
 msgstr "தெரியவில்லை"
 
 #: src/features/documents/document-actions.tsx
+#: src/routes/builder/$resumeId/-components/document-menu.tsx
 msgid "Unlink"
 msgstr "இணைப்பை நீக்கவும்"
+
+#: src/routes/builder/$resumeId/-components/document-menu.tsx
+msgid "Unlink from {baseName}?"
+msgstr ""
+
+#: src/routes/builder/$resumeId/-components/document-menu.tsx
+msgid "Unlink from base…"
+msgstr ""
 
 #: src/features/resume/editor/check/job-match.tsx
 msgid "Unlink this application"
 msgstr "இந்த வேலை விண்ணப்பத்தின் இணைப்பை நீக்கவும்"
+
+#: src/routes/builder/$resumeId/-components/document-menu.tsx
+msgid "Unlinked from {baseName}. This is a resume of its own now."
+msgstr ""
 
 #: src/features/settings/account/auth-hooks.ts
 msgid "Unlinking your {providerName} account..."
@@ -11943,6 +12251,10 @@ msgstr "எடிட்டிங் திறக்கும்"
 msgid "Unlock it first"
 msgstr "முதலில் அதைத் திறக்கவும்"
 
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "Unlock the resume first"
+msgstr ""
+
 #: src/features/settings/account/security.tsx
 msgid "Unnamed passkey"
 msgstr "பெயரிடப்படாத பாஸ் கீ"
@@ -11951,6 +12263,10 @@ msgstr "பெயரிடப்படாத பாஸ் கீ"
 #: src/features/resume/stylesheet/targets.ts
 msgid "Untitled"
 msgstr "பெயரிடப்படாதது"
+
+#: src/features/resume/variants/labels.ts
+msgid "Untitled entry"
+msgstr ""
 
 #: src/features/documents/new-document-dialog.tsx
 msgid "Untitled letter"
@@ -11971,6 +12287,11 @@ msgstr "2 நிமிடங்கள் வரை. நீங்கள் பே
 #: src/features/ats-checker/checker.tsx
 msgid "Up to 25 MB · checked in your browser, never uploaded"
 msgstr "25 MB · உங்கள் உலாவியில் சரிபார்க்கப்பட்டது, ஒருபோதும் பதிவேற்றப்படவில்லை"
+
+#. placeholder {0}: base.name
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "Up to date. Nothing changed in {0} since this variant last took its changes."
+msgstr ""
 
 #: src/features/applications/components/calendar-view.tsx
 msgid "Upcoming interviews"
@@ -12001,6 +12322,23 @@ msgstr "புதுப்பிக்கப்பட்டது"
 #: src/features/applications/components/list-view.tsx
 msgid "Updated {0}"
 msgstr "{0} புதுப்பிக்கப்பட்டது"
+
+#: src/features/resume/variants/labels.ts
+msgid "Updated settings"
+msgstr ""
+
+#. placeholder {0}: base.name
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "Updates from {0}"
+msgstr ""
+
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "Updates from base"
+msgstr ""
+
+#: src/routes/builder/$resumeId/-components/document-menu.tsx
+msgid "Updates from base…"
+msgstr ""
 
 #: src/dialogs/auth/change-password.tsx
 msgid "Updating your password..."
@@ -12169,6 +12507,7 @@ msgstr "பயனர் ஆய்வு"
 #. Label for username input on registration form
 #: src/features/auth/pages/register.tsx
 #: src/features/resume/editor/write/entries.tsx
+#: src/features/resume/variants/labels.ts
 #: src/features/settings/account/profile.tsx
 msgid "Username"
 msgstr "பயனர் பெயர்"
@@ -12204,6 +12543,21 @@ msgstr "மதிப்பீடும் நீர்த்தலும் உ�
 #: src/features/career/offers.tsx
 msgid "Value uncertain"
 msgstr "மதிப்பு உறுதியற்றது"
+
+#: src/routes/builder/$resumeId/-components/document-details.tsx
+msgid "Variant of"
+msgstr ""
+
+#. placeholder {0}: base.name
+#. placeholder {0}: document.base.name
+#: src/features/documents/document-card.tsx
+#: src/features/resume/variants/variant-indicator.tsx
+msgid "Variant of {0}"
+msgstr ""
+
+#: src/routes/builder/$resumeId/-components/document-details.tsx
+msgid "Variants"
+msgstr ""
 
 #: src/features/ats-checker/messages.ts
 msgid "Vary the openings so the section does not read as boilerplate."
@@ -12316,6 +12670,7 @@ msgid "Views and downloads"
 msgstr "பார்வைகள் மற்றும் பதிவிறக்கங்கள்"
 
 #: src/features/homepage/share.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Visibility"
 msgstr "தெரிவுநிலை"
 
@@ -12409,8 +12764,13 @@ msgid "Web search failed: {0}"
 msgstr "இணைய தேடல் தோல்வி: {0}"
 
 #: src/features/resume/editor/write/basics-card.tsx
+#: src/features/resume/variants/labels.ts
 msgid "Website"
 msgstr "இணையதளம்"
+
+#: src/features/resume/variants/labels.ts
+msgid "Website label"
+msgstr ""
 
 #: src/features/career/today.tsx
 msgid "Weekly at {clock} · next {next}"
@@ -12440,6 +12800,15 @@ msgstr "ஒரு நபர் என்ன பார்க்கிறார்
 #: src/features/career/coach.tsx
 msgid "What are you working on?"
 msgstr "நீங்கள் எதில் வேலை செய்கிறீர்கள்?"
+
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "What changed in the base resume. Your own edits to this variant stay as they are."
+msgstr ""
+
+#. placeholder {0}: formatRelativeTime(status.syncedAt, i18n.locale)
+#: src/features/resume/variants/base-updates-dialog.tsx
+msgid "What changed in the base since {0}. Your own edits to this variant stay as they are."
+msgstr ""
 
 #: src/features/career/knowledge/stories.tsx
 msgid "What changed? Leave blank if you can’t support it."
@@ -12575,6 +12944,10 @@ msgstr "என்ன வேலை செய்கிறது"
 #: src/features/career/offers.tsx
 msgid "When do they need your answer?"
 msgstr "அவர்களுக்கு உங்கள் பதில் எப்போது தேவை?"
+
+#: src/features/documents/new-document-dialog.tsx
+msgid "When the original changes later (a fixed typo, a new job), this copy shows the updates and lets you take them in. Its own tailoring is kept."
+msgstr ""
 
 #: src/features/career/coach.tsx
 msgid "When you press send, {shared} go to {connection}."
@@ -12781,6 +13154,10 @@ msgstr "எழுதுதல், தழுவல் மற்றும் அ�
 #: src/features/career/offers.tsx
 msgid "Written offer"
 msgstr "எழுத்துப்பூர்வச் சலுகை"
+
+#: src/features/resume/variants/labels.ts
+msgid "Yes"
+msgstr ""
 
 #: src/features/homepage/faq.tsx
 msgid "Yes. Every feature is free: all {templates} templates, PDF and Word downloads, the ATS checker, cover letters and the job tracker. There are no ads, no tracking and no paid tier. Donations pay for hosting and development."

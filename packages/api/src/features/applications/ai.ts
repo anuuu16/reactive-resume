@@ -398,7 +398,17 @@ export const aiRouter = {
 			operationId: "aiTailorResumeForApplication",
 			...reserved,
 		})
-		.input(z.object({ id: z.string() }))
+		.input(
+			z.object({
+				id: z.string(),
+				linked: z
+					.boolean()
+					.default(false)
+					.describe(
+						"Make the tailored copy a variant of the resume it came from, so that resume's later changes can be pulled in (see getResumeVariantStatus). Off by default: the copy is on its own.",
+					),
+			}),
+		)
 		.use(aiRequestRateLimit)
 		.output(z.object({ resumeId: z.string(), name: z.string() }))
 		.errors(aiErrors)
@@ -426,6 +436,7 @@ export const aiRouter = {
 			const name = `Tailored — ${application.company} · ${application.role}`.slice(0, 60);
 			const tailoredData = { ...resume.data, summary: { ...resume.data.summary, content: summary } };
 
+			// Opted in, the copy is a variant of the resume it came from, so later fixes to that resume reach it.
 			const newResumeId = await resumeService.create({
 				userId: context.user.id,
 				name,
@@ -433,6 +444,7 @@ export const aiRouter = {
 				tags: [...resume.tags, "tailored"],
 				data: tailoredData,
 				locale: context.locale,
+				...(input.linked ? { base: { id: resume.id, data: resume.data } } : {}),
 			});
 
 			// Point the application at the tailored copy and log it on the timeline.

@@ -15,7 +15,8 @@ export type DialogSchema =
 	  }
 	| {
 			type: "resume.duplicate";
-			data: { id: string; name: string; slug: string; tags: string[] };
+			/** `asVariant` opens the dialog with the copy linked to the original as a variant. */
+			data: { id: string; name: string; tags: string[]; asVariant?: boolean };
 	  };
 
 export type DialogType = DialogSchema["type"];

@@ -20,6 +20,8 @@ const searchSchema = z.object({
 	applicationId: z.string().optional().catch(undefined),
 	// The file a resume was just imported from; Write says what came in until it's dismissed.
 	imported: z.string().max(255).optional().catch(undefined),
+	// Opens a variant's "Updates from base" review; the library's "N updates from base" links here.
+	variant: z.enum(["updates"]).optional().catch(undefined),
 });
 
 export const Route = createFileRoute("/builder/$resumeId")({

@@ -97,6 +97,8 @@ type EditorStore = {
 	 */
 	exportCheck: { report: PdfAtsReport; data: ResumeData } | null;
 	exportReportOpen: boolean;
+	/** Variants: the "Updates from base" dialog, where the base's changes are taken or left. */
+	baseUpdatesOpen: boolean;
 	select: (selection: EditorSelection | null) => void;
 	setZoom: (zoom: number | "fit") => void;
 	setDrawerOpen: (open: boolean) => void;
@@ -127,6 +129,7 @@ type EditorStore = {
 	setWritingReview: (review: WritingReview | null) => void;
 	setExportCheck: (check: { report: PdfAtsReport; data: ResumeData } | null) => void;
 	setExportReportOpen: (open: boolean) => void;
+	setBaseUpdatesOpen: (open: boolean) => void;
 	reset: () => void;
 };
 
@@ -172,6 +175,7 @@ const initialState = {
 	writingReview: null,
 	exportCheck: null,
 	exportReportOpen: false,
+	baseUpdatesOpen: false,
 } as const;
 
 export const useEditorStore = create<EditorStore>()((set) => ({
@@ -218,6 +222,7 @@ export const useEditorStore = create<EditorStore>()((set) => ({
 	setWritingReview: (writingReview) => set({ writingReview }),
 	setExportCheck: (exportCheck) => set({ exportCheck }),
 	setExportReportOpen: (exportReportOpen) => set({ exportReportOpen }),
+	setBaseUpdatesOpen: (baseUpdatesOpen) => set({ baseUpdatesOpen }),
 	reset: () =>
 		set((state) => ({ ...initialState, rendered: { ...initialState.rendered, version: state.rendered.version + 1 } })),
 }));

@@ -3,6 +3,7 @@ import { t } from "@lingui/core/macro";
 import { Trans } from "@lingui/react/macro";
 import { useMutation } from "@tanstack/react-query";
 import { useNavigate, useParams } from "@tanstack/react-router";
+import { useState } from "react";
 import z from "zod";
 import { Button } from "@reactive-resume/ui/components/button";
 import {
@@ -15,6 +16,7 @@ import {
 import { FormControl, FormDescription, FormItem, FormLabel, FormMessage } from "@reactive-resume/ui/components/form";
 import { Icon } from "@reactive-resume/ui/components/icon";
 import { Input } from "@reactive-resume/ui/components/input";
+import { SwitchRow } from "@reactive-resume/ui/components/switch";
 import { toast } from "@reactive-resume/ui/components/toast";
 import { generateRandomName } from "@reactive-resume/utils/string";
 import { useDialogStore } from "../store";
@@ -113,33 +115,50 @@ export function UpdateResumeDialog({ data }: DialogProps<"resume.update">) {
 	);
 }
 
+/**
+ * Duplicate, or New variant: the same form, with a switch that keeps the copy linked to the original. A variant
+ * shows what changed in the original afterwards and takes those changes in without losing its own edits.
+ */
 export function DuplicateResumeDialog({ data }: DialogProps<"resume.duplicate">) {
 	const navigate = useNavigate();
 	const closeDialog = useDialogStore((state) => state.closeDialog);
+	const [asVariant, setAsVariant] = useState(data.asVariant ?? false);
 
-	const { mutate: duplicateResume, isPending } = useMutation(orpc.resume.duplicate.mutationOptions());
+	const { mutate: duplicateResume, isPending: duplicating } = useMutation(orpc.resume.duplicate.mutationOptions());
+	const { mutate: createVariant, isPending: creatingVariant } = useMutation(
+		orpc.resume.createVariant.mutationOptions(),
+	);
+	const isPending = duplicating || creatingVariant;
 
 	const form = useAppForm({
 		defaultValues: {
 			id: data.id,
-			name: `${data.name} (Copy)`,
+			name: data.asVariant ? t`${data.name} (variant)` : `${data.name} (Copy)`,
 			tags: data.tags,
 		},
 		validators: { onSubmit: formSchema },
 		onSubmit: ({ value }) => {
-			const toastId = toast.add({ type: "loading", description: t`Duplicating your resume...` });
-
-			duplicateResume(value, {
-				onSuccess: (id) => {
-					toast.add({ type: "success", description: t`Your resume has been duplicated.`, id: toastId });
-					closeDialog();
-
-					void navigate({ to: "/builder/$resumeId", params: { resumeId: id } });
-				},
-				onError: (error) => {
-					toast.add({ type: "error", description: getResumeErrorMessage(error), id: toastId });
-				},
+			const toastId = toast.add({
+				type: "loading",
+				description: asVariant ? t`Creating the variant...` : t`Duplicating your resume...`,
 			});
+			const opened = (id: string) => {
+				toast.add({
+					type: "success",
+					description: asVariant
+						? t`The variant is ready. It stays linked to “${data.name}”.`
+						: t`Your resume has been duplicated.`,
+					id: toastId,
+				});
+				closeDialog();
+				void navigate({ to: "/builder/$resumeId", params: { resumeId: id } });
+			};
+			const failed = (error: unknown) => {
+				toast.add({ type: "error", description: getResumeErrorMessage(error), id: toastId });
+			};
+
+			if (asVariant) createVariant(value, { onSuccess: opened, onError: failed });
+			else duplicateResume(value, { onSuccess: opened, onError: failed });
 		},
 	});
 
@@ -149,11 +168,18 @@ export function DuplicateResumeDialog({ data }: DialogProps<"resume.duplicate">)
 		<DialogContent>
 			<DialogHeader>
 				<DialogTitle className="flex items-center gap-x-2">
-					<Icon name="pencil-simple" size={16} />
-					<Trans>Duplicate Resume</Trans>
+					<Icon name={asVariant ? "git-branch" : "copy"} size={16} />
+					{asVariant ? <Trans>New Variant</Trans> : <Trans>Duplicate Resume</Trans>}
 				</DialogTitle>
 				<DialogDescription>
-					<Trans>Duplicate your resume to create a new one, just like the original.</Trans>
+					{asVariant ? (
+						<Trans>
+							A variant starts as a copy and stays linked to the original. Tailor it freely; when the original changes,
+							the variant shows those changes and lets you take them in.
+						</Trans>
+					) : (
+						<Trans>Duplicate your resume to create a new one, just like the original.</Trans>
+					)}
 				</DialogDescription>
 			</DialogHeader>
 
@@ -167,9 +193,16 @@ export function DuplicateResumeDialog({ data }: DialogProps<"resume.duplicate">)
 			>
 				<ResumeForm form={form} />
 
+				<SwitchRow
+					checked={asVariant}
+					onCheckedChange={setAsVariant}
+					label={t`Keep linked to “${data.name}” as a variant`}
+					description={t`Fix a typo or add a job in the original, and this copy can pull it in. Its own edits are kept.`}
+				/>
+
 				<DialogFooter>
 					<Button type="submit" disabled={isPending}>
-						<Trans>Duplicate</Trans>
+						{asVariant ? <Trans>Create variant</Trans> : <Trans>Duplicate</Trans>}
 					</Button>
 				</DialogFooter>
 			</form>

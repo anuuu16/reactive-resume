@@ -87,6 +87,22 @@ describe("copyForJob", () => {
 		expect(applicationServiceMock.update).toHaveBeenCalledWith({ userId: "u1", id: "a1", resumeId: "copy" });
 	});
 
+	it("keeps a linked copy as a variant of the source, with the source's data as the snapshot", async () => {
+		resumeServiceMock.getById.mockResolvedValueOnce({ id: "r1", ...source });
+		resumeServiceMock.create.mockResolvedValueOnce("copy");
+
+		await documentsService.copyForJob({ userId: "u1", resumeId: "r1", linked: true });
+
+		expect(resumeServiceMock.create).toHaveBeenCalledWith(
+			expect.objectContaining({ name: "Product Designer (copy)", base: { id: "r1", data: source.data } }),
+		);
+
+		resumeServiceMock.getById.mockResolvedValueOnce({ id: "r1", ...source });
+		resumeServiceMock.create.mockResolvedValueOnce("copy");
+		await documentsService.copyForJob({ userId: "u1", resumeId: "r1" });
+		expect(resumeServiceMock.create).toHaveBeenLastCalledWith(expect.not.objectContaining({ base: expect.anything() }));
+	});
+
 	it.each(["saved", "applied"])(
 		"prepares a copy at %s while preserving its base and submitted documents",
 		async (status) => {

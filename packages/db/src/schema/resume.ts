@@ -29,6 +29,12 @@ export const resume = pg.pgTable(
 		trashedAt: pg.timestamp("trashed_at", { withTimezone: true }),
 		// A blank resume's name follows its headline until the user renames it.
 		autoName: pg.boolean("auto_name").notNull().default(false),
+		// A variant: the resume this one was made from and stays linked to. Cleared when the base is deleted for good.
+		baseResumeId: pg.text("base_resume_id").references((): AnyPgColumn => resume.id, { onDelete: "set null" }),
+		// The base's data as it was when the variant was made or last pulled its updates: the common ancestor the
+		// three-way merge starts from (see @reactive-resume/resume/variants).
+		baseSnapshot: pg.jsonb("base_snapshot").$type<ResumeData>(),
+		baseSyncedAt: pg.timestamp("base_synced_at", { withTimezone: true }),
 		data: pg
 			.jsonb("data")
 			.notNull()
@@ -50,12 +56,14 @@ export const resume = pg.pgTable(
 		pg.index().on(t.createdAt.asc()),
 		pg.index().on(t.userId, t.updatedAt.desc()),
 		pg.index().on(t.isPublic, t.slug, t.userId),
+		pg.index().on(t.baseResumeId),
 	],
 );
 
 /**
  * What made a version: created or imported (the first entry), an editing session's autosave, a version the
- * user named, the state saved before a restore, the restore itself, an AI edit, or a sent application.
+ * user named, the state saved before a restore, the restore itself, an AI edit, a sent application, or a
+ * variant pulling in its base's updates.
  */
 export const RESUME_VERSION_KINDS = [
 	"created",
@@ -66,6 +74,7 @@ export const RESUME_VERSION_KINDS = [
 	"restored",
 	"ai",
 	"sent",
+	"base-update",
 ] as const;
 
 export type ResumeVersionKind = (typeof RESUME_VERSION_KINDS)[number];

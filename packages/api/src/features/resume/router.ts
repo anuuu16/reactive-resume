@@ -5,6 +5,7 @@ import { getRootResume } from "./root";
 import { sharingRouter } from "./sharing";
 import { resumeStatisticsRouter } from "./statistics";
 import { tagsRouter } from "./tags";
+import { variantsRouter } from "./variants";
 import { versionsRouter } from "./versions";
 
 export const resumeRouter = {
@@ -38,4 +39,9 @@ export const resumeRouter = {
 	renameVersion: versionsRouter.renameVersion,
 	deleteVersion: versionsRouter.deleteVersion,
 	restoreVersion: versionsRouter.restoreVersion,
+	createVariant: variantsRouter.createVariant,
+	getVariantStatus: variantsRouter.getVariantStatus,
+	pullBaseUpdates: variantsRouter.pullBaseUpdates,
+	detachVariant: variantsRouter.detachVariant,
+	listVariantUpdates: variantsRouter.listVariantUpdates,
 };
