@@ -2,9 +2,6 @@ packages:
   - apps/*
   - packages/*
   - tooling
-# Sandbox only: the npm mirror here lacks pnpm 12.10.1, so the global pnpm runs the project as is.
-managePackageManagerVersions: false
-packageManagerStrict: false
 catalogMode: prefer
 catalog:
   "@better-auth/api-key": "1.7.5"
