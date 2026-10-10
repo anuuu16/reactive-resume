@@ -1,3 +1,7 @@
+# Sandbox: packages the npm mirror lacks are pre-loaded in ../sandbox-deps/store.
+storeDir: ../sandbox-deps/store
+preferOffline: true
+
 packages:
   - apps/*
   - packages/*
