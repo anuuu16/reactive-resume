@@ -26,7 +26,7 @@
 		"test:agent": "vitest run --reporter=agent --reporter=json --outputFile.json=reports/vitest-results.json --passWithNoTests"
 	},
 	"dependencies": {
-		"@bramus/specificity": "^2.4.3",
+		"@bramus/specificity": "^2.4.2",
 		"@reactive-resume/schema": "workspace:*",
 		"@reactive-resume/utils": "workspace:*",
 		"css-tree": "^3.2.1",
