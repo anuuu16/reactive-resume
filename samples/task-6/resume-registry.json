@@ -1,0 +1,118 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "meta": {
+    "theme": "elegant",
+    "version": "v1.0.0",
+    "lastModified": "2026-09-30T10:00:00Z"
+  },
+  "basics": {
+    "name": "Zoë Fernández-Iyer",
+    "label": "Staff Engineer · Platform",
+    "email": "zoe@example.com",
+    "phone": "+44 20 7946 0958",
+    "url": "https://zoe.example.dev",
+    "image": "https://zoe.example.dev/photo.jpg",
+    "summary": "I build developer platforms.\n\n- 12 years in infrastructure\n- Led 3 platform teams",
+    "location": {
+      "city": "London",
+      "countryCode": "GB"
+    },
+    "profiles": [
+      {
+        "network": "X",
+        "username": "zoe_fi",
+        "url": "https://x.com/zoe_fi"
+      },
+      {
+        "network": "Stack Overflow",
+        "username": "zoefi",
+        "url": "https://stackoverflow.com/users/1/zoefi"
+      },
+      {
+        "network": "LinkedIn",
+        "username": "zoe-fi"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Umbrella Cloud",
+      "position": "Staff Engineer",
+      "location": "London, UK",
+      "startDate": "Jan 2023",
+      "summary": "Platform team lead.",
+      "highlights": [
+        "Cut deploy time by 70%"
+      ],
+      "x-team-size": 9
+    },
+    {
+      "name": "Umbrella Cloud",
+      "position": "Senior Engineer",
+      "location": "London, UK",
+      "startDate": "03/2020",
+      "endDate": "12/2022"
+    },
+    {
+      "name": "Initrode",
+      "position": "Engineer",
+      "startDate": "2016/09",
+      "endDate": "2020/02"
+    }
+  ],
+  "education": [
+    {
+      "institution": "University of Manchester",
+      "studyType": "MEng",
+      "area": "Computer Science",
+      "startDate": "2011",
+      "endDate": "2015",
+      "score": 3.8,
+      "courses": [
+        "Compilers",
+        "Distributed Systems"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "name": "Kubernetes",
+      "level": "4/5",
+      "keywords": [
+        "Helm",
+        "Operators"
+      ]
+    },
+    {
+      "name": "Go",
+      "level": "Expert"
+    },
+    {
+      "name": "Rust",
+      "level": 3
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "Native speaker"
+    },
+    {
+      "language": "Spanish",
+      "fluency": "C1"
+    }
+  ],
+  "certificates": [
+    {
+      "name": "CKS",
+      "issuer": "CNCF",
+      "date": "2024-02-30"
+    }
+  ],
+  "references": [
+    {
+      "name": "Sam Lee, VP Engineering at Umbrella Cloud",
+      "reference": "Zoë is the best platform engineer I've worked with."
+    }
+  ]
+}
