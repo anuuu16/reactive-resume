@@ -3,6 +3,7 @@
 Lives in `.sandbox/` on branch `sandbox-base`. The upload script leaves this folder out, so the model never sees it.
 
 Layout:
+
 ```
 Alignerr/
 ├── reactive-resume/                 ← the git repo (branches: main, sandbox-base, task_*)
@@ -18,15 +19,18 @@ Alignerr/
 ## 1. On your Mac
 
 ### Build the upload (always use the script)
+
 ```bash
-bash /Users/anu/Desktop/PersonalProjects/Alignerr/make-sandbox-zip.sh            # from branch sandbox-base
-bash /Users/anu/Desktop/PersonalProjects/Alignerr/make-sandbox-zip.sh task_5     # from another branch
+bash /Users/anubhavsingh/Desktop/PersonalProjects/make-sandbox-zip.sh            # from branch sandbox-base
+bash /Users/anubhavsingh/Desktop/PersonalProjects/make-sandbox-zip.sh task_5     # from another branch
 ```
+
 It uses `git archive` (committed files only, so **`.git` is never included**) and refuses to finish unless all checks pass:
 no `.git`, no `node_modules`, no `.env*`, no agent/AI-tool files, no `.sandbox/`, only the 2 docs files and the 1 workflow
 that tests read, `.gitignore` present, no private-registry URLs, no `packageManager`/`engines` pins.
 
 Left out of the zip (not deleted from the branch; the code and tests don't use them):
+
 - `.sandbox/` (this folder)
 - `.github/` except `workflows/docker-build.yml` (read by `tooling/docker-publishing.test.ts`)
 - `docs/` except `guides/json-resume-schema.mdx` and `applying-custom-styles.mdx` (read by `tooling/semantic-css`)
@@ -41,6 +45,7 @@ Kept on purpose: `lefthook.yml` + `commitlint.config.cjs` (without `lefthook.yml
 To leave out more, add it to `DROP` in the script (and to `KEEP` anything a test reads).
 
 ### What's in `sandbox-base`
+
 Upstream `main` + versions downgraded to what the Taiga npm mirror has + `packageManager`/`engines` removed + `.npmrc`
 pointing at the public registry + agent files removed (`AGENTS.md`, `CLAUDE.md`, copilot instructions, `docs/agents/`,
 `.claude-plugin/`, `plugins/` skills, `skills-lock.json`, the agent-skills guide) + `career/voice.test.ts` removed.
@@ -49,29 +54,36 @@ Kept: `plugins/reactive-resume/skills/resume-builder/references/schema.md` (gene
 reads it).
 
 ### Start a new task branch
+
 ```bash
-cd /Users/anu/Desktop/PersonalProjects/Alignerr/reactive-resume
+cd /Users/anubhavsingh/Desktop/PersonalProjects/Alignerr/reactive-resume
 git switch -c task_N sandbox-base
 ```
 
 ### Apply a turn's Taiga download (`changes.diff` is cumulative: always onto `sandbox-base`)
+
 ```bash
 git switch -c task_N_turnX sandbox-base
 git apply -p2 --check /path/to/changes.diff && git apply -p2 /path/to/changes.diff
 git add -A && git commit --no-verify -m "chore(taiga): apply task N turn X"
 ```
+
 Or replace files from the zip's `files/` folder (only if there's no `OMITTED.txt`, and handle deleted files):
+
 ```bash
 rsync -av /path/to/<id>_X_a_changed_files/files/reactive-resume/  ./
 ```
 
 ### Before any commit/upload: private registry check
+
 This Mac's npm uses a private company registry. If a lockfile was regenerated here:
+
 ```bash
 grep -c artifactory pnpm-lock.yaml        # must be 0
 ```
 
 ### Never commit `.git` / secrets
+
 - Upload only via `make-sandbox-zip.sh` (`git archive` can't include `.git`).
 - Change this sheet or the script only on `sandbox-base` (`.sandbox/`), then commit there.
 - `.gitignore` already ignores `node_modules`, `dist`, `.env*`, `.turbo`.
@@ -85,6 +97,7 @@ Tools available there: **terminal, VS Code, Chrome, Node 22, pnpm 10.34.x, Postg
 No Docker. Don't assume anything else is missing: check with `which <tool>`.
 
 ### Install
+
 ```bash
 cd /workspace/reactive-resume
 node -v; pnpm -v
@@ -92,6 +105,7 @@ pnpm install --frozen-lockfile
 ```
 
 ### Tests (by package; no database needed)
+
 ```bash
 pnpm --filter @reactive-resume/schema test
 pnpm --filter @reactive-resume/resume test
@@ -105,6 +119,7 @@ pnpm --filter @reactive-resume/api exec vitest run src/features/resume/paginatio
 ```
 
 ### Typecheck, lint, format
+
 ```bash
 (cd packages/api && pnpm exec tsgo --noEmit)        # any package: packages/<name> or apps/web
 pnpm exec oxlint --deny-warnings
@@ -112,6 +127,7 @@ pnpm exec oxfmt --check
 ```
 
 ### Postgres (integration tests / running the app)
+
 ```bash
 mkdir -p /tmp/pgdata
 initdb -D /tmp/pgdata -U postgres --auth=trust > /tmp/initdb.log 2>&1
@@ -125,6 +141,7 @@ pg_ctl -D /tmp/pgdata stop
 ```
 
 ### Run the app and use it in Chrome
+
 ```bash
 cat > .env.local <<'EOF'
 APP_URL=http://localhost:3000
@@ -138,17 +155,19 @@ mkdir -p /tmp/rr-storage
 pnpm db:migrate
 pnpm dev                       # web :3000, API :3001, email preview :3002
 ```
+
 Chrome → `http://localhost:3000` → sign up (no email verification) → try the feature. Emails print in the server log.
 
 ---
 
 ## 3. Known failures on `sandbox-base` (from the downgrade, not from any task)
-| Where | Symptom | Cause |
-|---|---|---|
-| `packages/pdf` tests + typecheck | ~157 tests fail | Forme 0.10 (real: 0.28) |
-| `apps/web` tests using Lingui macros | "macro … executed outside the context of compilation" | Lingui 6.8 (real: 6.9) |
-| typecheck: `packages/auth`, `api/src/context.ts`, `features/auth/router.ts`, `features/career/voice.ts`, web settings | type errors | better-auth / AI SDK downgrade |
-| `api` `public-render-rate-limit` (2 tests) | timeout | no Redis |
-| `tooling` `turbo/source-cache.test.ts` | turbo command fails | fails on the base too |
+
+| Where                                                                                                                 | Symptom                                               | Cause                          |
+| --------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------- | ------------------------------ |
+| `packages/pdf` tests + typecheck                                                                                      | ~157 tests fail                                       | Forme 0.10 (real: 0.28)        |
+| `apps/web` tests using Lingui macros                                                                                  | "macro … executed outside the context of compilation" | Lingui 6.8 (real: 6.9)         |
+| typecheck: `packages/auth`, `api/src/context.ts`, `features/auth/router.ts`, `features/career/voice.ts`, web settings | type errors                                           | better-auth / AI SDK downgrade |
+| `api` `public-render-rate-limit` (2 tests)                                                                            | timeout                                               | no Redis                       |
+| `tooling` `turbo/source-cache.test.ts`                                                                                | turbo command fails                                   | fails on the base too          |
 
 Baseline passes: schema 84 · resume 196 · api 366+ · docx 25 · mcp 19.

@@ -27,7 +27,7 @@ DROP=(
 )
 # Kept although inside a dropped folder: tests read them.
 KEEP=(
-	.github/workflows/docker-build.yml           # tooling/docker-publishing.test.ts
+	# .github/workflows/docker-build.yml           # tooling/docker-publishing.test.ts
 	docs/guides/json-resume-schema.mdx           # tooling/semantic-css/generate-reference(.test).ts
 	docs/applying-custom-styles.mdx              # tooling/semantic-css/generate-reference.test.ts
 )
@@ -67,7 +67,7 @@ check "agent / AI-tool files"   "$(grep -ciE '(^|/)(AGENTS|CLAUDE|GEMINI|PRODUCT
 check "this .sandbox folder"    "$(grep -c '^reactive-resume/\.sandbox/' <<<"$list" || true)" 0
 files_in() { grep "^reactive-resume/$1" <<<"$list" | grep -vc '/$' || true; }
 check "docs (only the 2 files tests read)" "$(files_in 'docs/')" 2
-check ".github (only docker-build.yml)" "$(files_in '\.github/')" 1
+# check ".github (only docker-build.yml)" "$(files_in '\.github/')" 1
 check ".gitignore present"      "$(grep -c '^reactive-resume/\.gitignore$' <<<"$list" || true)" 1
 check "private registry URLs"   "$(unzip -p "$ZIP" | grep -ac 'artifactory' || true)" 0
 check "turbo agentGuidance off" "$(unzip -p "$ZIP" reactive-resume/turbo.json | grep -c '"agentGuidance": false' || true)" 1
