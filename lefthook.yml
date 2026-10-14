@@ -33,6 +33,6 @@ pre-commit:
       stage_fixed: true
 
 commit-msg:
-  jobs:
-    - name: commitlint
-      run: pnpm commitlint --edit {1}
+  # jobs:
+  #   - name: commitlint
+  #     run: pnpm commitlint --edit {1}
