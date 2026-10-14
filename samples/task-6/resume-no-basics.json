@@ -1,0 +1,5 @@
+{
+  "work": [{ "name": "Umbrella Labs", "position": "Data Engineer", "startDate": "2020-01", "endDate": "2023-12", "highlights": ["Built the event pipeline"] }],
+  "education": [{ "institution": "IIT Delhi", "studyType": "MTech", "area": "Data Science", "startDate": "2018", "endDate": "2020" }],
+  "skills": [{ "name": "Data", "keywords": ["Spark", "Kafka"] }]
+}

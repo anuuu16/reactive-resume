@@ -1,0 +1,48 @@
+{
+  "basics": {
+    "name": "Priya Sharma",
+    "label": "Backend Engineer",
+    "email": "priya.sharma@example.com",
+    "phone": "+91 98765 43210",
+    "website": "https://priya.example.dev",
+    "summary": "Backend engineer who builds payment systems.",
+    "location": { "address": "12 MG Road", "postalCode": "411001", "city": "Pune", "region": "Maharashtra", "countryCode": "IN" },
+    "profiles": [
+      { "network": "GitHub", "username": "priya-s", "url": "https://github.com/priya-s" },
+      { "username": "priya-sharma", "url": "https://www.linkedin.com/in/priya-sharma" }
+    ]
+  },
+  "work": [
+    {
+      "company": "Acme Payments",
+      "position": "Senior Engineer",
+      "website": "https://acme.example.com",
+      "description": "Payments company, 200 people",
+      "startDate": "2021-04",
+      "endDate": "",
+      "summary": "Own the settlement service.",
+      "highlights": ["Cut settlement time from 2 days to 4 hours", "Led a team of 4"]
+    },
+    {
+      "company": "Globex",
+      "position": "Software Engineer",
+      "startDate": "2018-07-01",
+      "endDate": "2021-03-31",
+      "highlights": ["Built the invoicing API"]
+    }
+  ],
+  "volunteer": [
+    { "organization": "Code for Pune", "position": "Mentor", "startDate": "2019-01", "summary": "Weekend coding classes." }
+  ],
+  "education": [
+    { "institution": "College of Engineering Pune", "area": "Computer Science", "studyType": "B.Tech", "startDate": "2014", "endDate": "2018", "gpa": "8.7/10" }
+  ],
+  "projects": [
+    { "name": "ledger-lite", "description": "Small double-entry ledger in Go", "keywords": ["Go", "PostgreSQL"], "roles": ["Author"], "url": "", "startDate": "2020-02" }
+  ],
+  "publications": [
+    { "name": "Idempotent payments at scale", "publisher": "Example Engineering Blog", "releaseDate": "2022-05", "website": "https://blog.example.com/idempotent" }
+  ],
+  "skills": [{ "name": "Backend", "level": "Advanced", "keywords": ["Go", "Java", "PostgreSQL"] }],
+  "languages": [{ "language": "English", "fluency": "Fluent" }, { "language": "Hindi", "fluency": "Native" }]
+}
