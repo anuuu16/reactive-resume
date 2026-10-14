@@ -1,0 +1,27 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Rahul Verma",
+    "label": "Frontend Developer",
+    "image": "",
+    "email": "",
+    "phone": "",
+    "url": "rahulverma.example.dev",
+    "summary": "",
+    "location": { "city": "Bengaluru", "countryCode": "IN" },
+    "profiles": []
+  },
+  "work": [
+    { "name": "Initech", "position": "Frontend Developer", "url": "", "startDate": "2022-08-01T00:00:00.000Z", "endDate": "Present", "summary": "", "highlights": ["Moved the dashboard to React"] },
+    { "name": "Hooli", "position": "Intern", "url": "", "startDate": "2022-01", "endDate": "2022-06", "summary": "", "highlights": [] }
+  ],
+  "education": [
+    { "institution": "RV College of Engineering", "url": "", "area": "Information Science", "studyType": "BE", "startDate": "2018", "endDate": "2022", "score": "", "courses": [] }
+  ],
+  "awards": [{ "title": "Hackathon winner", "date": "2021-11", "awarder": "Hooli", "summary": "" }],
+  "certificates": [{ "name": "AWS Cloud Practitioner", "date": "2023-02", "issuer": "Amazon Web Services", "url": "" }],
+  "skills": [{ "name": "Frontend", "level": "", "keywords": ["React", "TypeScript"] }],
+  "interests": [{ "name": "Chess", "keywords": [] }],
+  "references": [],
+  "projects": []
+}
