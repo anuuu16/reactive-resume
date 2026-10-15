@@ -1,0 +1,612 @@
+{
+  "picture": {
+    "hidden": false,
+    "fit": "cover",
+    "url": "",
+    "size": 100,
+    "rotation": 0,
+    "aspectRatio": 1,
+    "borderRadius": 0,
+    "borderColor": "rgba(0, 0, 0, 0.5)",
+    "borderWidth": 0,
+    "shadowColor": "rgba(0, 0, 0, 0.5)",
+    "shadowWidth": 0
+  },
+  "basics": {
+    "name": "Sneha Rao",
+    "headline": "Software Engineer",
+    "email": "sneha.rao@example.com",
+    "phone": "+91 98450 12345",
+    "location": "Bengaluru, India",
+    "website": {
+      "url": "",
+      "label": ""
+    },
+    "customFields": []
+  },
+  "summary": {
+    "title": "",
+    "icon": "article",
+    "columns": 1,
+    "hidden": false,
+    "showHeading": true,
+    "keepTogether": false,
+    "startOnNewPage": false,
+    "content": "<p>I am a hard-working, passionate and results-driven team player. I am a self-starter with excellent communication skills and I think outside the box. I am looking for a challenging role where I can grow.</p>"
+  },
+  "sections": {
+    "profiles": {
+      "title": "",
+      "icon": "messenger-logo",
+      "columns": 1,
+      "hidden": false,
+      "showHeading": true,
+      "keepTogether": false,
+      "startOnNewPage": false,
+      "items": [
+        {
+          "id": "019bef5a-93e4-7746-ad39-3d42ddc9b4d8",
+          "hidden": false,
+          "icon": "github-logo",
+          "iconColor": "",
+          "network": "GitHub",
+          "username": "sneha-rao",
+          "website": {
+            "url": "https://github.com/sneha-rao",
+            "label": "",
+            "inlineLink": false
+          }
+        },
+        {
+          "id": "019bef5a-93e4-7746-ad39-43c470b77f4a",
+          "hidden": false,
+          "icon": "linkedin-logo",
+          "iconColor": "",
+          "network": "LinkedIn",
+          "username": "sneha-rao",
+          "website": {
+            "url": "https://linkedin.com/in/sneha-rao",
+            "label": "",
+            "inlineLink": false
+          }
+        }
+      ]
+    },
+    "experience": {
+      "title": "",
+      "icon": "briefcase",
+      "columns": 1,
+      "hidden": false,
+      "showHeading": true,
+      "keepTogether": false,
+      "startOnNewPage": false,
+      "items": [
+        {
+          "id": "e1",
+          "hidden": false,
+          "company": "Zenith Pay",
+          "position": "Senior Software Engineer",
+          "location": "Bengaluru, India",
+          "period": "April 2022 – Present",
+          "dates": {
+            "start": "2022-04",
+            "end": null,
+            "present": true
+          },
+          "website": {
+            "url": "",
+            "label": "",
+            "inlineLink": false
+          },
+          "description": "<ul><li>Responsible for the payments backend.</li><li>Responsible for code reviews.</li><li>Responsible for working with the team on various projects and tasks that were assigned to me by my manager on a regular basis, and also helped other teams when they needed help with their own projects and deadlines.</li><li>I was involved in the migration to Kubernetes.</li><li>Helped with on-call.</li></ul>",
+          "roles": []
+        },
+        {
+          "id": "e2",
+          "hidden": false,
+          "company": "Northwind",
+          "position": "Software Engineer",
+          "location": "Bengaluru, India",
+          "period": "July 2019 – March 2022",
+          "dates": {
+            "start": "2019-07",
+            "end": "2022-03",
+            "present": false
+          },
+          "website": {
+            "url": "",
+            "label": "",
+            "inlineLink": false
+          },
+          "description": "<ul><li>Worked on the refunds API.</li><li>Worked on bug fixes.</li><li>Worked with QA.</li><li>Was part of the team that did the database upgrade.</li></ul>",
+          "roles": []
+        },
+        {
+          "id": "e3",
+          "hidden": false,
+          "company": "Globex",
+          "position": "Junior Developer",
+          "location": "Bengaluru, India",
+          "period": "June 2018 – June 2019",
+          "dates": {
+            "start": "2018-06",
+            "end": "2019-06",
+            "present": false
+          },
+          "website": {
+            "url": "",
+            "label": "",
+            "inlineLink": false
+          },
+          "description": "",
+          "roles": []
+        }
+      ]
+    },
+    "education": {
+      "title": "",
+      "icon": "graduation-cap",
+      "columns": 1,
+      "hidden": false,
+      "showHeading": true,
+      "keepTogether": false,
+      "startOnNewPage": false,
+      "items": [
+        {
+          "id": "019bef5a-93e4-7746-ad39-48455f6cef9e",
+          "hidden": false,
+          "school": "University of Washington",
+          "degree": "Bachelor of Science",
+          "area": "Computer Science",
+          "grade": "3.6 GPA",
+          "location": "Seattle, WA",
+          "period": "2014 – 2018",
+          "website": {
+            "url": "",
+            "label": "",
+            "inlineLink": false
+          },
+          "description": "<p>Concentration in Game Development. Relevant Coursework: Game Engine Architecture, Computer Graphics, Artificial Intelligence, Physics Simulation, 3D Mathematics, Software Engineering, Data Structures & Algorithms</p>",
+          "dates": {
+            "start": "2014",
+            "end": "2018",
+            "present": false
+          }
+        }
+      ]
+    },
+    "projects": {
+      "title": "",
+      "icon": "code-simple",
+      "columns": 1,
+      "hidden": false,
+      "showHeading": true,
+      "keepTogether": false,
+      "startOnNewPage": false,
+      "items": []
+    },
+    "skills": {
+      "title": "",
+      "icon": "compass-tool",
+      "columns": 1,
+      "hidden": false,
+      "showHeading": true,
+      "keepTogether": false,
+      "startOnNewPage": false,
+      "items": [
+        {
+          "id": "019bef5a-93e4-7746-ad39-5a52dcf50ed4",
+          "hidden": false,
+          "icon": "code",
+          "iconColor": "",
+          "name": "Unity Engine",
+          "proficiency": "Expert",
+          "level": 5,
+          "keywords": [
+            "C#",
+            "Editor Tools",
+            "Performance Profiling"
+          ]
+        }
+      ],
+      "keywordLayout": "inline",
+      "layout": "default"
+    },
+    "languages": {
+      "title": "",
+      "icon": "translate",
+      "columns": 1,
+      "hidden": false,
+      "showHeading": true,
+      "keepTogether": false,
+      "startOnNewPage": false,
+      "items": [
+        {
+          "id": "019bef5a-93e4-7746-ad39-73807ccc48b5",
+          "hidden": false,
+          "language": "English",
+          "fluency": "Native",
+          "level": 5
+        },
+        {
+          "id": "019bef5a-93e4-7746-ad39-768670459358",
+          "hidden": false,
+          "language": "Polish",
+          "fluency": "Conversational",
+          "level": 3
+        }
+      ]
+    },
+    "interests": {
+      "title": "",
+      "icon": "football",
+      "columns": 1,
+      "hidden": false,
+      "showHeading": true,
+      "keepTogether": false,
+      "startOnNewPage": false,
+      "items": [
+        {
+          "id": "019bef5a-93e4-7746-ad39-7821b4de95f7",
+          "hidden": false,
+          "icon": "game-controller",
+          "iconColor": "",
+          "name": "Game Design",
+          "keywords": [
+            "Mechanics",
+            "Level Design",
+            "Player Psychology"
+          ]
+        },
+        {
+          "id": "019bef5a-93e4-7746-ad39-7c64c1a607d3",
+          "hidden": false,
+          "icon": "robot",
+          "iconColor": "",
+          "name": "AI & Procedural Generation",
+          "keywords": [
+            "PCG",
+            "Machine Learning",
+            "Emergent Gameplay"
+          ]
+        },
+        {
+          "id": "019bef5a-93e4-7746-ad39-80bccce3c0ef",
+          "hidden": false,
+          "icon": "book-open",
+          "iconColor": "",
+          "name": "Indie Game Development",
+          "keywords": [
+            "Solo Dev",
+            "Game Jams",
+            "Community"
+          ]
+        },
+        {
+          "id": "019bef5a-93e4-7746-ad39-84bb7e9af005",
+          "hidden": false,
+          "icon": "pen-nib",
+          "iconColor": "",
+          "name": "Technical Art",
+          "keywords": [
+            "Shaders",
+            "VFX",
+            "Optimization"
+          ]
+        }
+      ]
+    },
+    "awards": {
+      "title": "",
+      "icon": "trophy",
+      "columns": 1,
+      "hidden": false,
+      "showHeading": true,
+      "keepTogether": false,
+      "startOnNewPage": false,
+      "items": [
+        {
+          "id": "019bef5a-93e4-7746-ad39-8a8bb9fbe182",
+          "hidden": false,
+          "title": "Best Gameplay - Ludum Dare 48",
+          "awarder": "Ludum Dare",
+          "date": "April 2021",
+          "website": {
+            "url": "",
+            "label": "",
+            "inlineLink": false
+          },
+          "description": "<p>Awarded for puzzle game 'Deeper and Deeper' which ranked in the top 5% overall among 3,000+ submissions</p>",
+          "dates": {
+            "start": "2021-04",
+            "end": null,
+            "present": false
+          }
+        },
+        {
+          "id": "019bef5a-93e4-7746-ad39-8dd81379c7c9",
+          "hidden": false,
+          "title": "Employee Excellence Award",
+          "awarder": "Pixel Forge Interactive",
+          "date": "December 2021",
+          "website": {
+            "url": "",
+            "label": "",
+            "inlineLink": false
+          },
+          "description": "<p>Recognized for exceptional contributions to 'Starbound Odyssey' development and dedication to code quality</p>",
+          "dates": {
+            "start": "2021-12",
+            "end": null,
+            "present": false
+          }
+        }
+      ]
+    },
+    "certifications": {
+      "title": "",
+      "icon": "certificate",
+      "columns": 1,
+      "hidden": false,
+      "showHeading": true,
+      "keepTogether": false,
+      "startOnNewPage": false,
+      "items": [
+        {
+          "id": "019bef5a-93e4-7746-ad39-91fe8a4dfea6",
+          "hidden": false,
+          "title": "Unity Certified Expert: Programmer",
+          "issuer": "Unity Technologies",
+          "date": "March 2022",
+          "website": {
+            "url": "",
+            "label": "",
+            "inlineLink": false
+          },
+          "description": "",
+          "dates": {
+            "start": "2022-03",
+            "end": null,
+            "present": false
+          }
+        },
+        {
+          "id": "019bef5a-93e4-7746-ad39-961afccc2508",
+          "hidden": false,
+          "title": "Unreal Engine 5 C++ Developer",
+          "issuer": "Epic Games (Udemy)",
+          "date": "June 2023",
+          "website": {
+            "url": "",
+            "label": "",
+            "inlineLink": false
+          },
+          "description": "",
+          "dates": {
+            "start": "2023-06",
+            "end": null,
+            "present": false
+          }
+        }
+      ]
+    },
+    "publications": {
+      "title": "",
+      "icon": "books",
+      "columns": 1,
+      "hidden": false,
+      "showHeading": true,
+      "keepTogether": false,
+      "startOnNewPage": false,
+      "items": [
+        {
+          "id": "019bef5a-93e4-7746-ad39-9816f0081895",
+          "hidden": false,
+          "title": "Optimizing Unity Games for Mobile: A Practical Guide",
+          "publisher": "Game Developer Magazine",
+          "date": "September 2021",
+          "website": {
+            "url": "",
+            "label": "",
+            "inlineLink": false
+          },
+          "description": "<p>Technical article covering mobile optimization techniques including draw call batching, LOD systems, and memory management</p>",
+          "dates": {
+            "start": "2021-09",
+            "end": null,
+            "present": false
+          }
+        },
+        {
+          "id": "019bef5a-93e4-7746-ad39-9cf55c272c05",
+          "hidden": false,
+          "title": "Building Modular Dialogue Systems",
+          "publisher": "Seattle Indie Game Developers Meetup",
+          "date": "May 2022",
+          "website": {
+            "url": "",
+            "label": "",
+            "inlineLink": false
+          },
+          "description": "<p>Presented talk on designing flexible dialogue systems for narrative games, attended by 60+ local developers</p>",
+          "dates": {
+            "start": "2022-05",
+            "end": null,
+            "present": false
+          }
+        }
+      ]
+    },
+    "volunteer": {
+      "title": "",
+      "icon": "hand-heart",
+      "columns": 2,
+      "hidden": false,
+      "showHeading": true,
+      "keepTogether": false,
+      "startOnNewPage": false,
+      "items": [
+        {
+          "id": "019bef5a-93e4-7746-ad39-a02580473e05",
+          "hidden": false,
+          "organization": "Seattle Indies",
+          "location": "Seattle, WA",
+          "period": "2020 – Present",
+          "website": {
+            "url": "",
+            "label": "",
+            "inlineLink": false
+          },
+          "description": "<p>Active member of local indie game development community. Organize monthly game showcases and provide mentorship to aspiring game developers through code reviews and technical guidance.</p>",
+          "dates": {
+            "start": "2020",
+            "end": null,
+            "present": true
+          }
+        },
+        {
+          "id": "019bef5a-93e4-7746-ad39-a731c5b1b286",
+          "hidden": false,
+          "organization": "Code.org Game Development Workshops",
+          "location": "Seattle, WA",
+          "period": "2021 – Present",
+          "website": {
+            "url": "",
+            "label": "",
+            "inlineLink": false
+          },
+          "description": "<p>Volunteer instructor teaching basic game programming concepts to middle school students. Led 8+ workshops introducing Unity fundamentals and game design principles.</p>",
+          "dates": {
+            "start": "2021",
+            "end": null,
+            "present": true
+          }
+        }
+      ]
+    },
+    "references": {
+      "title": "",
+      "icon": "phone",
+      "columns": 1,
+      "hidden": false,
+      "showHeading": true,
+      "keepTogether": false,
+      "startOnNewPage": false,
+      "items": [
+        {
+          "id": "019bef5a-93e4-7746-ad39-a945c0f42dd5",
+          "hidden": false,
+          "name": "Available upon request",
+          "position": "",
+          "website": {
+            "url": "",
+            "label": "",
+            "inlineLink": false
+          },
+          "phone": "",
+          "description": ""
+        }
+      ]
+    }
+  },
+  "customSections": [
+    {
+      "title": "Earlier experience",
+      "icon": "briefcase",
+      "columns": 1,
+      "hidden": false,
+      "showHeading": true,
+      "keepTogether": false,
+      "startOnNewPage": false,
+      "id": "019becaf-0b87-769d-98a6-46ccf558c0e8",
+      "type": "experience",
+      "items": []
+    }
+  ],
+  "metadata": {
+    "template": "azurill",
+    "layout": {
+      "sidebarWidth": 30,
+      "pages": [
+        {
+          "fullWidth": false,
+          "main": [
+            "summary",
+            "education",
+            "experience"
+          ],
+          "sidebar": [
+            "profiles",
+            "skills"
+          ]
+        },
+        {
+          "fullWidth": false,
+          "main": [
+            "019becaf-0b87-769d-98a6-46ccf558c0e8",
+            "awards"
+          ],
+          "sidebar": [
+            "certifications",
+            "languages",
+            "interests",
+            "references"
+          ]
+        },
+        {
+          "fullWidth": true,
+          "main": [
+            "projects",
+            "publications",
+            "volunteer"
+          ],
+          "sidebar": []
+        }
+      ]
+    },
+    "page": {
+      "gapX": 12,
+      "gapY": 8,
+      "marginX": 16,
+      "marginY": 16,
+      "format": "a4",
+      "locale": "en-US",
+      "hideLinkUnderline": false,
+      "hideIcons": false,
+      "hideSectionIcons": false,
+      "dateFormat": "long"
+    },
+    "design": {
+      "level": {
+        "icon": "star",
+        "type": "icon"
+      },
+      "colors": {
+        "primary": "rgba(0, 112, 178, 1)",
+        "text": "rgba(0, 0, 0, 1)",
+        "background": "rgba(255, 255, 255, 1)"
+      }
+    },
+    "typography": {
+      "body": {
+        "fontFamily": "IBM Plex Serif",
+        "fontWeights": [
+          "400",
+          "600"
+        ],
+        "fontSize": 10,
+        "lineHeight": 1.5
+      },
+      "heading": {
+        "fontFamily": "Fira Sans Condensed",
+        "fontWeights": [
+          "500"
+        ],
+        "fontSize": 12,
+        "lineHeight": 1.5
+      }
+    },
+    "notes": "",
+    "styleRules": []
+  }
+}
