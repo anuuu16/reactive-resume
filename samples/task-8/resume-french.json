@@ -1,0 +1,380 @@
+{
+	"picture": {
+		"hidden": false,
+		"fit": "cover",
+		"url": "",
+		"size": 100,
+		"rotation": 0,
+		"aspectRatio": 1,
+		"borderRadius": 0,
+		"borderColor": "rgba(0, 0, 0, 0.5)",
+		"borderWidth": 0,
+		"shadowColor": "rgba(0, 0, 0, 0.5)",
+		"shadowWidth": 0
+	},
+	"basics": {
+		"name": "Camille Laurent",
+		"headline": "Ingénieure backend",
+		"email": "camille.laurent@example.com",
+		"phone": "+33 6 12 34 56 78",
+		"location": "Lyon, France",
+		"website": {
+			"url": "",
+			"label": ""
+		},
+		"customFields": []
+	},
+	"summary": {
+		"title": "Profil",
+		"icon": "article",
+		"columns": 1,
+		"hidden": false,
+		"showHeading": true,
+		"keepTogether": false,
+		"startOnNewPage": false,
+		"content": "<p>Ingénieure backend avec 6 ans d'expérience dans le paiement en ligne. A réduit le délai de facturation de 2 jours à 4 heures et dirige une équipe de 5 développeurs.</p>"
+	},
+	"sections": {
+		"profiles": {
+			"title": "Profils",
+			"icon": "messenger-logo",
+			"columns": 1,
+			"hidden": false,
+			"showHeading": true,
+			"keepTogether": false,
+			"startOnNewPage": false,
+			"items": [
+				{
+					"id": "019bef5a-93e4-7746-ad39-3d42ddc9b4d8",
+					"hidden": false,
+					"icon": "github-logo",
+					"iconColor": "",
+					"network": "GitHub",
+					"username": "camille-laurent",
+					"website": {
+						"url": "https://github.com/camille-laurent",
+						"label": "",
+						"inlineLink": false
+					}
+				},
+				{
+					"id": "019bef5a-93e4-7746-ad39-43c470b77f4a",
+					"hidden": false,
+					"icon": "linkedin-logo",
+					"iconColor": "",
+					"network": "LinkedIn",
+					"username": "camille-laurent",
+					"website": {
+						"url": "https://linkedin.com/in/camille-laurent",
+						"label": "",
+						"inlineLink": false
+					}
+				}
+			]
+		},
+		"experience": {
+			"title": "Expérience professionnelle",
+			"icon": "briefcase",
+			"columns": 1,
+			"hidden": false,
+			"showHeading": true,
+			"keepTogether": false,
+			"startOnNewPage": false,
+			"items": [
+				{
+					"id": "e1",
+					"hidden": false,
+					"company": "Zenith Pay",
+					"position": "Ingénieure backend senior",
+					"location": "Lyon",
+					"period": "Avril 2022 – Aujourd'hui",
+					"dates": {
+						"start": "2022-04",
+						"end": null,
+						"present": true
+					},
+					"website": {
+						"url": "",
+						"label": "",
+						"inlineLink": false
+					},
+					"description": "<ul><li>Réduit le délai de facturation de 2 jours à 4 heures.</li><li>Dirigé une équipe de 5 développeurs.</li><li>Migré 40 services vers Kubernetes sans interruption.</li><li>Mis en place une revue de code qui a diminué les incidents de 30 %.</li></ul>",
+					"roles": []
+				},
+				{
+					"id": "e2",
+					"hidden": false,
+					"company": "Northwind",
+					"position": "Ingénieure backend",
+					"location": "Lyon",
+					"period": "Juillet 2019 – Mars 2022",
+					"dates": {
+						"start": "2019-07",
+						"end": "2022-03",
+						"present": false
+					},
+					"website": {
+						"url": "",
+						"label": "",
+						"inlineLink": false
+					},
+					"description": "<ul><li>Conçu une API de remboursement traitant 1,2 million de requêtes par jour.</li><li>Corrigé plus de 120 anomalies en production.</li><li>Automatisé les tests de non-régression, passant de 3 heures à 20 minutes.</li></ul>",
+					"roles": []
+				},
+				{
+					"id": "e3",
+					"hidden": false,
+					"company": "Globex",
+					"position": "Développeuse junior",
+					"location": "Paris",
+					"period": "Juin 2018 – Juin 2019",
+					"dates": {
+						"start": "2018-06",
+						"end": "2019-06",
+						"present": false
+					},
+					"website": {
+						"url": "",
+						"label": "",
+						"inlineLink": false
+					},
+					"description": "<ul><li>Développé un tableau de bord interne pour 200 agents du support.</li><li>Rédigé la documentation de 15 services internes.</li></ul>",
+					"roles": []
+				}
+			]
+		},
+		"education": {
+			"title": "Formation",
+			"icon": "graduation-cap",
+			"columns": 1,
+			"hidden": false,
+			"showHeading": true,
+			"keepTogether": false,
+			"startOnNewPage": false,
+			"items": [
+				{
+					"id": "019bef5a-93e4-7746-ad39-48455f6cef9e",
+					"hidden": false,
+					"school": "INSA Lyon",
+					"degree": "Diplôme d'ingénieur",
+					"area": "Informatique",
+					"grade": "Mention bien",
+					"location": "Lyon",
+					"period": "2014 – 2018",
+					"website": {
+						"url": "",
+						"label": "",
+						"inlineLink": false
+					},
+					"description": "<p>Spécialisation en systèmes distribués. Projet de fin d'études : plateforme de paiement temps réel.</p>",
+					"dates": {
+						"start": "2014",
+						"end": "2018",
+						"present": false
+					}
+				}
+			]
+		},
+		"projects": {
+			"title": "",
+			"icon": "code-simple",
+			"columns": 1,
+			"hidden": false,
+			"showHeading": true,
+			"keepTogether": false,
+			"startOnNewPage": false,
+			"items": []
+		},
+		"skills": {
+			"title": "Compétences",
+			"icon": "compass-tool",
+			"columns": 1,
+			"hidden": false,
+			"showHeading": true,
+			"keepTogether": false,
+			"startOnNewPage": false,
+			"items": [
+				{
+					"id": "869949b4-894c-4f52-bf8e-e542f7b4316d",
+					"hidden": false,
+					"icon": "code",
+					"iconColor": "",
+					"name": "Go",
+					"proficiency": "Expert",
+					"level": 5,
+					"keywords": ["gRPC", "Concurrence", "Profilage"]
+				},
+				{
+					"id": "226faf14-12b3-424f-b0e7-22a0a86b6b9a",
+					"hidden": false,
+					"icon": "code",
+					"iconColor": "",
+					"name": "PostgreSQL",
+					"proficiency": "Avancé",
+					"level": 5,
+					"keywords": ["Indexation", "Réplication"]
+				},
+				{
+					"id": "3dc1c38d-1b9b-4a58-8f93-22b6752ee9ea",
+					"hidden": false,
+					"icon": "code",
+					"iconColor": "",
+					"name": "Kubernetes",
+					"proficiency": "Avancé",
+					"level": 5,
+					"keywords": ["Helm", "Observabilité"]
+				},
+				{
+					"id": "bd99dcfa-02d9-453a-a543-c770eba998b0",
+					"hidden": false,
+					"icon": "code",
+					"iconColor": "",
+					"name": "Kafka",
+					"proficiency": "Intermédiaire",
+					"level": 5,
+					"keywords": ["Streams", "Schémas"]
+				}
+			],
+			"keywordLayout": "inline",
+			"layout": "default"
+		},
+		"languages": {
+			"title": "Langues",
+			"icon": "translate",
+			"columns": 1,
+			"hidden": false,
+			"showHeading": true,
+			"keepTogether": false,
+			"startOnNewPage": false,
+			"items": [
+				{
+					"id": "019bef5a-93e4-7746-ad39-73807ccc48b5",
+					"hidden": false,
+					"language": "Français",
+					"fluency": "Langue maternelle",
+					"level": 5
+				},
+				{
+					"id": "019bef5a-93e4-7746-ad39-768670459358",
+					"hidden": false,
+					"language": "Anglais",
+					"fluency": "Courant",
+					"level": 3
+				}
+			]
+		},
+		"interests": {
+			"title": "",
+			"icon": "football",
+			"columns": 1,
+			"hidden": false,
+			"showHeading": true,
+			"keepTogether": false,
+			"startOnNewPage": false,
+			"items": []
+		},
+		"awards": {
+			"title": "",
+			"icon": "trophy",
+			"columns": 1,
+			"hidden": false,
+			"showHeading": true,
+			"keepTogether": false,
+			"startOnNewPage": false,
+			"items": []
+		},
+		"certifications": {
+			"title": "",
+			"icon": "certificate",
+			"columns": 1,
+			"hidden": false,
+			"showHeading": true,
+			"keepTogether": false,
+			"startOnNewPage": false,
+			"items": []
+		},
+		"publications": {
+			"title": "",
+			"icon": "books",
+			"columns": 1,
+			"hidden": false,
+			"showHeading": true,
+			"keepTogether": false,
+			"startOnNewPage": false,
+			"items": []
+		},
+		"volunteer": {
+			"title": "",
+			"icon": "hand-heart",
+			"columns": 2,
+			"hidden": false,
+			"showHeading": true,
+			"keepTogether": false,
+			"startOnNewPage": false,
+			"items": []
+		},
+		"references": {
+			"title": "",
+			"icon": "phone",
+			"columns": 1,
+			"hidden": false,
+			"showHeading": true,
+			"keepTogether": false,
+			"startOnNewPage": false,
+			"items": []
+		}
+	},
+	"customSections": [],
+	"metadata": {
+		"template": "azurill",
+		"layout": {
+			"sidebarWidth": 30,
+			"pages": [
+				{
+					"fullWidth": false,
+					"main": ["summary", "experience", "education"],
+					"sidebar": ["profiles", "skills", "languages"]
+				}
+			]
+		},
+		"page": {
+			"gapX": 12,
+			"gapY": 8,
+			"marginX": 16,
+			"marginY": 16,
+			"format": "a4",
+			"locale": "fr-FR",
+			"hideLinkUnderline": false,
+			"hideIcons": false,
+			"hideSectionIcons": false,
+			"dateFormat": "long"
+		},
+		"design": {
+			"level": {
+				"icon": "star",
+				"type": "icon"
+			},
+			"colors": {
+				"primary": "rgba(0, 112, 178, 1)",
+				"text": "rgba(0, 0, 0, 1)",
+				"background": "rgba(255, 255, 255, 1)"
+			}
+		},
+		"typography": {
+			"body": {
+				"fontFamily": "IBM Plex Serif",
+				"fontWeights": ["400", "600"],
+				"fontSize": 10,
+				"lineHeight": 1.5
+			},
+			"heading": {
+				"fontFamily": "Fira Sans Condensed",
+				"fontWeights": ["500"],
+				"fontSize": 12,
+				"lineHeight": 1.5
+			}
+		},
+		"notes": "",
+		"styleRules": []
+	}
+}

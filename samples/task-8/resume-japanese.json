@@ -1,0 +1,380 @@
+{
+	"picture": {
+		"hidden": false,
+		"fit": "cover",
+		"url": "",
+		"size": 100,
+		"rotation": 0,
+		"aspectRatio": 1,
+		"borderRadius": 0,
+		"borderColor": "rgba(0, 0, 0, 0.5)",
+		"borderWidth": 0,
+		"shadowColor": "rgba(0, 0, 0, 0.5)",
+		"shadowWidth": 0
+	},
+	"basics": {
+		"name": "佐藤 美咲",
+		"headline": "バックエンドエンジニア",
+		"email": "misaki.sato@example.com",
+		"phone": "+81 90-1234-5678",
+		"location": "東京都",
+		"website": {
+			"url": "",
+			"label": ""
+		},
+		"customFields": []
+	},
+	"summary": {
+		"title": "プロフィール",
+		"icon": "article",
+		"columns": 1,
+		"hidden": false,
+		"showHeading": true,
+		"keepTogether": false,
+		"startOnNewPage": false,
+		"content": "<p>決済領域で6年の経験を持つバックエンドエンジニア。請求処理の時間を2日から4時間に短縮し、5名の開発チームを率いています。</p>"
+	},
+	"sections": {
+		"profiles": {
+			"title": "プロフィールリンク",
+			"icon": "messenger-logo",
+			"columns": 1,
+			"hidden": false,
+			"showHeading": true,
+			"keepTogether": false,
+			"startOnNewPage": false,
+			"items": [
+				{
+					"id": "019bef5a-93e4-7746-ad39-3d42ddc9b4d8",
+					"hidden": false,
+					"icon": "github-logo",
+					"iconColor": "",
+					"network": "GitHub",
+					"username": "misaki-sato",
+					"website": {
+						"url": "https://github.com/misaki-sato",
+						"label": "",
+						"inlineLink": false
+					}
+				},
+				{
+					"id": "019bef5a-93e4-7746-ad39-43c470b77f4a",
+					"hidden": false,
+					"icon": "linkedin-logo",
+					"iconColor": "",
+					"network": "LinkedIn",
+					"username": "misaki-sato",
+					"website": {
+						"url": "https://linkedin.com/in/misaki-sato",
+						"label": "",
+						"inlineLink": false
+					}
+				}
+			]
+		},
+		"experience": {
+			"title": "職務経歴",
+			"icon": "briefcase",
+			"columns": 1,
+			"hidden": false,
+			"showHeading": true,
+			"keepTogether": false,
+			"startOnNewPage": false,
+			"items": [
+				{
+					"id": "e1",
+					"hidden": false,
+					"company": "Zenith Pay",
+					"position": "シニアバックエンドエンジニア",
+					"location": "東京",
+					"period": "2022年4月 – 現在",
+					"dates": {
+						"start": "2022-04",
+						"end": null,
+						"present": true
+					},
+					"website": {
+						"url": "",
+						"label": "",
+						"inlineLink": false
+					},
+					"description": "<ul><li>請求処理の時間を2日から4時間に短縮しました。</li><li>5名の開発チームを率いました。</li><li>40のサービスを無停止でKubernetesへ移行しました。</li><li>コードレビュー体制を導入し、障害件数を30%削減しました。</li></ul>",
+					"roles": []
+				},
+				{
+					"id": "e2",
+					"hidden": false,
+					"company": "Northwind",
+					"position": "バックエンドエンジニア",
+					"location": "東京",
+					"period": "2019年7月 – 2022年3月",
+					"dates": {
+						"start": "2019-07",
+						"end": "2022-03",
+						"present": false
+					},
+					"website": {
+						"url": "",
+						"label": "",
+						"inlineLink": false
+					},
+					"description": "<ul><li>1日120万件のリクエストを処理する返金APIを設計・開発しました。</li><li>本番環境の不具合を120件以上修正しました。</li><li>回帰テストを自動化し、実行時間を3時間から20分に短縮しました。</li></ul>",
+					"roles": []
+				},
+				{
+					"id": "e3",
+					"hidden": false,
+					"company": "Globex",
+					"position": "ジュニアエンジニア",
+					"location": "大阪",
+					"period": "2018年6月 – 2019年6月",
+					"dates": {
+						"start": "2018-06",
+						"end": "2019-06",
+						"present": false
+					},
+					"website": {
+						"url": "",
+						"label": "",
+						"inlineLink": false
+					},
+					"description": "<ul><li>サポート担当200名向けの社内ダッシュボードを開発しました。</li><li>社内サービス15件のドキュメントを作成しました。</li></ul>",
+					"roles": []
+				}
+			]
+		},
+		"education": {
+			"title": "学歴",
+			"icon": "graduation-cap",
+			"columns": 1,
+			"hidden": false,
+			"showHeading": true,
+			"keepTogether": false,
+			"startOnNewPage": false,
+			"items": [
+				{
+					"id": "019bef5a-93e4-7746-ad39-48455f6cef9e",
+					"hidden": false,
+					"school": "東京工業大学",
+					"degree": "学士",
+					"area": "情報工学",
+					"grade": "GPA 3.5",
+					"location": "東京",
+					"period": "2014 – 2018",
+					"website": {
+						"url": "",
+						"label": "",
+						"inlineLink": false
+					},
+					"description": "<p>分散システムを専攻。卒業研究：リアルタイム決済基盤。</p>",
+					"dates": {
+						"start": "2014",
+						"end": "2018",
+						"present": false
+					}
+				}
+			]
+		},
+		"projects": {
+			"title": "",
+			"icon": "code-simple",
+			"columns": 1,
+			"hidden": false,
+			"showHeading": true,
+			"keepTogether": false,
+			"startOnNewPage": false,
+			"items": []
+		},
+		"skills": {
+			"title": "スキル",
+			"icon": "compass-tool",
+			"columns": 1,
+			"hidden": false,
+			"showHeading": true,
+			"keepTogether": false,
+			"startOnNewPage": false,
+			"items": [
+				{
+					"id": "72783ccd-5d3a-4296-a2ab-0179f94ddb9d",
+					"hidden": false,
+					"icon": "code",
+					"iconColor": "",
+					"name": "Go",
+					"proficiency": "上級",
+					"level": 5,
+					"keywords": ["gRPC", "並行処理", "プロファイリング"]
+				},
+				{
+					"id": "5ed26d2e-1b59-4320-b138-d2c15564e9a5",
+					"hidden": false,
+					"icon": "code",
+					"iconColor": "",
+					"name": "PostgreSQL",
+					"proficiency": "上級",
+					"level": 5,
+					"keywords": ["インデックス設計", "レプリケーション"]
+				},
+				{
+					"id": "5176f0b5-208d-4318-aa9c-8c623e0c6595",
+					"hidden": false,
+					"icon": "code",
+					"iconColor": "",
+					"name": "Kubernetes",
+					"proficiency": "上級",
+					"level": 5,
+					"keywords": ["Helm", "監視"]
+				},
+				{
+					"id": "d928504a-3ad4-4b8f-bf78-1d5cdfe42560",
+					"hidden": false,
+					"icon": "code",
+					"iconColor": "",
+					"name": "Kafka",
+					"proficiency": "中級",
+					"level": 5,
+					"keywords": ["Streams", "スキーマ管理"]
+				}
+			],
+			"keywordLayout": "inline",
+			"layout": "default"
+		},
+		"languages": {
+			"title": "語学",
+			"icon": "translate",
+			"columns": 1,
+			"hidden": false,
+			"showHeading": true,
+			"keepTogether": false,
+			"startOnNewPage": false,
+			"items": [
+				{
+					"id": "019bef5a-93e4-7746-ad39-73807ccc48b5",
+					"hidden": false,
+					"language": "日本語",
+					"fluency": "ネイティブ",
+					"level": 5
+				},
+				{
+					"id": "019bef5a-93e4-7746-ad39-768670459358",
+					"hidden": false,
+					"language": "英語",
+					"fluency": "ビジネスレベル",
+					"level": 3
+				}
+			]
+		},
+		"interests": {
+			"title": "",
+			"icon": "football",
+			"columns": 1,
+			"hidden": false,
+			"showHeading": true,
+			"keepTogether": false,
+			"startOnNewPage": false,
+			"items": []
+		},
+		"awards": {
+			"title": "",
+			"icon": "trophy",
+			"columns": 1,
+			"hidden": false,
+			"showHeading": true,
+			"keepTogether": false,
+			"startOnNewPage": false,
+			"items": []
+		},
+		"certifications": {
+			"title": "",
+			"icon": "certificate",
+			"columns": 1,
+			"hidden": false,
+			"showHeading": true,
+			"keepTogether": false,
+			"startOnNewPage": false,
+			"items": []
+		},
+		"publications": {
+			"title": "",
+			"icon": "books",
+			"columns": 1,
+			"hidden": false,
+			"showHeading": true,
+			"keepTogether": false,
+			"startOnNewPage": false,
+			"items": []
+		},
+		"volunteer": {
+			"title": "",
+			"icon": "hand-heart",
+			"columns": 2,
+			"hidden": false,
+			"showHeading": true,
+			"keepTogether": false,
+			"startOnNewPage": false,
+			"items": []
+		},
+		"references": {
+			"title": "",
+			"icon": "phone",
+			"columns": 1,
+			"hidden": false,
+			"showHeading": true,
+			"keepTogether": false,
+			"startOnNewPage": false,
+			"items": []
+		}
+	},
+	"customSections": [],
+	"metadata": {
+		"template": "azurill",
+		"layout": {
+			"sidebarWidth": 30,
+			"pages": [
+				{
+					"fullWidth": false,
+					"main": ["summary", "experience", "education"],
+					"sidebar": ["profiles", "skills", "languages"]
+				}
+			]
+		},
+		"page": {
+			"gapX": 12,
+			"gapY": 8,
+			"marginX": 16,
+			"marginY": 16,
+			"format": "a4",
+			"locale": "ja-JP",
+			"hideLinkUnderline": false,
+			"hideIcons": false,
+			"hideSectionIcons": false,
+			"dateFormat": "long"
+		},
+		"design": {
+			"level": {
+				"icon": "star",
+				"type": "icon"
+			},
+			"colors": {
+				"primary": "rgba(0, 112, 178, 1)",
+				"text": "rgba(0, 0, 0, 1)",
+				"background": "rgba(255, 255, 255, 1)"
+			}
+		},
+		"typography": {
+			"body": {
+				"fontFamily": "IBM Plex Serif",
+				"fontWeights": ["400", "600"],
+				"fontSize": 10,
+				"lineHeight": 1.5
+			},
+			"heading": {
+				"fontFamily": "Fira Sans Condensed",
+				"fontWeights": ["500"],
+				"fontSize": 12,
+				"lineHeight": 1.5
+			}
+		},
+		"notes": "",
+		"styleRules": []
+	}
+}
