@@ -1,0 +1,380 @@
+{
+	"picture": {
+		"hidden": false,
+		"fit": "cover",
+		"url": "",
+		"size": 100,
+		"rotation": 0,
+		"aspectRatio": 1,
+		"borderRadius": 0,
+		"borderColor": "rgba(0, 0, 0, 0.5)",
+		"borderWidth": 0,
+		"shadowColor": "rgba(0, 0, 0, 0.5)",
+		"shadowWidth": 0
+	},
+	"basics": {
+		"name": "अनन्या शर्मा",
+		"headline": "बैकएंड इंजीनियर",
+		"email": "ananya.sharma@example.com",
+		"phone": "+91 98765 43210",
+		"location": "बेंगलुरु, भारत",
+		"website": {
+			"url": "",
+			"label": ""
+		},
+		"customFields": []
+	},
+	"summary": {
+		"title": "प्रोफ़ाइल",
+		"icon": "article",
+		"columns": 1,
+		"hidden": false,
+		"showHeading": true,
+		"keepTogether": false,
+		"startOnNewPage": false,
+		"content": "<p>भुगतान क्षेत्र में 6 वर्षों के अनुभव वाली बैकएंड इंजीनियर। बिलिंग का समय 2 दिन से घटाकर 4 घंटे किया और 5 डेवलपर्स की टीम का नेतृत्व करती हूँ।</p>"
+	},
+	"sections": {
+		"profiles": {
+			"title": "प्रोफ़ाइल लिंक",
+			"icon": "messenger-logo",
+			"columns": 1,
+			"hidden": false,
+			"showHeading": true,
+			"keepTogether": false,
+			"startOnNewPage": false,
+			"items": [
+				{
+					"id": "019bef5a-93e4-7746-ad39-3d42ddc9b4d8",
+					"hidden": false,
+					"icon": "github-logo",
+					"iconColor": "",
+					"network": "GitHub",
+					"username": "ananya-sharma",
+					"website": {
+						"url": "https://github.com/ananya-sharma",
+						"label": "",
+						"inlineLink": false
+					}
+				},
+				{
+					"id": "019bef5a-93e4-7746-ad39-43c470b77f4a",
+					"hidden": false,
+					"icon": "linkedin-logo",
+					"iconColor": "",
+					"network": "LinkedIn",
+					"username": "ananya-sharma",
+					"website": {
+						"url": "https://linkedin.com/in/ananya-sharma",
+						"label": "",
+						"inlineLink": false
+					}
+				}
+			]
+		},
+		"experience": {
+			"title": "कार्य अनुभव",
+			"icon": "briefcase",
+			"columns": 1,
+			"hidden": false,
+			"showHeading": true,
+			"keepTogether": false,
+			"startOnNewPage": false,
+			"items": [
+				{
+					"id": "e1",
+					"hidden": false,
+					"company": "Zenith Pay",
+					"position": "सीनियर बैकएंड इंजीनियर",
+					"location": "बेंगलुरु",
+					"period": "अप्रैल 2022 – वर्तमान",
+					"dates": {
+						"start": "2022-04",
+						"end": null,
+						"present": true
+					},
+					"website": {
+						"url": "",
+						"label": "",
+						"inlineLink": false
+					},
+					"description": "<ul><li>बिलिंग का समय 2 दिन से घटाकर 4 घंटे किया।</li><li>5 डेवलपर्स की टीम का नेतृत्व किया।</li><li>40 सेवाओं को बिना किसी रुकावट के Kubernetes पर माइग्रेट किया।</li><li>कोड रिव्यू प्रक्रिया शुरू की, जिससे घटनाएँ 30% कम हुईं।</li></ul>",
+					"roles": []
+				},
+				{
+					"id": "e2",
+					"hidden": false,
+					"company": "Northwind",
+					"position": "बैकएंड इंजीनियर",
+					"location": "बेंगलुरु",
+					"period": "जुलाई 2019 – मार्च 2022",
+					"dates": {
+						"start": "2019-07",
+						"end": "2022-03",
+						"present": false
+					},
+					"website": {
+						"url": "",
+						"label": "",
+						"inlineLink": false
+					},
+					"description": "<ul><li>प्रतिदिन 12 लाख अनुरोध संभालने वाला रिफ़ंड API बनाया।</li><li>प्रोडक्शन की 120 से अधिक गड़बड़ियाँ ठीक कीं।</li><li>रिग्रेशन टेस्ट स्वचालित किए, समय 3 घंटे से घटकर 20 मिनट हुआ।</li></ul>",
+					"roles": []
+				},
+				{
+					"id": "e3",
+					"hidden": false,
+					"company": "Globex",
+					"position": "जूनियर डेवलपर",
+					"location": "पुणे",
+					"period": "जून 2018 – जून 2019",
+					"dates": {
+						"start": "2018-06",
+						"end": "2019-06",
+						"present": false
+					},
+					"website": {
+						"url": "",
+						"label": "",
+						"inlineLink": false
+					},
+					"description": "<ul><li>200 सपोर्ट कर्मचारियों के लिए आंतरिक डैशबोर्ड विकसित किया।</li><li>15 आंतरिक सेवाओं का दस्तावेज़ीकरण लिखा।</li></ul>",
+					"roles": []
+				}
+			]
+		},
+		"education": {
+			"title": "शिक्षा",
+			"icon": "graduation-cap",
+			"columns": 1,
+			"hidden": false,
+			"showHeading": true,
+			"keepTogether": false,
+			"startOnNewPage": false,
+			"items": [
+				{
+					"id": "019bef5a-93e4-7746-ad39-48455f6cef9e",
+					"hidden": false,
+					"school": "भारतीय प्रौद्योगिकी संस्थान, दिल्ली",
+					"degree": "बी.टेक",
+					"area": "कंप्यूटर विज्ञान",
+					"grade": "CGPA 8.6",
+					"location": "नई दिल्ली",
+					"period": "2014 – 2018",
+					"website": {
+						"url": "",
+						"label": "",
+						"inlineLink": false
+					},
+					"description": "<p>वितरित प्रणालियों में विशेषज्ञता। अंतिम वर्ष परियोजना: रियल-टाइम भुगतान प्लेटफ़ॉर्म।</p>",
+					"dates": {
+						"start": "2014",
+						"end": "2018",
+						"present": false
+					}
+				}
+			]
+		},
+		"projects": {
+			"title": "",
+			"icon": "code-simple",
+			"columns": 1,
+			"hidden": false,
+			"showHeading": true,
+			"keepTogether": false,
+			"startOnNewPage": false,
+			"items": []
+		},
+		"skills": {
+			"title": "कौशल",
+			"icon": "compass-tool",
+			"columns": 1,
+			"hidden": false,
+			"showHeading": true,
+			"keepTogether": false,
+			"startOnNewPage": false,
+			"items": [
+				{
+					"id": "a74d9a8e-4dc4-4e63-9ab7-4f23f031466c",
+					"hidden": false,
+					"icon": "code",
+					"iconColor": "",
+					"name": "Go",
+					"proficiency": "विशेषज्ञ",
+					"level": 5,
+					"keywords": ["gRPC", "समवर्तीता", "प्रोफ़ाइलिंग"]
+				},
+				{
+					"id": "2beb65ba-20e0-4414-ba56-76f870e64ef7",
+					"hidden": false,
+					"icon": "code",
+					"iconColor": "",
+					"name": "PostgreSQL",
+					"proficiency": "उन्नत",
+					"level": 5,
+					"keywords": ["इंडेक्सिंग", "प्रतिकृति"]
+				},
+				{
+					"id": "44161c13-28d8-4342-a28e-820abc03f2ee",
+					"hidden": false,
+					"icon": "code",
+					"iconColor": "",
+					"name": "Kubernetes",
+					"proficiency": "उन्नत",
+					"level": 5,
+					"keywords": ["Helm", "निगरानी"]
+				},
+				{
+					"id": "338bd139-ebe6-4a3b-bd90-d19983adf5fe",
+					"hidden": false,
+					"icon": "code",
+					"iconColor": "",
+					"name": "Kafka",
+					"proficiency": "मध्यम",
+					"level": 5,
+					"keywords": ["Streams", "स्कीमा"]
+				}
+			],
+			"keywordLayout": "inline",
+			"layout": "default"
+		},
+		"languages": {
+			"title": "भाषाएँ",
+			"icon": "translate",
+			"columns": 1,
+			"hidden": false,
+			"showHeading": true,
+			"keepTogether": false,
+			"startOnNewPage": false,
+			"items": [
+				{
+					"id": "019bef5a-93e4-7746-ad39-73807ccc48b5",
+					"hidden": false,
+					"language": "हिन्दी",
+					"fluency": "मातृभाषा",
+					"level": 5
+				},
+				{
+					"id": "019bef5a-93e4-7746-ad39-768670459358",
+					"hidden": false,
+					"language": "अंग्रेज़ी",
+					"fluency": "धाराप्रवाह",
+					"level": 3
+				}
+			]
+		},
+		"interests": {
+			"title": "",
+			"icon": "football",
+			"columns": 1,
+			"hidden": false,
+			"showHeading": true,
+			"keepTogether": false,
+			"startOnNewPage": false,
+			"items": []
+		},
+		"awards": {
+			"title": "",
+			"icon": "trophy",
+			"columns": 1,
+			"hidden": false,
+			"showHeading": true,
+			"keepTogether": false,
+			"startOnNewPage": false,
+			"items": []
+		},
+		"certifications": {
+			"title": "",
+			"icon": "certificate",
+			"columns": 1,
+			"hidden": false,
+			"showHeading": true,
+			"keepTogether": false,
+			"startOnNewPage": false,
+			"items": []
+		},
+		"publications": {
+			"title": "",
+			"icon": "books",
+			"columns": 1,
+			"hidden": false,
+			"showHeading": true,
+			"keepTogether": false,
+			"startOnNewPage": false,
+			"items": []
+		},
+		"volunteer": {
+			"title": "",
+			"icon": "hand-heart",
+			"columns": 2,
+			"hidden": false,
+			"showHeading": true,
+			"keepTogether": false,
+			"startOnNewPage": false,
+			"items": []
+		},
+		"references": {
+			"title": "",
+			"icon": "phone",
+			"columns": 1,
+			"hidden": false,
+			"showHeading": true,
+			"keepTogether": false,
+			"startOnNewPage": false,
+			"items": []
+		}
+	},
+	"customSections": [],
+	"metadata": {
+		"template": "azurill",
+		"layout": {
+			"sidebarWidth": 30,
+			"pages": [
+				{
+					"fullWidth": false,
+					"main": ["summary", "experience", "education"],
+					"sidebar": ["profiles", "skills", "languages"]
+				}
+			]
+		},
+		"page": {
+			"gapX": 12,
+			"gapY": 8,
+			"marginX": 16,
+			"marginY": 16,
+			"format": "a4",
+			"locale": "hi-IN",
+			"hideLinkUnderline": false,
+			"hideIcons": false,
+			"hideSectionIcons": false,
+			"dateFormat": "long"
+		},
+		"design": {
+			"level": {
+				"icon": "star",
+				"type": "icon"
+			},
+			"colors": {
+				"primary": "rgba(0, 112, 178, 1)",
+				"text": "rgba(0, 0, 0, 1)",
+				"background": "rgba(255, 255, 255, 1)"
+			}
+		},
+		"typography": {
+			"body": {
+				"fontFamily": "IBM Plex Serif",
+				"fontWeights": ["400", "600"],
+				"fontSize": 10,
+				"lineHeight": 1.5
+			},
+			"heading": {
+				"fontFamily": "Fira Sans Condensed",
+				"fontWeights": ["500"],
+				"fontSize": 12,
+				"lineHeight": 1.5
+			}
+		},
+		"notes": "",
+		"styleRules": []
+	}
+}
